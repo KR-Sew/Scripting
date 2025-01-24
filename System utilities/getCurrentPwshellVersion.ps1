@@ -1,4 +1,4 @@
-Write-Host "There is the current version of PowerShell is :"
+Write-Host "The current version of PowerShell is :"
 
 $Value01 = Get-Command powershell | Select-Object Version
 $Value02 = Get-Host | Select-Object Version
