@@ -1,4 +1,12 @@
 Write-Host "There is the current version of PowerShell is :"
-$PSVersionTable.PSVersion
-Get-Command powershell | Select-Object Version
-Get-Host | Select-Object Version
+
+$Value01 = Get-Command powershell | Select-Object Version
+$Value02 = Get-Host | Select-Object Version
+$customTable = [PSCustomObject]@{
+    Major = $PSVersionTable.PSVersion.Major
+    Minor = $PSVersionTable.PSVersion.Minor
+    Patch = $PSVersionTable.PSVersion.Patch
+    Version = $Value01.Version
+    Year = $Value02.Version
+}
+$customTable | Format-Table -AutoSize
