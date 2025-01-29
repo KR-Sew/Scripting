@@ -18,5 +18,5 @@ $d = Get-Date
 $timeStamp= $d.AddDays(0).ToString('dd.MM')
 If (-not (Test-Path -Path "$DBArchFdr\$DBFolder\$timeStamp")) { New-Item -ItemType Directory -Path "$DBArchFdr\$DBFolder\$timeStamp" } 
 $ArchFdr= "$DBArchFdr\$DBFolder\$timeStamp"   
- Dir $SrcFdr -Recurse | Move-Item -Destination $ArchFdr
+ Get-ChildItem $SrcFdr -Recurse | Move-Item -Destination $ArchFdr
 Clear-Variable SrcFdr,ArchFdr,DBFolder,DBSrcFdr,DBArchFdr
