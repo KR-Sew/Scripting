@@ -10,15 +10,16 @@ $DefaultVolumeSizeGB = 50GB        # Size of the VHD (in GB)
 $DefaultVLANID = 0               # Default VLAN ID
 $DefaultSwitchName = "ExternalSwitch01"  # Replace with a valid switch name
 $DefSecureBoot = "On"              # Secure boot value
-
+$DefISOPath =""
+$DefAttachISO = "On"
 # Prompt for VM details or use default values
 $VMName = Read-Host "Enter VM Name (Default: $DefaultVMName)" 
 if (-not $VMName) { $VMName = $DefaultVMName }
 
-$MemoryStartup = Read-Host "Enter Startup Memory in MB (Default: $DefaultMemoryStartup)" 
+$MemoryStartup = Read-Host "Enter Startup Memory in MB (Default: $DefaultMemoryStartup)"
 if (-not $MemoryStartup) { $MemoryStartup = $DefaultMemoryStartup }
 
-$MemoryMinimum = Read-Host "Enter Minimum Memory in MB (Default: $DefaultMemoryMinimum)" 
+$MemoryMinimum = Read-Host "Enter Minimum Memory in MB (Default: $DefaultMemoryMinimum)"
 if (-not $MemoryMinimum) { $MemoryMinimum = $DefaultMemoryMinimum }
 
 $MemoryMaximum = Read-Host "Enter Maximum Memory in MB (Default: $DefaultMemoryMaximum)" 
@@ -49,6 +50,12 @@ if (-not $VMSecureBoot) { $VMSecureBoot = $DefSecureBoot }
 if (-not (Test-Path $VHDPath)) { New-Item -ItemType Directory -Path $VHDPath }
 if (-not (Test-Path $ConfigPath)) { New-Item -ItemType Directory -Path $ConfigPath }
 
+$AttachISO = Read-Host "Enter attaching ISO (Default: $DefAttachISO)"
+if (-not $AttachISO) { $AttachISO = $DefAttachISO }
+
+$ISOPath = Read-Host "Enter ISO path (Default: $DefISOPath)"
+if (-not $ISOPath ) { $ISOPath = $DefISOPath }
+
 # Paths for the VHDX files
 $VHDFile = Join-Path -Path $VHDPath\VHDs\$VMName -ChildPath "$VMName.vhdx"
 
@@ -56,23 +63,39 @@ $VHDFile = Join-Path -Path $VHDPath\VHDs\$VMName -ChildPath "$VMName.vhdx"
 # Create the VM
 Write-Host "Creating VM $VMName..."
 New-VM -Name $VMName `
-       -MemoryStartupBytes $MemoryStartup `
+       -MemoryStartupBytes  ($MemoryStartup / 1) `
        -Generation 2 `
        -Path $ConfigPath\VMs `
        -SwitchName $SwitchName
 
-# Configure the processor count
-Set-VMProcessor -VMName $VMName -Count $ProcessorCount
+    # Configure the processor count
+    Set-VMProcessor -VMName $VMName -Count $ProcessorCount
 
-# Configure memory settings (dynamic memory)
-Write-Host "Configuring Memory Settings..."
-Set-VMMemory -VMName $VMName `
-             -StartupBytes $MemoryStartup `
+    # Configure memory settings (dynamic memory)
+    Write-Host "Configuring Memory Settings..."
+    Set-VMMemory -VMName $VMName `
+             -StartupBytes ($MemoryStartup / 1) `
              -DynamicMemoryEnabled $true `
-             -MinimumBytes $MemoryMinimum `
-             -MaximumBytes $MemoryMaximum 
+             -MinimumBytes ($MemoryMinimum / 1)`
+             -MaximumBytes ($MemoryMaximum / 1) 
              
+# Attach ISO if $AttachISO is true
+if ($AttachISO -and $ISOPath) {
+    # Validate that the ISO file exists
+    if (-not (Test-Path -Path $ISOPath)) {
+        Write-Host "Error: The ISO file '$ISOPath' does not exist." -ForegroundColor Red
+        return
+    }
 
+    # Attach the ISO to the virtual DVD drive
+    Add-VMDvdDrive -VMName $VMName -Path $ISOPath
+    Write-Host "ISO '$ISOPath' attached to VM '$VMName'."
+    # Configure the VM to boot from the ISO
+    Set-VMFirmware -VMName $VMName -FirstBootDevice $(Get-VMDvdDrive -VMName $VMName)
+
+} else {
+    Write-Host "No ISO will be attached to VM '$VMName'." -ForegroundColor Yellow
+}
 # Create and attach a new VHDX
 Write-Host "Creating VHDX at $VHDFile with size ${VolumeSizeGB}GB..."
 New-VHD -Path $VHDFile -Dynamic -SizeBytes ($VolumeSizeGB)
