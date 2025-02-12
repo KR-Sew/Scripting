@@ -1,6 +1,8 @@
-# **Clouds**
-# 🚀 PowerShell Scripts Collection  
 
+# 🚀 Cloud Scripts Collection
+[![AWS](https://custom-icon-badges.demolab.com/badge/Cloud-AWS-e95420?style=flat&logo=aws&logoColor=white&logoSize=auto&labelColor=000000)](https://explore.skillbuilder.aws/learn/learning-plans/85/devops-engineer-learning-plan)
+[![Azure](https://custom-icon-badges.demolab.com/badge/Azure-Microsoft-0078D6?style=flat&logo=microsoftazure&logoColor=white)](https://learn.microsoft.com/azure)
+[![PowerShell](https://custom-icon-badges.demolab.com/badge/.-PowerShell-blue.svg?style=flat&logo=powershell-core-eyecatch32&logoColor=white)]
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1%2B-blue?logo=powershell)](https://docs.microsoft.com/en-us/powershell/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![CI/CD](https://github.com/your-username/your-repo/actions/workflows/powershell.yml/badge.svg)](https://github.com/your-username/your-repo/actions)
