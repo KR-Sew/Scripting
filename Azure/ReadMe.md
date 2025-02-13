@@ -1,4 +1,4 @@
-# ☁️ Cloud Management Scripts (Azure & AWS)
+# ☁️ Cloud Management Scripts (Azure)
 
 [![Azure](https://custom-icon-badges.demolab.com/badge/Azure-Microsoft-0078D6?style=flat&logo=microsoftazure&logoColor=white)](https://learn.microsoft.com/azure)
 [![PowerShell](https://custom-icon-badges.demolab.com/badge/.-Microsoft-blue.svg?style=flat&logo=powershell-core-eyecatch32&logoColor=white)](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.5)
