@@ -1,5 +1,5 @@
 
-# ☁️ Cloud Management Scripts (Azure & AWS)
+# ☁️ Cloud Management Scripts (![Azure](./Assets/icons8-azure-48.svg) Azure & ![AWS](./Assets/icons8-amazon-web-services-48.svg) AWS)
 
 [![AWS](https://custom-icon-badges.demolab.com/badge/Cloud-AWS-e95420?style=flat&logo=aws&logoColor=white&logoSize=auto&labelColor=000000)](https://explore.skillbuilder.aws/learn/learning-plans/85/devops-engineer-learning-plan)
 [![Azure](https://custom-icon-badges.demolab.com/badge/Azure-Microsoft-0078D6?style=flat&logo=microsoftazure&logoColor=white)](https://learn.microsoft.com/azure)
