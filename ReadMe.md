@@ -6,7 +6,7 @@
 
 ## **(PowerShell & Bash)**
 
-### This repository contains a set of PowerShell and Bash scripts designed for system administrators, DevOps engineers, and IT professionals who manage virtual machines (VMs), automate system tasks, and optimize infrastructure operations. These scripts work with Hyper-V, VMware, Azure, and Linux-based systems to simplify daily administration tasks.
+### This repository contains a set of PowerShell and Bash scripts designed for system administrators, DevOps engineers, and IT professionals who manage virtual machines (VMs), automate system tasks, and optimize infrastructure operations. These scripts work with Hyper-V, VMware, Azure, and Linux-based systems to simplify daily administration tasks
 
 ### 🚀 Features
 
