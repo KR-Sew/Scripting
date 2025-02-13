@@ -1,5 +1,5 @@
 
-# ☁️ Cloud Management Scripts (![Azure](./Assets/icons8-azure-48.svg) Azure & ![AWS](./Assets/icons8-amazon-web-services-48.svg) AWS)
+# ☁️ Cloud Management Scripts [![Azure](./Assets/icons8-azure-48.svg)](https://portal.azure.com) & [![AWS](./Assets/icons8-amazon-web-services-48.svg)](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=tier%23always-free&awsf.Free%20Tier%20Categories=*all)
 
 [![AWS](https://custom-icon-badges.demolab.com/badge/Cloud-AWS-e95420?style=flat&logo=aws&logoColor=white&logoSize=auto&labelColor=000000)](https://explore.skillbuilder.aws/learn/learning-plans/85/devops-engineer-learning-plan)
 [![Azure](https://custom-icon-badges.demolab.com/badge/Azure-Microsoft-0078D6?style=flat&logo=microsoftazure&logoColor=white)](https://learn.microsoft.com/azure)
