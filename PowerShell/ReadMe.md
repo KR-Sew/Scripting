@@ -3,8 +3,6 @@
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1%2B-blue?logo=powershell)](https://docs.microsoft.com/en-us/powershell/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/bash.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/bash.yml)
-[![CI/CD](https://github.com/KR-Sew/Scripting/actions/workflows/powershell.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions)
-[![Issues](https://img.shields.io/github/issues/KR-Sew/your-repo.svg)](https://github.com/KR-Sew/Scripting/issues)
 
 A collection of useful PowerShell scripts for system administration, automation, and DevOps workflows.  
 
