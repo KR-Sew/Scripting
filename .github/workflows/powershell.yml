@@ -1,0 +1,18 @@
+name: Run PowerShell Script
+
+on:
+  push:
+    branches:
+      - main  # Runs when pushing to the main branch
+
+jobs:
+  test-powershell:
+    runs-on: windows-latest  # Use Windows runner
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4  # Checks out your repo
+
+      - name: Run PowerShell Script
+        run: ./Powershell/GetSystemInfo.ps1
+        shell: pwsh  # Runs with PowerShell Core
