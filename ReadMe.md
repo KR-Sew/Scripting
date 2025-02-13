@@ -11,7 +11,7 @@
 ---
 This repository provides a set of PowerShell and Bash scripts designed for cloud engineers, DevOps professionals, and system administrators to manage cloud resources, automate deployments, and optimize cloud infrastructure. These scripts work with Azure CLI, AWS CLI, Terraform, and cloud-native services to simplify daily cloud operations.
 
-### 🚀 Features
+## 🚀 Features
 
 - ✅ VM & Compute Management → Create, start, stop, resize, and manage cloud VMs.
 - ✅ Storage Management → Automate blob storage, S3 bucket operations, and backups.
@@ -20,7 +20,7 @@ This repository provides a set of PowerShell and Bash scripts designed for cloud
 - ✅ Cost Optimization → Identify unused resources and optimize cloud spending.
 - ✅ CI/CD & Automation → Deploy infrastructure with Terraform, automate cloud deployments.
 
-## 📂 Folder Structure  
+### 📂 Folder Structure  
 
 ```plaintext
 📂 PowerShell-Scripts/
