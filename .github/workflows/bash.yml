@@ -16,4 +16,4 @@ jobs:
         run: chmod +x ./Bash/Update_Golang.sh
 
       - name: Run the script
-        run: ./Bash/Update_Golang.sh  # Executes your script
+        run: ./Bash/Update_Git_GitCli.sh  # Executes your script
