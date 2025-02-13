@@ -13,4 +13,4 @@ jobs:
         uses: actions/checkout@v4  # Checks out your repo
 
       - name: Run the script
-        run: ./Update_Golang.sh  # Executes your script
+        run: ./Bash/Update_Golang.sh  # Executes your script
