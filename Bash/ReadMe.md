@@ -10,10 +10,9 @@ A collection of useful Bash scripts for system administration, automation, and D
 ## 📂 Folder Structure  
 
 ```plaintext
-📂 PowerShell-Scripts/
- ├── 📄 Backup-Scripts/          # Scripts for automated backups
- ├── 📄 Network-Tools/           # Scripts for network diagnostics
- ├── 📄 System-Monitoring/       # Performance monitoring tools
- ├── 📄 Azure-Automation/        # Scripts for Azure management
- ├── install.ps1                 # Script to install required modules
+📂 Bash/
+ ├── 📄 Assets/                 # Service folders
+ ├── 📄 fail2ban/               # Configuration files for fail2ban
+ ├── Update_Golang.sh            # Scripts for auto update Golang (Go)
+ ├── Update_Git_GitCli.sh        # Script for automatic update Git and Gh collection
  ├── README.md                   # Project documentation
