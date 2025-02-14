@@ -10,10 +10,9 @@ A collection of useful PowerShell scripts for system administration, automation,
 ## 📂 Folder Structure  
 
 ```plaintext
-📂 PowerShell-Scripts/
- ├── 📄 Backup-Scripts/          # Scripts for automated backups
- ├── 📄 Network-Tools/           # Scripts for network diagnostics
+📂 PowerShell/
+ ├── 📄 MS Hyper V and VM/       # Scripts for automated backups
+ ├── 📄 System uitilities/       # Scripts for manage operating systems
  ├── 📄 System-Monitoring/       # Performance monitoring tools
- ├── 📄 Azure-Automation/        # Scripts for Azure management
- ├── install.ps1                 # Script to install required modules
+ ├── 📄 Manage SQL server/       # Scripts for managing SQL server
  ├── README.md                   # Project documentation
