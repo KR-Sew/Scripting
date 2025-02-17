@@ -20,13 +20,7 @@ This repository provides a set of PowerShell and Bash scripts designed for cloud
 - ✅ Cost Optimization → Identify unused resources and optimize cloud spending.
 - ✅ CI/CD & Automation → Deploy infrastructure with Terraform, automate cloud deployments.
 
-### 📂 Folder Structure  
+### 🚀 Available Cloud Platforms
 
-```plaintext
-📂 PowerShell-Scripts/
- ├── 📄 Backup-Scripts/          # Scripts for automated backups
- ├── 📄 Network-Tools/           # Scripts for network diagnostics
- ├── 📄 System-Monitoring/       # Performance monitoring tools
- ├── 📄 Azure-Automation/        # Scripts for Azure management
- ├── install.ps1                 # Script to install required modules
- ├── README.md                   # Project documentation
+- <img src="./Assets/icons8-azure-48s.svg" width="15" > [Azure](./Azure/) – Scripts for managing Azure resources, including VMs, storage, networking, security, and automation using Azure CLI and PowerShell.
+- <img src="./Assets/icons8-amazon-web-services-48.svg" width="15"> [AWS](./AWS/) – Automation scripts for AWS infrastructure management, covering EC2, S3, IAM, RDS, networking, and security using AWS CLI and PowerShell.
