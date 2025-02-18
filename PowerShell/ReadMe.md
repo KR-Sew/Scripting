@@ -9,7 +9,7 @@ A collection of useful PowerShell scripts for system administration, automation,
 
 ## 📂 Folder Structure  
 
-|                          |                                        |
+|   Folders Name          |  Description                                      |
 |:------------------------|:---------------------------------------|
 |  📂 [./MS Hyper V and VM](./MS%20Hyper%20V%20and%20VM/) |  # Scripts for automated backups        |
 |  📂 [./System uitilities](./System%20utilities/) |  # Scripts for manage operating systems |
