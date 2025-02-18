@@ -11,4 +11,4 @@ A collection of PowerShell and Bash scripts for automating cloud resource manage
 
 ---
 
-🔙 [back to Clouds repo](../)
+🔙 [back to 📂 Clouds](../)
