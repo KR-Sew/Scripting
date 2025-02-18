@@ -16,3 +16,8 @@ A collection of useful PowerShell scripts for system administration, automation,
  ├── 📄 System-Monitoring/       # Performance monitoring tools
  ├── 📄 Manage SQL server/       # Scripts for managing SQL server
  ├── README.md                   # Project documentation
+```
+
+---
+
+🔙 [back to Scripting](../)

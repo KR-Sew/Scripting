@@ -17,3 +17,8 @@ A collection of useful PowerShell scripts for system administration, automation,
  ├── 📄 Azure-Automation/        # Scripts for Azure management
  ├── install.ps1                 # Script to install required modules
  ├── README.md                   # Project documentation
+```
+
+---
+
+🔙 [back to Powershell](../)

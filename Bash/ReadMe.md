@@ -1,4 +1,4 @@
-# 🚀 Bash <img src="../Assets/icons8-bash-48.svg" width=35>  Scripts Collection  
+# <img src="../Assets/icons8-bash-48.svg" width=35>  Bash Scripts Collection  
 
 [![WSL](https://img.shields.io/badge/WSL-Microsoft-blue?style=flat&logo=linux&logoColor=white&logoSize=auto&labelColor=4E9A06)](https://learn.microsoft.com/en-us/windows/wsl/about)
 [![Bash](https://img.shields.io/badge/GNU%20Bash-4EAA25?style=flat&logo=gnubash&logoColor=white&logoSize=auto&labelColor=black)](https://www.gnu.org/software/bash/)
@@ -16,3 +16,8 @@ A collection of useful Bash scripts for system administration, automation, and D
  ├── Update_Golang.sh            # Scripts for auto update Golang (Go)
  ├── Update_Git_GitCli.sh        # Script for automatic update Git and Gh collection
  ├── README.md                   # Project documentation
+```
+
+---
+
+🔙 [back to Scripting](../)
