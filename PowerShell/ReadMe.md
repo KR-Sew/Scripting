@@ -9,14 +9,13 @@ A collection of useful PowerShell scripts for system administration, automation,
 
 ## 📂 Folder Structure  
 
-```plaintext
-📂 PowerShell/
- ├── 📄 MS Hyper V and VM/       # Scripts for automated backups
- ├── 📄 System uitilities/       # Scripts for manage operating systems
- ├── 📄 System-Monitoring/       # Performance monitoring tools
- ├── 📄 Manage SQL server/       # Scripts for managing SQL server
- ├── README.md                   # Project documentation
-```
+|                          |                                        |
+|:------------------------|:---------------------------------------|
+|  📂 [./MS Hyper V and VM](./MS%20Hyper%20V%20and%20VM/) |  # Scripts for automated backups        |
+|  📂 [./System uitilities](./System%20utilities/) |  # Scripts for manage operating systems |
+|  📂 ./System-Monitoring  |  # Performance monitoring tools         |
+|  📂 [./Manage SQL server](./Manage%20SQL%20server%20scripts/)  |  # Scripts for managing SQL server      |
+|  📄 README.md          |  # Project documentation                |
 
 ---
 
