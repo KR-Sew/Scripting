@@ -22,3 +22,6 @@
 
 - <img src="./Assets/Powershell.svg" width="15" > [PowerShell Scripts](./PowerShell/) – A collection of Windows and cross-platform PowerShell scripts for system management, automation, networking, security, and DevOps tasks.
 - <img src="./Assets/icons8-bash-48.svg" width="15" > [Bash Scripts](./Bash/) – A collection of Bash scripts for Linux automation, system monitoring, server management, and DevOps workflows.
+
+---
+🔙 [back to Repos](https://github.com/KR-Sew?tab=repositories)
