@@ -20,4 +20,4 @@ A collection of useful Bash scripts for system administration, automation, and D
 
 ---
 
-🔙 [back to Scripting](../)
+🔙 [back to 📂 Scripting](../)
