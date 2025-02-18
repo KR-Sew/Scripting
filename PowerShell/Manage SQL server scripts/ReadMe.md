@@ -7,17 +7,14 @@
 
 A collection of useful PowerShell scripts for system administration, automation, and DevOps workflows.  
 
-## 📂 Folder Structure  
+## 📂 Folder Description  
 
-```plaintext
-📂 PowerShell-Scripts/
- ├── 📄 Backup-Scripts/          # Scripts for automated backups
- ├── 📄 Network-Tools/           # Scripts for network diagnostics
- ├── 📄 System-Monitoring/       # Performance monitoring tools
- ├── 📄 Azure-Automation/        # Scripts for Azure management
- ├── install.ps1                 # Script to install required modules
- ├── README.md                   # Project documentation
-```
+- 📄 [BackupDataBase.ps1](BackupDataBase.ps1)   # Scripts for automated backups
+- 📄 [CreateStoredProcedure.ps1](CreateStoredProcedure.ps1)   # Scripts for network diagnostics
+- 📄 [RestartSQLInstance.ps1](RestartSQLInstance.ps1)  # Performance monitoring tools
+- 📄 [README.md](ReadMe.md)                 # Project documentation
+
+---
 
 ---
 
