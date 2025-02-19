@@ -1,7 +1,8 @@
 param (
-    [string]$VMName,       # Name of the existing VM
-    [string]$NewVMName,    # Name for the cloned VM
-    [string]$SwitchName    # Virtual switch to use for networking
+    [Parameter(Mandatory=$true)]
+       [string]$VMName,       # Name of the existing VM
+       [string]$NewVMName,    # Name for the cloned VM
+       [string]$SwitchName    # Virtual switch to use for networking
 )
 
 # Check if VM exists
