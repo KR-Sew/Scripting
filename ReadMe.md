@@ -22,8 +22,8 @@ This repository provides a set of PowerShell and Bash scripts designed for cloud
 
 ### 🚀 Available Cloud Platforms
 
-- <img src="./Assets/icons8-azure-48s.svg" width="15" > [Azure](./Azure/) – Scripts for managing Azure resources, including VMs, storage, networking, security, and automation using Azure CLI and PowerShell.
-- <img src="./Assets/icons8-amazon-web-services-48.svg" width="15"> [AWS](./AWS/) – Automation scripts for AWS infrastructure management, covering EC2, S3, IAM, RDS, networking, and security using AWS CLI and PowerShell.
+- <img src="./Assets/icons8-azure-48s.svg" width="15" alt="Azure"> [Azure](./Azure/) – Scripts for managing Azure resources, including VMs, storage, networking, security, and automation using Azure CLI and PowerShell.
+- <img src="./Assets/icons8-amazon-web-services-48.svg" width="15" alt="AWS"> [AWS](./AWS/) – Automation scripts for AWS infrastructure management, covering EC2, S3, IAM, RDS, networking, and security using AWS CLI and PowerShell.
 
 ---
 
