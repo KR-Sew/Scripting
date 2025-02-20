@@ -10,11 +10,18 @@
 # командлет Get-Date  в связи с конфликтом с аналогичным по названию в MS SQL server (начиная с 2017 и новее)
 ###############################################################################################################
 
-Param ( [string]$DBName, [string]$DBPath,[string]$SyncCloudFolder )
+Param (
+    [Parameter(Mandatory=$true)]
+        [string]$DBName, # Database name
+        [string]$DBPath, # Path to database
+        [string]$SyncCloudFolder 
+        )
+
 $Path = "$DBPath\$DBName"
-#SyncCloudFolder = "E:\SyncBackup"
+
 $Days = "-1"
 $CurrentDate = Get-Date
 $OldDate = $CurrentDate.AddDays($Days)
 $Files = Get-ChildItem $Path -Recurse | Where-Object { $_.LastWriteTime -gt $OldDate } | Copy-Item -Destination $SyncCloudFolder -Recurse -Container 
+
 Clear-Variable DBName,DBPath,Path,OldDate,CurrentDate,Days,SyncCloudFolder,Files
