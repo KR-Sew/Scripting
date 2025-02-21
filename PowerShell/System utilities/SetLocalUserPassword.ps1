@@ -1,6 +1,9 @@
-
+# Prompt for the local user name
 $UserName = Read-Host -Prompt "Enter a local user name"
-$NewPassword = Read-Host -Prompt "Enter Password. Remeber the password must be 8 symbols at least. Just in put it" -AsSecureString
+
+# Prompt for the new password as a SecureString
+$NewPassword = Read-Host -Prompt "Enter Password. Remember the password must be at least 8 characters long." -AsSecureString
+
 # Set the new password
 try {
     Set-LocalUser -Name $UserName -Password $NewPassword
