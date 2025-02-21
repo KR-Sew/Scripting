@@ -17,10 +17,29 @@ Param (
     [string]$DBPath, 
     [int]$Days,
     [string]$DBName
-    )
+)
+
 $Path = "$DBPath\$DBName"
-#$Days = "-10"
 $CurrentDate = Get-Date
-$OldDate = $CurrentDate.AddDays($Days)
-Get-ChildItem $Path -Recurse | Where-Object { $_.LastWriteTime -lt $OldDate } | Remove-Item -Recurse
+$OldDate = $CurrentDate.AddDays(-$Days)
+
+# Define Event Log Source
+$EventSource = "FileCleanupScript"
+$EventLogName = "Application"
+
+# Ensure Event Log Source Exists
+if (-not [System.Diagnostics.EventLog]::SourceExists($EventSource)) {
+    New-EventLog -LogName $EventLogName -Source $EventSource
+}
+
+# Get and delete old files while logging
+Get-ChildItem $Path -Recurse | Where-Object { $_.LastWriteTime -lt $OldDate } | ForEach-Object {
+    # Log file before deletion
+    Write-EventLog -LogName $EventLogName -Source $EventSource -EntryType Information -EventId 1001 -Message "Deleting file: $($_.FullName)"
+
+    # Delete the file/folder
+    Remove-Item $_.FullName -Recurse -Force
+}
+
+# Clear variables
 Clear-Variable DBName,DBPath,Path,OldDate,CurrentDate,Days
