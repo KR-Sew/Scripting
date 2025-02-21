@@ -10,7 +10,7 @@ A collection of useful PowerShell scripts for system administration, automation,
 ## 📂 Folder Description
 
 - 📄[CopyArchivedDatabase.ps1](CopyArchivedDBase.ps1)           # Scripts for automated backups
-- 📄[](CopyArchToSyncCloudFolder.ps1)        # Scripts for network diagnostics
+- 📄[CopyArchiveToCloudFolcer](CopyArchToSyncCloudFolder.ps1)   # Copy local archives or any other files to cloud storage with Rclone software
 - 📄[CopyOneFiletoManyFolders.ps1](CopyOnefileToManySubfolder.ps1) # Performance monitoring tools-
 - 📄[DeleteArchInCloud.ps1](DelArchInCloud.ps1)  # Scripts for Azure management
 - 📄[DeleteOldFilesOnDate.ps1](DeleteOldFileForDate.ps1)
