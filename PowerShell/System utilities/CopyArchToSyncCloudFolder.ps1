@@ -14,14 +14,27 @@ Param (
     [Parameter(Mandatory=$true)]
         [string]$DBName, # Database name
         [string]$DBPath, # Path to database
-        [string]$SyncCloudFolder 
+        [string]$CloudFolder 
         )
+  # Set the default value
+    $DefaultCloudPath = "myDrive:/backup/dbfolder/"
 
-$Path = "$DBPath\$DBName"
+    $Path = "$DBPath\$DBName"
+    $SyncCloudFolder = "$DefaultCloudPath\$CloudFolder"
+
+    # Ensure the path exist
+if (-not ( Test-Path $SyncCloudFolder)) { New-Item -ItemType Directory $SyncCloudFolder }
 
 $Days = "-1"
 $CurrentDate = Get-Date
 $OldDate = $CurrentDate.AddDays($Days)
-$Files = Get-ChildItem $Path -Recurse | Where-Object { $_.LastWriteTime -gt $OldDate } | Copy-Item -Destination $SyncCloudFolder -Recurse -Container 
+$Files = Get-ChildItem $Path -Recurse | Where-Object { $_.LastWriteTime -gt $OldDate } 
+
+foreach ($Files in $Files) {
+    $rcloneCommand = "rclone copy `"$($File.FullName)`" `"$SyncCloudFolder`" --progress"
+
+    Invoke-Expression $rcloneCommand
+}
+
 
 Clear-Variable DBName,DBPath,Path,OldDate,CurrentDate,Days,SyncCloudFolder,Files
