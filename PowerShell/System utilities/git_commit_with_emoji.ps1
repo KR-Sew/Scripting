@@ -7,15 +7,15 @@ function Select-Files {
 
     while ($true) {
         # Read user input
-        $input = Read-Host "Enter command (or type 'list' to see files)"
+        $inputs = Read-Host "Enter command (or type 'list' to see files)"
 
         # Exit condition
-        if ($input -eq 'exit') {
+        if ($inputs -eq 'exit') {
             break
         }
 
         # List files in the current directory
-        if ($input -eq 'list') {
+        if ($inputs -eq 'list') {
             $files = Get-ChildItem -Path $currentDir
             if ($files.Count -eq 0) {
                 Write-Host "No files found in the current directory."
