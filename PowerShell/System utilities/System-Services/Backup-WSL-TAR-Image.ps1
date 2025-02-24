@@ -5,7 +5,7 @@ param (
 )
 
 # Function to check if WSL is installed
-function Check-WSL {
+function Test-WSL {
     $wslInstalled = wsl --list --verbose 2>$null
     if (-not $wslInstalled) {
         Write-Host "WSL is not installed. Please install WSL first." -ForegroundColor Red
