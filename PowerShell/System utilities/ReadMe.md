@@ -25,4 +25,4 @@ A collection of useful PowerShell scripts for system administration, automation,
 
 ---
 
-🔙 [back to 📂 System utilities](../)
+🔙 [back to 📂 Powershell](../)
