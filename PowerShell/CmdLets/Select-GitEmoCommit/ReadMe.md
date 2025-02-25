@@ -10,18 +10,26 @@ This cmdlet works with git and add emoji to the description of the commit.
 ## 📂 Folder contents  
 
 - 📄 [Select-GitEmoCommit.ps1](Select-GitEmoCommit.ps1) # CmdLet
-- 📄 [Emoji-config.json](emoji-config.json) # Collection of commit emoji  
+- 📄 [Emoji-config.json](emoji-config.json) # Collection of commit emoji
+- 📄 [Register-ArgumentCompleter](./EmoPath.ps1) # if the argument completer for `CommitType` is not being triggered correctly apply this fix
 - 📄 [About this section](ReadMe.md) # Project documentation
 
 ---
 
-### Automatically load cmdlet into any session
+### Here’s the cmdlet `Select-GitEmoCommit` module with
 
-To make your Commit-GitChanges cmdlet available in every PowerShell session, follow these steps:
+- ✅ Tab completion for file selection
+- ✅ Emoji-based commit messages
+- ✅ Option to add more emojis dynamically
+- ✅ Git push with branch selection
+
+#### Automatically load cmdlet into any session
+
+To make your `Select-GitEmoCommit` cmdlet available in every PowerShell session, follow these steps:
 
 1. Save the Module in a Persistent Location
 
-Move your PowerShell script (Select-GitEmoCommit.psm1) and emoji-config.json to a dedicated module directory. PowerShell expects custom modules in one of these locations:
+Move your PowerShell script (`Select-GitEmoCommit.psm1`) and `emoji-config.json` to a dedicated module directory. PowerShell expects custom modules in one of these locations:
 
 User scope:
 
@@ -55,7 +63,7 @@ The module should be in one of the paths listed.
 
 #### 3. Automatically Load the Module in Every Session
 
-Add this line to your PowerShell profile ($PROFILE):
+Add this line to your PowerShell profile (`$PROFILE`):
 
 ```powershell
 "Import-Module Select-GitEmoCommit" | Out-File -Append -Encoding utf8 $PROFILE
