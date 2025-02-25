@@ -5,29 +5,21 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/bash.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/bash.yml)
 
-A collection of useful PowerShell scripts for system administration, automation, and DevOps workflows.  
+The scripts Contains PowerShell scripts designed for efficient management of files, folders, and the filesystem  
 
 ## 📂 Folder Description
 
-- 📄[CopyArchivedDatabase.ps1](CopyArchivedDBase.ps1)           # Scripts for automated backups
-- 📄[CopyArchiveToCloudFolcer](CopyArchToSyncCloudFolder.ps1)   # Copy local archives or any other files to cloud storage with Rclone software
-- 📄[CopyOneFiletoManyFolders.ps1](CopyOnefileToManySubfolder.ps1) # Performance monitoring tools-
-- 📄[DeleteArchInCloud.ps1](DelArchInCloud.ps1)  # Scripts for Azure management
-- 📄[DeleteOldFilesOnDate.ps1](DeleteOldFileForDate.ps1)
-- 📄[GetCurrentPwshVersion.ps1](getCurrentPwshellVersion.ps1)
-- 📄[GetMotherBoard.ps1](getMotherBoard.ps1)
-- 📄[GetHostNetworkAdapter.ps1](GetHostNetworkAdapter.ps1)
-- 📄[GetSystemInfo](GetSystemInfo.ps1)
-- 📄[GetTeamProperties.ps1](GetTeamProperties.ps1)
-- 📄[MakeFolders](MakeFolders.ps1)
-- 📄[MakeFoldersWithParameters.ps1](MakeFoldersWithParameters.ps1)
-- 📄[InstallManyUpdates-1C.ps1](massUpdate1c.ps1)
-- 📄[MoveItem.ps1](MoveItem.ps1)
-- 📄[RestartService](RestartService.ps1)
-- 📄[UpdateDockerWinServ.ps1](Update-Docker-WinServ.ps1)
-- 📄[README.md](ReadMe.md)                   # Project documentation
+- 📄[CopyArchivedDatabase.ps1](./CopyArchivedDBase.ps1)# Scripts for automated backups
+- 📄[CopyArchiveToCloudFolcer](./CopyArchToSyncCloudFolder.ps1)# Copy local archives or any other files to cloud storage with Rclone software
+- 📄[CopyOneFiletoManyFolders.ps1](./CopyOnefileToManySubfolder.ps1) # Performance monitoring tools-
+- 📄[DeleteArchInCloud.ps1](./DelArchInCloud.ps1)# Delete cloud archives with RClone
+- 📄[DeleteOldFilesOnDate.ps1](./DeleteOldFileOnDate.ps1)# Delete folders on date
+- 📄[Create folders](./MakeFolders.ps1)# Create folders
+- 📄[Create folders with input parameters](./MakeFoldersWithParameters.ps1)# Create folders with input parameters
+- 📄[GetHostNetworkAdapter.ps1](./massUpdate1c.ps1)# Extract archives and automatic install updates for 1C
+- 📄[GetSystemInfo](./MoveItem.ps1)
+- 📄[About this section](./ReadMe.md)# Project documentation
 
----
 ---
 
 🔙 [back to 📂 Powershell](../)
