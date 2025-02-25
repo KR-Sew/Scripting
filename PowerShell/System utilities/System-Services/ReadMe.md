@@ -9,7 +9,7 @@ The scripts enable users to start, stop, and restart services, gather hardware a
 
 ## 📂 Folder Description
 
-- 📄[Check and install RSAT](./CheckAndInstallRSAT.ps1) # automated RSAT installation 
+- 📄[Check and install RSAT](./CheckAndInstallRSAT.ps1) # automated RSAT installation
 - 📄[Get Powershell version](./getCurrentPwshellVersion.ps1) # Get current Powershell verion
 - 📄[Get network adapter info](./GetHostNetworkAdapter.ps1) # Get network adapter information
 - 📄[Get motherboard info](./getMotherBoard.ps1) # Get motehreboard information
