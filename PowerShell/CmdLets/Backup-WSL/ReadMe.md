@@ -5,14 +5,12 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/bash.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/bash.yml)
 
-This cmdlet works with git and add emoji to the description of the commit.
+This cmdlet `Backup-WSLImage` create a WSL backup in a tar archive.
 
 ## 📂 Folder contents  
 
-- 📄 [Select-GitEmoCommit.ps1](Select-GitEmoCommit.ps1) # CmdLet
-- 📄 [Emoji-config.json](emoji-config.json) # Collection of commit emoji
-- 📄 [Register-ArgumentCompleter](./Register-ArgumentCompleter.ps1) # if the argument completer for `CommitType` is not being triggered correctly apply this fix
-- 📄 [About this section](ReadMe.md) # Project documentation
+- 📄 [Backup-WSLImage.ps1](./Backup-WSLImage.psm1) # CmdLet module file
+- 📄 [About this section](./ReadMe.md) # Project documentation
 
 ---
 
@@ -25,46 +23,47 @@ This cmdlet works with git and add emoji to the description of the commit.
 
 It can be add and change emoji in `emoji-config.json` file, you can place the file together with the `cmdlet` file or separately. In any case, has to apply the file for correct operation argument completer (`Register-ArgumentCompleter.ps1`) for correct operation of the tab key.
 
-The cmdlet `Select-GitEmoCommit` works with parameters
+The cmdlet `Backup-WSLImage` works with parameters
 
 ```powershell
-Select-GitEmoCommit -Path <> -CommitType <> -Message <> -Branch <> -Push
+Backup-WSLImage -DistroName <> -BackupPath <>
 ```
 
 Where the parameter is:
 
-- `-Path` the path to the commit file
-- `-CommitType` select emoji from `emoji-config.json`
-- `-Message` add comments to the commit
-- `-Branch`select the branch for the commit. It can be set by default.
-- `-Push`the parameter to push the commit
+- `-DistroName` specify the name of the distribution package for backup
+- `-BackupPath` specify the path to the backup folder
+
+To get a list of available distributives in a system you can run the command
+
+```powershell
+wsl --list --verbose
+```
 
 #### Automatically load cmdlet into any session
 
-To make your `Select-GitEmoCommit` cmdlet available in every PowerShell session, follow these steps:
+To make your `Backup-WSLImage` cmdlet available in every PowerShell session, follow these steps:
 
 1. Save the Module in a Persistent Location
 
-Move your PowerShell script (`Select-GitEmoCommit.psm1`) and `emoji-config.json` to a dedicated module directory. PowerShell expects custom modules in one of these locations:
+Move your PowerShell script (`Backup-WSLImage.psm1`) to a dedicated module directory. PowerShell expects custom modules in one of these locations:
 
 User scope:
 
 ```powershell
-$env:USERPROFILE\Documents\PowerShell\Modules\Select-GitEmoCommit
+$env:USERPROFILE\Documents\PowerShell\Modules\Backup-WSLImage
 ```
 
 System scope:
 
 ```powershell
-$env:ProgramFiles\PowerShell\Modules\Select-GitEmoCommit
-```
+$env:ProgramFiles\PowerShell\Modules\Backup-WSLImage
 
 Create the folder and move your script:
 
 ```powershell
-New-Item -ItemType Directory -Path "$env:USERPROFILE\Documents\PowerShell\Modules\Select-GitEmoCommit" -Force
-Move-Item -Path "D:\path\to\your\Select-GitEmoCommit.psm1" -Destination "$env:USERPROFILE\Documents\PowerShell\Modules\Select-GitEmoCommit\"
-Move-Item -Path "D:\path\to\your\emoji-config.json" -Destination "$env:USERPROFILE\Documents\Power
+New-Item -ItemType Directory -Path "$env:USERPROFILE\Documents\PowerShell\Modules\Backup-WSLImage" -Force
+Move-Item -Path "D:\path\to\your\Backup-WSLImage.psm1" -Destination "$env:USERPROFILE\Documents\PowerShell\Modules\Backup-WSLImage\"
 ```
 
 #### 2. Ensure PowerShell Can Load the Module
@@ -82,17 +81,17 @@ The module should be in one of the paths listed.
 Add this line to your PowerShell profile (`$PROFILE`):
 
 ```powershell
-"Import-Module Select-GitEmoCommit" | Out-File -Append -Encoding utf8 $PROFILE
+"Import-Module Backup-WSLImage" | Out-File -Append -Encoding utf8 $PROFILE
 ```
 
-This ensures that `Select-GitEmoCommit` is available every time you open PowerShell.
+This ensures that `Backup-WSLImage` is available every time you open PowerShell.
 
 #### 4. Verify
 
 Restart PowerShell and run:
 
 ```powershell
-Get-Command Select-GitEmoCommit
+Get-Command Backup-WSLImage
 ```
 
 If it lists your function, everything is set up correctly.
