@@ -8,66 +8,64 @@ function Select-GitEmoCommit {
         })]
         [string[]]$Path,  # Enables tab-completion for file selection
 
-        [ValidateSet("feat", "fix", "docs", "style", "refactor", "perf", "test", "chore", "ci")]
+        [ArgumentCompleter({ param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameters)
+            $emojiConfigPath = "emoji-config.json"
+            if (Test-Path $emojiConfigPath) {
+                $emojis = Get-Content -Raw -Path $emojiConfigPath | ConvertFrom-Json
+                $emojis.PSObject.Properties.Name | Where-Object { $_ -like "$wordToComplete*" }
+            }
+        })]
         [string]$CommitType, # Commit type
 
         [string]$Message, # Commit message
 
-        [switch]$Push,
-        [string]$Branch
+        [string]$Branch = "main" , # Default branch to main
+
+        [switch]$Push # Push option
     )
 
-    # Step 1: File Selection
-    if (-not $Path) {
-        Write-Host "ℹ️  Use [TAB] to select files or type 'all' for everything." -ForegroundColor Cyan
-        $Path = Read-Host "Enter file(s) to add (comma-separated or 'all')"
-
-        if ($Path -eq "all") {
-            git add .
-        } else {
-            $Path = $Path -split "," | ForEach-Object { $_.Trim() }
-            git add $Path
-        }
-    } else {
-        git add $Path
+    # Ensure required parameters are provided
+    if (-not $Path -or -not $CommitType -or -not $Message) {
+        Write-Error "Missing required parameters: -Path, -CommitType, and -Message must be provided."
+        return
     }
+
+    # Load emoji configuration from external file
+    $emojiConfigPath = "emoji-config.json"
+    if (-not (Test-Path $emojiConfigPath)) {
+        Write-Error "Emoji configuration file 'emoji-config.json' not found. Please create the file with emoji mappings."
+        return
+    }
+
+    $commitEmojis = Get-Content -Raw -Path $emojiConfigPath | ConvertFrom-Json
+    if (-not $commitEmojis.PSObject.Properties.Name -contains $CommitType) {
+        Write-Error "Invalid commit type '$CommitType'. Ensure it's listed in 'emoji-config.json'."
+        return
+    }
+
+    # Add files to git
+    git add $Path
 
     Write-Host "✅ Files added to commit:" -ForegroundColor Green
     $Path | ForEach-Object { Write-Host "  - $_" }
 
-    # Step 2: Commit Type Selection
-    if (-not $CommitType) {
-        Write-Host "`n🔹 Available Commit Types:" -ForegroundColor Cyan
-        Write-Host "  - feat, fix, docs, style, refactor, perf, test, chore, ci"
-
-        do {
-            $CommitType = Read-Host "Enter commit type"
-        } until ($CommitType -in @("feat", "fix", "docs", "style", "refactor", "perf", "test", "chore", "ci"))
-    }
-
-    # Step 3: Commit Message
-    if (-not $Message) {
-        $Message = Read-Host "Enter commit message"
-    }
-
-    # Emoji mapping
-    $commitEmojis = @{
-        "feat" = "✨"; "fix" = "🐛"; "docs" = "📝"; "style" = "🎨"; 
-        "refactor" = "♻️"; "perf" = "⚡"; "test" = "✅"; "chore" = "🔧"; "ci" = "🚀"
-    }
-
     # Create commit message
-    $finalMessage = "$($commitEmojis[$CommitType]) [$CommitType] $Message"
+    $finalMessage = "$($commitEmojis.$CommitType) [$CommitType] $Message"
     git commit -m "$finalMessage"
 
     Write-Host "✅ Commit added: $finalMessage" -ForegroundColor Green
 
-    # Step 4: Handle Git Push
+    
+    # Switch to the specified branch
+    git checkout $Branch
+    Write-Host "✅ Switched to branch: $Branch" -ForegroundColor Green
+
+    # Push changes if requested
     if ($Push) {
         if (-not $Branch) {
             $Branch = Read-Host "Enter branch to push to"
         }
         git push origin $Branch
-        Write-Host "🚀 Pushed to $Branch" -ForegroundColor Green
+        Write-Host "✅ Changes pushed to remote repository." -ForegroundColor Green
     }
 }
