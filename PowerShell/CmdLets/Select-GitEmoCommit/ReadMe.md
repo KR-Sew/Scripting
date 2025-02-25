@@ -14,31 +14,66 @@ This cmdlet works with git and add emoji to the description of the commit.
 - 📄 [About this section](ReadMe.md) # Project documentation
 
 ---
+
+### Automatically load cmdlet into any session
+
 To make your Commit-GitChanges cmdlet available in every PowerShell session, follow these steps:
 
 1. Save the Module in a Persistent Location
 
-Move your PowerShell script (Commit-GitChanges.psm1) and emoji-config.json to a dedicated module directory. PowerShell expects custom modules in one of these locations:
+Move your PowerShell script (Select-GitEmoCommit.psm1) and emoji-config.json to a dedicated module directory. PowerShell expects custom modules in one of these locations:
 
 User scope:
 
 ```powershell
-$env:USERPROFILE\Documents\PowerShell\Modules\Commit-GitChanges
+$env:USERPROFILE\Documents\PowerShell\Modules\Select-GitEmoCommit
 ```
 
 System scope:
 
 ```powershell
-$env:ProgramFiles\PowerShell\Modules\Commit-GitChanges
+$env:ProgramFiles\PowerShell\Modules\Select-GitEmoCommit
 ```
 
 Create the folder and move your script:
 
 ```powershell
-New-Item -ItemType Directory -Path "$env:USERPROFILE\Documents\PowerShell\Modules\Commit-GitChanges" -Force
-Move-Item -Path "D:\path\to\your\Commit-GitChanges.psm1" -Destination "$env:USERPROFILE\Documents\PowerShell\Modules\Commit-GitChanges\"
+New-Item -ItemType Directory -Path "$env:USERPROFILE\Documents\PowerShell\Modules\Select-GitEmoCommit" -Force
+Move-Item -Path "D:\path\to\your\Select-GitEmoCommit.psm1" -Destination "$env:USERPROFILE\Documents\PowerShell\Modules\Select-GitEmoCommit\"
 Move-Item -Path "D:\path\to\your\emoji-config.json" -Destination "$env:USERPROFILE\Documents\Power
 ```
+
+#### 2. Ensure PowerShell Can Load the Module
+
+Check if PowerShell recognizes your module:
+
+```powershell
+$env:PSModulePath -split ';'
+```
+
+The module should be in one of the paths listed.
+
+#### 3. Automatically Load the Module in Every Session
+
+Add this line to your PowerShell profile ($PROFILE):
+
+```powershell
+"Import-Module Select-GitEmoCommit" | Out-File -Append -Encoding utf8 $PROFILE
+```
+
+This ensures that Select-GitEmoCommit is available every time you open PowerShell.
+
+#### 4. Verify
+
+Restart PowerShell and run:
+
+```powershell
+Get-Command Select-GitEmoCommit
+```
+
+If it lists your function, everything is set up correctly.
+
+Now, your cmdlet will be available in every session without needing to manually import it. 🚀
 
 ---
 
