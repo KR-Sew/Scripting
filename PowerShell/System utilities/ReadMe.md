@@ -13,13 +13,9 @@ A collection of useful PowerShell scripts for system administration, automation,
 
   Folder contains PowerShell scripts designed for managing user and group permissions within the organization. The scripts facilitate the automation of tasks such as creating, modifying, and deleting user accounts and groups, as well as assigning and revoking access rights.
 
----
-
 - 📂 [Manage files and folders and thing like these](./FileSystems/)
   
   Contains PowerShell scripts designed for efficient management of files, folders, and the filesystem.
-
----
 
 - 📂 [Manage System and Serviice scripts](./System-Services/)
 
