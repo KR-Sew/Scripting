@@ -21,8 +21,6 @@ A collection of useful PowerShell scripts for system administration, automation,
 
      Contains PowerShell scripts designed for managing system services, retrieving detailed system information, and configuring various system components. The scripts enable users to start, stop, and restart services, gather hardware and software details, and modify system settings to optimize performance and functionality.
 
----
-
 - 📄[README.md](ReadMe.md)                   # Project documentation
 
 ---
