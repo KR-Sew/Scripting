@@ -13,13 +13,13 @@ The scripts enable users to start, stop, and restart services, gather hardware a
 - 📄[Get Powershell version](./getCurrentPwshellVersion.ps1) # Get current Powershell verion
 - 📄[Get network adapter info](./GetHostNetworkAdapter.ps1) # Get network adapter information
 - 📄[Get motherboard info](./getMotherBoard.ps1) # Get motehreboard information
-- 📄[Get system info](./GetSystemInfo.ps1)#Get system information
-- 📄[Get team properties](./GetTeamProperties.ps1)#Get team network adapter properties
-- 📄[Restart service](./RestartService.ps1)#Restart service(service name as a parameter)
-- 📄[Jpdate Docker on Windows server](./Update-Docker-WinServ.ps1)#Update Docker on Windows server
-- 📄[Update RClone on Windows system](./UpdateRCloneWiindows.ps1)#Update Rclone storage menagement software on Windows
+- 📄[Get system info](./GetSystemInfo.ps1) # Get system information
+- 📄[Get team properties](./GetTeamProperties.ps1) # Get team network adapter properties
+- 📄[Restart service](./RestartService.ps1) # Restart service(service name as a parameter)
+- 📄[Jpdate Docker on Windows server](./Update-Docker-WinServ.ps1) # Update Docker on Windows server
+- 📄[Update RClone on Windows system](./UpdateRCloneWiindows.ps1) # Update Rclone storage menagement software on Windows
 - 📄[About this section](./ReadMe.md)
 
 ---
 
-🔙 [back to 📂 Powershell](../)
+🔙 [back to 📂 System Utilities](../)
