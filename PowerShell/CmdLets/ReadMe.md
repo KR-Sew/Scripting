@@ -10,6 +10,7 @@ PowerShell Custom cmdlets for extending functionality
 ## 📂 Description  
 
 - 📂 [Select-GitEmoCommit](./Select-GitEmoCommit/)   # Cmdlet for adding emoji to the commit description in cli mode
+- 📂 [Backup-WSLImage](.//Backup-WSL/) # Cmdlet for creating a WSL backup in a tar archive
 - 📄 [README.md](ReadMe.md)                 # Description of this folder
 
 ---
