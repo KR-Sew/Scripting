@@ -1,4 +1,4 @@
-# <img src="../../../Assets/Powershell.svg" width="35" alt="PowerShell"> PowerShell CmdLet Select-GitEmoCommit
+# <img src="../../../Assets/Powershell.svg" width="35" alt="PowerShell"> PowerShell CmdLet Backup-WSLImage
 
 [![PowerShell](https://custom-icon-badges.demolab.com/badge/.-Microsoft-blue.svg?style=flat&logo=powershell-core-eyecatch32&logoColor=white)](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.5)
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1%2B-blue?logo=powershell)](https://docs.microsoft.com/en-us/powershell/)
@@ -15,14 +15,12 @@ This cmdlet `Backup-WSLImage` create a WSL backup in a tar archive.
 
 ---
 
-### Here’s the cmdlet `Select-GitEmoCommit` module with
+### Here’s the cmdlet `Backup-WSLImage` module with
 
 - ✅ Tab completion for file selection
-- ✅ Emoji-based commit messages
-- ✅ Option to add more emojis dynamically
-- ✅ Git push with branch selection
+- ✅ Specify the path to the backup folder
 
-It can be add and change emoji in `emoji-config.json` file, you can place the file together with the `cmdlet` file or separately. In any case, has to apply the file for correct operation argument completer (`Register-ArgumentCompleter.ps1`) for correct operation of the tab key.
+This is a custom PowerShell cmdlet that allows you to back up a WSL distribution to a `.tar` file. This cmdlet will accept parameters for the distribution `name` and the `backup path`.
 
 The cmdlet `Backup-WSLImage` works with parameters
 
