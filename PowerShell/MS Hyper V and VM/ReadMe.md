@@ -9,13 +9,13 @@ A collection of useful PowerShell scripts for management Microsoft Hyper V serve
 
 ## 📂 Folder Descrioption  
 
-- 📄[ChangeVMAdapterVlan.ps1](ChangeVmNetAdapterVlan.ps1)          # Scripts for automated backups
-- 📄[Create_VMachine(key).ps1](Create_VMachine(keys).ps1)           # Scripts for network diagnostics
-- 📄[Create_VMachine(Write-Host).ps1](Create_VMachine(Write%20host).ps1)   # Performance monitoring tools
-- 📄[Create-VM-Snapshot.ps1](Create-VM-Snapshot.ps1)        # Scripts for Azure management
-- 📄[CreateVirtualSwitch.ps1](CreateVirtualSwitch.ps1)     #
-- 📄[CreateVMFromSnapshot.ps1](CreateVMfromSnapshot.ps1)   #
-- 📄README.md                   # Project documentation```
+- 📄[ChangeVMAdapterVlan](./ChangeVmNetAdapterVlan.ps1) # Change vlan id on VM network adapter
+- 📄[Create_VM_Snapshot](./Create-VM-Snapshot.ps1) # Create virtual machine snapshot
+- 📄[Create_VMachine(with parameters)](./Create_VMachine(keys).ps1) # Create VM with parameters
+- 📄[Create VM](./Create_VMachine(Write%20host).ps1) # Create VM
+- 📄[Create Virtual Switch](./CreateVirtualSwitch.ps1) # Create virtual switch
+- 📄[Create VM From Snapshot](./CreateVMfromSnapshot.ps1) # Create VM from snapshot
+- 📄[About this section](./ReadMe.md) # Project documentation```
 
 ---
 
