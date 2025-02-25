@@ -11,7 +11,7 @@ This cmdlet works with git and add emoji to the description of the commit.
 
 - 📄 [Select-GitEmoCommit.ps1](Select-GitEmoCommit.ps1) # CmdLet
 - 📄 [Emoji-config.json](emoji-config.json) # Collection of commit emoji
-- 📄 [Register-ArgumentCompleter](./EmoPath.ps1) # if the argument completer for `CommitType` is not being triggered correctly apply this fix
+- 📄 [Register-ArgumentCompleter](./Register-ArgumentCompleter.ps1) # if the argument completer for `CommitType` is not being triggered correctly apply this fix
 - 📄 [About this section](ReadMe.md) # Project documentation
 
 ---
@@ -22,6 +22,22 @@ This cmdlet works with git and add emoji to the description of the commit.
 - ✅ Emoji-based commit messages
 - ✅ Option to add more emojis dynamically
 - ✅ Git push with branch selection
+
+It can be add and change emoji in `emoji-config.json` file, you can place the file together with the `cmdlet` file or separately. In any case, has to apply the file for correct operation argument completer (`Register-ArgumentCompleter.ps1`) for correct operation of the tab key.
+
+The cmdlet `Select-GitEmoCommit` works with parameters
+
+```powershell
+Select-GitEmoCommit -Path <> -CommitType <> -Message <> -Branch <> -Push
+```
+
+Where the parameter is:
+
+- `-Path` the path to the commit file
+- `-CommitType` select emoji from `emoji-config.json`
+- `-Message` add comments to the commit
+- `-Branch`select the branch for the commit. It can be set by default.
+- `-Push`the parameter to push the commit
 
 #### Automatically load cmdlet into any session
 
