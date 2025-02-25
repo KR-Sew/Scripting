@@ -5,29 +5,21 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/bash.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/bash.yml)
 
-A collection of useful PowerShell scripts for system administration, automation, and DevOps workflows.  
+The scripts enable users to start, stop, and restart services, gather hardware and software details, and modify system settings to optimize performance and functionality  
 
 ## 📂 Folder Description
 
-- 📄[CopyArchivedDatabase.ps1](CopyArchivedDBase.ps1)           # Scripts for automated backups
-- 📄[CopyArchiveToCloudFolcer](CopyArchToSyncCloudFolder.ps1)   # Copy local archives or any other files to cloud storage with Rclone software
-- 📄[CopyOneFiletoManyFolders.ps1](CopyOnefileToManySubfolder.ps1) # Performance monitoring tools-
-- 📄[DeleteArchInCloud.ps1](DelArchInCloud.ps1)  # Scripts for Azure management
-- 📄[DeleteOldFilesOnDate.ps1](DeleteOldFileForDate.ps1)
-- 📄[GetCurrentPwshVersion.ps1](getCurrentPwshellVersion.ps1)
-- 📄[GetMotherBoard.ps1](getMotherBoard.ps1)
-- 📄[GetHostNetworkAdapter.ps1](GetHostNetworkAdapter.ps1)
-- 📄[GetSystemInfo](GetSystemInfo.ps1)
-- 📄[GetTeamProperties.ps1](GetTeamProperties.ps1)
-- 📄[MakeFolders](MakeFolders.ps1)
-- 📄[MakeFoldersWithParameters.ps1](MakeFoldersWithParameters.ps1)
-- 📄[InstallManyUpdates-1C.ps1](massUpdate1c.ps1)
-- 📄[MoveItem.ps1](MoveItem.ps1)
-- 📄[RestartService](RestartService.ps1)
-- 📄[UpdateDockerWinServ.ps1](Update-Docker-WinServ.ps1)
-- 📄[README.md](ReadMe.md)                   # Project documentation
+- 📄[Check and install RSAT](./CheckAndInstallRSAT.ps1) # automated RSAT installation 
+- 📄[Get Powershell version](./getCurrentPwshellVersion.ps1) # Get current Powershell verion
+- 📄[Get network adapter info](./GetHostNetworkAdapter.ps1) # Get network adapter information
+- 📄[Get motherboard info](./getMotherBoard.ps1) # Get motehreboard information
+- 📄[Get system info](./GetSystemInfo.ps1)#Get system information
+- 📄[Get team properties](./GetTeamProperties.ps1)#Get team network adapter properties
+- 📄[Restart service](./RestartService.ps1)#Restart service(service name as a parameter)
+- 📄[Jpdate Docker on Windows server](./Update-Docker-WinServ.ps1)#Update Docker on Windows server
+- 📄[Update RClone on Windows system](./UpdateRCloneWiindows.ps1)#Update Rclone storage menagement software on Windows
+- 📄[About this section](./ReadMe.md)
 
----
 ---
 
 🔙 [back to 📂 Powershell](../)
