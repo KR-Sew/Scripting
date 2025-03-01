@@ -7,7 +7,7 @@
 
 ---
 
-A collection of PowerShell and Bash scripts for automating cloud resource management, infrastructure deployment, and DevOps tasks in Microsoft Azure.
+There is a repo for labs and traning for certification exam AZ-104 
 
 ---
 
