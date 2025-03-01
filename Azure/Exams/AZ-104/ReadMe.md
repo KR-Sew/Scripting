@@ -7,7 +7,7 @@
 
 ---
 
-There is a repo for labs and traning for certification exam AZ-104 
+There is a repo for labs and traning for certification exam AZ-104
 
 ---
 

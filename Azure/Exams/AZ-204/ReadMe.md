@@ -7,8 +7,6 @@
 
 ---
 
-A collection of PowerShell and Bash scripts for automating cloud resource management, infrastructure deployment, and DevOps tasks in Microsoft Azure.
-
 ---
 
 🔙 [back to 📂 Clouds](../)
