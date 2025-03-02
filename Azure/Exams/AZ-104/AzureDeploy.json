@@ -32,5 +32,8 @@
             "tier": "Standard_LRS"
         }
     }],
-    "outputs": {}
+    "outputs": {"storageEndpoint": {
+    "type": "object",
+    "value": "[reference('learntemplatestorage123').primaryEndpoints]"
+  }}
   }
