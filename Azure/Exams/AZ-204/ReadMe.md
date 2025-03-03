@@ -7,6 +7,10 @@
 
 ---
 
+There is a repo for labs and traning for certification exam AZ-204
+
+Most of them can be found on Microsoft learning site in Learning path that prepare you for AZ-204 certification exam.
+
 ---
 
 🔙 [back to 📂 Clouds](../)
