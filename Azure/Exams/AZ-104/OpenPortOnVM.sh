@@ -1,0 +1,1 @@
+az vm open-port --port 80 --resource-group "[sandbox resource group name]" --name SampleVM
