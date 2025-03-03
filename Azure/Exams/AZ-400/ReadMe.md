@@ -6,6 +6,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 ---
+There is a repo for labs and traning for certification exam AZ-400
+
+Most of them can be found on Microsoft learning site in Learning path that prepare you for AZ-400 certification exam.
 
 ---
 
