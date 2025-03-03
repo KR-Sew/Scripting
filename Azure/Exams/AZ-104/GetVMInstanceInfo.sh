@@ -1,0 +1,1 @@
+az vm get-instance-view --name SampleVM --resource-group "[sandbox resource group name]" --query "instanceView.statuses[?starts_with(code, 'PowerState/')].displayStatus" -o tsv

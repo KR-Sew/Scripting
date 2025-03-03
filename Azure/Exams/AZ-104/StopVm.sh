@@ -1,0 +1,1 @@
+az vm stop --name SampleVM --resource-group "[sandbox resource group name]"
