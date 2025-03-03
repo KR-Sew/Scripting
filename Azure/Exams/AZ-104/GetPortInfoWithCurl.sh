@@ -1,0 +1,1 @@
+curl -m 80 <PublicIPAddress>
