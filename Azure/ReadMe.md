@@ -9,6 +9,10 @@
 
 A collection of PowerShell and Bash scripts for automating cloud resource management, infrastructure deployment, and DevOps tasks in Microsoft Azure.
 
+- 📂
+- 📂
+- 📂 [Exam preparation ](./Exams/) # Repo folders for AZ-104, AZ-201 and AZ-400 certification exams
+
 ---
 
 🔙 [back to 📂 Clouds](../)
