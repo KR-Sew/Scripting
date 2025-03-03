@@ -11,6 +11,8 @@ There is a repo for labs and traning for certification exam AZ-104
 
 Here's a collection of bash scripts. The most part of them uses Azure CLI. It's a simple but useful script fot basic operation with cloud virtual machines and resourses.
 
+Most of them can be found on Microsoft learning site in Learning path that prepare you for AZ-104 certification exam.
+
 ---
 
 🔙 [back to 📂 Clouds](../)
