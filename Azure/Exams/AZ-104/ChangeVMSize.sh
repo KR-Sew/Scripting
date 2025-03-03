@@ -1,0 +1,1 @@
+az vm list-vm-resize-options --resource-group "[sandbox resource group name]" --name SampleVM --output table
