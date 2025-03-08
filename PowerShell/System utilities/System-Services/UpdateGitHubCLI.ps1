@@ -1,18 +1,23 @@
-# Check PowerShell version
-if ($PSVersionTable.PSVersion.Major -lt 5) {
-    Write-Output "PowerShell 5.0 or higher is required. Exiting."
+# Check if GitHub CLI is installed
+$installedVersionRaw = gh --version 2>$null
+
+# Extract only the first line
+$firstLine = ($installedVersionRaw -split "`n")[0]  # Works in Windows PowerShell and PowerShell Core
+
+if (-not $installedVersionRaw) {
+    Write-Output "Error: GitHub CLI is not installed or not in PATH. Please install it first."
     exit 1
 }
 
-# Check the installed version of GitHub CLI
-$installedVersion = gh --version 2>$null
-if (-not $installedVersion) {
-    Write-Output "GitHub CLI is not installed. Please install it first."
+# Extract the version number (e.g., "2.67.0")
+if ($firstLine -match "gh version (\d+\.\d+\.\d+)") {
+    $installedVersion = $matches[1]
+} else {
+    Write-Output "Error: Could not extract version number from GitHub CLI output."
+    Write-Output "Raw output: '$installedVersionRaw'"
     exit 1
 }
 
-# Extract only the version number (e.g., "2.46.0" from "gh version 2.46.0 (2024-02-02)")
-$installedVersion = ($installedVersion -match "(\d+\.\d+\.\d+)") ? $matches[1] : $null
 Write-Output "Installed version: $installedVersion"
 
 # Define the GitHub API releases URL
