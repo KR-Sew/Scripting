@@ -1,1 +1,1 @@
-ipaddress=$(az vm show --name support-web-vm01 --show-details --query [publicIps] --output tsv)
+ipaddress=$(az vm show --name support-web-vm01 --resource-group --show-details --query [publicIps] --output tsv)
