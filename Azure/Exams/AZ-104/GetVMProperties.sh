@@ -1,0 +1,1 @@
+az vm show --resource-group "[sandbox resource group name]" --name SampleVM
