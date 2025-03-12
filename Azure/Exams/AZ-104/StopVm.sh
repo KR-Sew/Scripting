@@ -11,7 +11,7 @@ VM_NAME=$1
 RESOURCE_GROUP=$2
 
 # Stop the Azure VM
-az vm stop --name "$VM_NAME" --resource-group "$RESOURCE_GROUP"
+az vm stop --name "$VM_NAME" --resource-group "$RESOURCE_GROUP" --yes
 
 # Check the exit status of the last command
 if [ $? -eq 0 ]; then
