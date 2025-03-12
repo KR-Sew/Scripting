@@ -18,7 +18,7 @@ if (!(Test-Path $backupDirectory)) {
 # Create a new SQL Server Management Objects Server object
 try {
     $server = New-Object Microsoft.SqlServer.Management.Smo.Server $serverName
-    if ($server.Databases[$databaseName] -eq $null) {
+    if ($null -eq $server.Databases[$databaseName]) {
         Write-Host "Error: Database '$databaseName' not found on server '$serverName'."
         exit 1
     }
