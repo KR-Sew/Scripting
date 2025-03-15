@@ -17,8 +17,5 @@ jobs:
 
       - name: Restart Windows Service
         run: |
-          param (
-              [string]$ServiceName
-          )
-          .\PowerShell\System_utilities\System-Services\Restart-Service.ps1 -ServiceName "${{ github.event.inputs.service_name }}"
+           .\PowerShell\System_utilities\System-Services\Restart-Service.ps1 -ServiceName "${{ github.event.inputs.service_name }}"
         shell: pwsh
