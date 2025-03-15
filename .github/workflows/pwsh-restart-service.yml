@@ -1,12 +1,9 @@
 name: Restart Windows Service
 
 on:
-  workflow_dispatch:
-    inputs:
-      service_name:
-        description: 'Service Name to Restart'
-        required: true
-        type: string
+    push:
+      branches:
+        - main  # Runs when pushing to the main branch
 
 jobs:
   restart-service:
@@ -17,5 +14,5 @@ jobs:
 
       - name: Restart Windows Service
         run: |
-           .\PowerShell\System_utilities\System-Services\RestartService.ps1 -ServiceName "spooler"
+           "& './Powershell/System_Utilities/System-Services/GetSystemInfo.ps1 -ServiceName "spooler"'"
         shell: pwsh
