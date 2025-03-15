@@ -17,5 +17,5 @@ jobs:
 
       - name: Restart Windows Service
         run: |
-           .\PowerShell\System_utilities\System-Services\RestartService.ps1 -ServiceName "${{ github.event.inputs.service_name }}"
+           .\PowerShell\System_utilities\System-Services\RestartService.ps1 -ServiceName "spooler"
         shell: pwsh
