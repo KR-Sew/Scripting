@@ -1,0 +1,24 @@
+name: Restart Windows Service
+
+on:
+  workflow_dispatch:
+    inputs:
+      service_name:
+        description: 'Service Name to Restart'
+        required: true
+        type: string
+
+jobs:
+  restart-service:
+    runs-on: windows-latest  # Ensure the runner is Windows-based
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Restart Windows Service
+        run: |
+          param (
+              [string]$ServiceName
+          )
+          .\PowerShell\System_utilities\System-Services\Restart-Service.ps1 -ServiceName "${{ github.event.inputs.service_name }}"
+        shell: pwsh
