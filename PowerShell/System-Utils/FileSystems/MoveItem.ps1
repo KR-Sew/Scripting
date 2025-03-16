@@ -1,0 +1,1 @@
+get-ChildItem .\Assets\ -Recurse | Where-Object {$_.Name -like "*cons*"} | Move-Item -path .\Assets\pics\ 
