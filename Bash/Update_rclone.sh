@@ -9,10 +9,11 @@ update_rclone() {
     echo "Checking latest Rclone version..."
     LATEST_RCLONE_VERSION=$(curl -s https://api.github.com/repos/rclone/rclone/releases/latest | grep '"tag_name":' | cut -d '"' -f 4 | sed 's/v//')
 
-    INSTALLED_RCLONE_VERSION=$(rclone version | head -n 1 | awk '{print $2}' || echo "0")
+    INSTALLED_RCLONE_VERSION=$(rclone version | head -n 1 | awk '{print $2}' | sed 's/^v//')
 
     if [ "$LATEST_RCLONE_VERSION" == "$INSTALLED_RCLONE_VERSION" ]; then
         echo "Rclone is already up to date ($INSTALLED_RCLONE_VERSION)."
+        exit 0 # Stop execution if already updated
     else
         echo "Updating Rclone from $INSTALLED_RCLONE_VERSION to $LATEST_RCLONE_VERSION..."
 

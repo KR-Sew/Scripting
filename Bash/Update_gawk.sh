@@ -30,6 +30,7 @@ update_gawk() {
 
     if [ "$LATEST_GAWK_VERSION" == "$INSTALLED_GAWK_VERSION" ]; then
         echo "Gawk is already up to date ($INSTALLED_GAWK_VERSION)."
+        exit 0
     else
         echo "Updating Gawk from $INSTALLED_GAWK_VERSION to $LATEST_GAWK_VERSION..."
 
