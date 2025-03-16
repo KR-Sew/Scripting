@@ -14,5 +14,5 @@ jobs:
 
       - name: Restart Windows Service
         run: |
-           "& './Powershell/System_Utilities/System-Services/GetSystemInfo.ps1 -ServiceName "spooler"'"
+           .\Powershell\System_Utilities\System-Services\RestartService.ps1 -ServiceName "spooler"
         shell: pwsh
