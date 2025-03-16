@@ -15,6 +15,9 @@ A collection of useful Bash scripts for system administration, automation, and D
    [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-git-gitcli.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-git-gitcli.yml)
   </br> the script for update Git and Git cli from source
 - 📄[Update_gawk.sh](Update_gawk.sh) # Script for automatic update gawk
+  </br>
+  [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml)
+  </br>
 - 📄[Update_rclone.sh](Update_rclone.sh) #S cript for automatic update Rclone
 - 📄[README.md](ReadMe.md) # Project documentation
 
