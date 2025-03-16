@@ -12,12 +12,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4  # Checks out your repo
       
-      - name: Fix Git dependencies
+      - name: Remove existing Git
         run: |
-          sudo apt install -y ppa-purge
-          sudo ppa-purge ppa:git-core/ppa
-          sudo apt update
-          sudo apt install -y git
+          sudo apt-get remove --purge -y git git-man
+
+      - name: Update package lists
+        run: |
+          sudo apt-get update
       
       - name: Grant execute permission to script
         run: |
