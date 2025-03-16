@@ -1,4 +1,4 @@
-name: Run Script on Push
+name: Update_Git_GitCli.sh
 
 on:
   push:
