@@ -1,4 +1,4 @@
-name: Restart Windows Service
+name: RestartService.ps1 
 
 on:
     push:

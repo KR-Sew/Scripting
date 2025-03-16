@@ -1,4 +1,4 @@
-name: Run PowerShell Script
+name: GetSystemInfo.ps1
 
 on:
   push:
