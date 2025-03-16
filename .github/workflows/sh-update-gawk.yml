@@ -1,0 +1,24 @@
+name: Update_gawk.sh
+
+on:
+  push:
+    branches:
+      - main  # Runs when pushing to the main branch
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest  # Runs on an Ubuntu runner
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4  # Checks out your repo
+      
+      - name: Update package lists
+        run: |
+          sudo apt-get update
+      
+      - name: Grant execute permission to script
+        run: |
+          chmod +x ./Bash/Update_gawk.sh
+
+      - name: Run the script
+        run: ./Bash/Update_gawk.sh  # Executes your script
