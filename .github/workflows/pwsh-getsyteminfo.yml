@@ -14,5 +14,5 @@ jobs:
         uses: actions/checkout@v4  # Checks out your repo
 
       - name: Run PowerShell Script
-        run: "& './Powershell/System-Utilities/System-Services/GetSystemInfo.ps1'"
+        run: "& './Powershell/System-Utils/System-Services/GetSystemInfo.ps1'"
         shell: pwsh  # Runs with PowerShell Core
