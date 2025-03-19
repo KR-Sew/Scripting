@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Exit immediately if a command exits with a non-zero status
+set -e
+
 # Define parameters
 VM_NAME="$1"
 DISK_NAME="$2"
@@ -13,4 +16,4 @@ if [[ -z "$VM_NAME" || -z "$DISK_NAME" || -z "$DISK_SIZE" || -z "$DISK_SKU" ]]; 
 fi
 
 # Attach the disk to the VM
-az vm disk attach --vm-name "$VM_NAME" --name "$DISK_NAME" --size-gb "$DISK_SIZE" --sku "$DISK_SKU" --new
+az vm disk attach --vm-name="$VM_NAME" --name="$DISK_NAME" --size-gb="$DISK_SIZE" --sku="$DISK_SKU" --new
