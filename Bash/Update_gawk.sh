@@ -26,7 +26,7 @@ update_gawk() {
         exit 1
     fi
 
-    INSTALLED_GAWK_VERSION=$(gawk --version | head -n 1 | awk '{print $3}' || echo "0")
+    INSTALLED_GAWK_VERSION=$(gawk --version | head -n 1 | awk '{print $3}' | sed 's/,$//')
 
     if [ "$LATEST_GAWK_VERSION" == "$INSTALLED_GAWK_VERSION" ]; then
         echo "Gawk is already up to date ($INSTALLED_GAWK_VERSION)."
