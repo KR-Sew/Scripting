@@ -1,8 +1,20 @@
 # Set the default location by region 
 # available: Westus2,southcentralus,centralus,#eastus,westeurope,southeastasia,japaneast,brazilsouth,australiasoutheast,centralindia
+#!/bin/bash
 
-az configure --defaults location=westeurope
+# Exit immediately if a command exits with a non-zero status
+set -e
 
-# Set the name of default resource group
+# Define parameters
+region="$1"
+resGroup="$2"
 
-az configure --defaults group="[sandbox Resource Group]"
+# Validate input
+if [[ -z "$region" || -z "$resGroup" ]]; then
+    echo "Usage: $0 <region> <resource-group>"
+    exit 1
+fi
+
+# Configure default location by region
+az configure --defaults location="$region" --defaults group="$resGroup"
+
