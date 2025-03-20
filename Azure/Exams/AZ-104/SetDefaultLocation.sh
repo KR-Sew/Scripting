@@ -1,5 +1,7 @@
 # Set the default location by region 
 # available: Westus2,southcentralus,centralus,#eastus,westeurope,southeastasia,japaneast,brazilsouth,australiasoutheast,centralindia
+#To check your default configuration, run: az configure --list-defaults
+
 #!/bin/bash
 
 # Exit immediately if a command exits with a non-zero status
