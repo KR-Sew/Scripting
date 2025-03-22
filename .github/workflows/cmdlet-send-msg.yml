@@ -3,10 +3,10 @@ name: Test Send-Msg Cmdlet
 on:
   push:
     branches:
-      - main
+      - dev
   pull_request:
     branches:
-      - main
+      - dev
   workflow_dispatch:  # Allows manual execution
 
 jobs:
