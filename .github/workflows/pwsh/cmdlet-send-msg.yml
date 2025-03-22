@@ -32,7 +32,7 @@ jobs:
               "username": "test_user",
               "use_ssl": false
           }
-          '@ | Out-File -FilePath smtp_config.json -Encoding utf8
+          '@ | Out-File -FilePath .\Powershell\CmdLets\Send-Msg\workflow\smtp_config.json -Encoding utf8
 
       - name: Create Test Recipients JSON
         shell: pwsh
@@ -43,7 +43,7 @@ jobs:
               "to": ["recipient1@example.com", "recipient2@example.com"],
               "subject": "Test Email from PowerShell"
           }
-          '@ | Out-File -FilePath recipients.json -Encoding utf8
+          '@ | Out-File -FilePath .\Powershell\CmdLets\Send-Msg\workflow\recipients.json -Encoding utf8
 
       - name: Create Test Email Body JSON
         shell: pwsh
@@ -52,7 +52,7 @@ jobs:
           {
               "body": "Hello,\n\nThis is a test email sent via PowerShell.\n\nBest regards,\nGitHub Actions"
           }
-          '@ | Out-File -FilePath body.json -Encoding utf8
+          '@ | Out-File -FilePath .\Powershell\CmdLets\Send-Msg\workflow\body.json -Encoding utf8
 
       - name: Store Dummy Credentials Securely
         shell: pwsh
@@ -63,4 +63,4 @@ jobs:
       - name: Run Send-Msg Cmdlet
         shell: pwsh
         run: |
-          ./Send-Msg -ConfigFile "smtp_config.json" -RecipientsFile "recipients.json" -BodyFile "body.json"
+          .\Powershell\Cmdlets\Send-Msg\Send-Msg.ps1 -ConfigFile ".\Powershell\Cmdlets\Send-Msg\workflow\smtp_config.json" -RecipientsFile ".\Powershell\Cmdlets\Send-Msg\workflow\recipients.json" -BodyFile ".\Powershell\Cmdlets\Send-Msg\workflow\body.json"
