@@ -21,7 +21,14 @@ jobs:
         shell: pwsh
         run: |
           Install-Module -Name CredentialManager -Force -Scope CurrentUser
-
+          Import-Module CredentialManager
+ 
+      - name: Store Dummy Credentials Securely
+        shell: pwsh
+        run: |
+            Import-Module CredentialManager
+            New-StoredCredential -Target "SMTP_Credentials_test_user" -UserName "test_user" -Password "testpassword" -Persist
+        
       - name: Create Test SMTP Config JSON
         shell: pwsh
         run: |
@@ -58,7 +65,7 @@ jobs:
         shell: pwsh
         run: |
           $SecurePassword = ConvertTo-SecureString "testpassword" -AsPlainText -Force
-          New-StoredCredential -Target "SMTP_Credentials_test_user" -UserName "test_user" -SecurePassword $SecurePassword -Persist
+          New-StoredCredential -Target "SMTP_Credentials_test_user" -UserName "test_user" -Password "testpassword" -Persist
 
       - name: Run Send-Msg Cmdlet
         shell: pwsh
