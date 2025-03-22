@@ -10,9 +10,9 @@ There is a collection of useful PowerShell scripts for system administration, au
 ## 📂 Description
 
 - 📂 [CmdLets](./CmdLets/) # Custom CmdLets folder
-- 📂 [MS Hyper V and VM](./MS%20Hyper%20V%20and%20VM/) # Scripts for automated backups
+- 📂 [MS Hyper V and VM](./Virtualization/) # Scripts for automated backups
 - 📂 [System uitilities](./System%20utilities/) # Scripts for manage operating systems
-- 📂 [Manage SQL server](./Manage%20SQL%20server%20scripts/)# Scripts for managing SQL server
+- 📂 [Manage SQL server](./ManageSQL/)# Scripts for managing SQL server
 - 📄 README.md # Project documentation
 
 ---
