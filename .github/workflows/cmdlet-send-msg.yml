@@ -1,0 +1,66 @@
+name: Test Send-Msg Cmdlet
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:  # Allows manual execution
+
+jobs:
+  test_send_msg:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install PowerShell Modules
+        shell: pwsh
+        run: |
+          Install-Module -Name CredentialManager -Force -Scope CurrentUser
+
+      - name: Create Test SMTP Config JSON
+        shell: pwsh
+        run: |
+          @'
+          {
+              "smtp_server": "smtp.mailtrap.io",
+              "smtp_port": 2525,
+              "username": "test_user",
+              "use_ssl": false
+          }
+          '@ | Out-File -FilePath .\Powershell\CmdLets\Send-Msg\workflow\smtp_config.json -Encoding utf8
+
+      - name: Create Test Recipients JSON
+        shell: pwsh
+        run: |
+          @'
+          {
+              "from": "test@example.com",
+              "to": ["recipient1@example.com", "recipient2@example.com"],
+              "subject": "Test Email from PowerShell"
+          }
+          '@ | Out-File -FilePath .\Powershell\CmdLets\Send-Msg\workflow\recipients.json -Encoding utf8
+
+      - name: Create Test Email Body JSON
+        shell: pwsh
+        run: |
+          @'
+          {
+              "body": "Hello,\n\nThis is a test email sent via PowerShell.\n\nBest regards,\nGitHub Actions"
+          }
+          '@ | Out-File -FilePath .\Powershell\CmdLets\Send-Msg\workflow\body.json -Encoding utf8
+
+      - name: Store Dummy Credentials Securely
+        shell: pwsh
+        run: |
+          $SecurePassword = ConvertTo-SecureString "testpassword" -AsPlainText -Force
+          New-StoredCredential -Target "SMTP_Credentials_test_user" -UserName "test_user" -SecurePassword $SecurePassword -Persist
+
+      - name: Run Send-Msg Cmdlet
+        shell: pwsh
+        run: |
+          .\Powershell\Cmdlets\Send-Msg\Send-Msg.ps1 -ConfigFile ".\Powershell\Cmdlets\Send-Msg\workflow\smtp_config.json" -RecipientsFile ".\Powershell\Cmdlets\Send-Msg\workflow\recipients.json" -BodyFile ".\Powershell\Cmdlets\Send-Msg\workflow\body.json"
