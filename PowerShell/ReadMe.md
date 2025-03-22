@@ -11,7 +11,7 @@ There is a collection of useful PowerShell scripts for system administration, au
 
 - 📂 [CmdLets](./CmdLets/) # Custom CmdLets folder
 - 📂 [MS Hyper V and VM](./Virtualization/) # Scripts for automated backups
-- 📂 [System uitilities](./System%20utilities/) # Scripts for manage operating systems
+- 📂 [System uitilities](./System-Utils/) # Scripts for manage operating systems
 - 📂 [Manage SQL server](./ManageSQL/)# Scripts for managing SQL server
 - 📄 README.md # Project documentation
 
