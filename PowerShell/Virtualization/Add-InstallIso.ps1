@@ -33,7 +33,7 @@ try {
     
     # Set the ISO as the first boot device if the flag is set
     if ($SetAsFirstBoot) {
-        $vmFirmware = Get-VMFirmware -VMName $VMName
+       # $vmFirmware = Get-VMFirmware -VMName $VMName
         Set-VMFirmware -VMName $VMName -FirstBootDevice $dvdDrive
         Write-Host "ISO set as the first boot device for VM '$VMName'." -ForegroundColor Green
     }
