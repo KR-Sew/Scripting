@@ -6,7 +6,7 @@ param (
     [string]$VmSwitch      # New virtual switch name to connect to
 )
 
-# Check if the VM exists
+# Check if VM exists
 if (-not (Get-VM -Name $VMName -ErrorAction SilentlyContinue)) {
     Write-Host "Error: VM '$VMName' does not exist!" -ForegroundColor Red
     exit 1
@@ -25,26 +25,34 @@ if (-not $adapter) {
     exit 1
 }
 
-# Disconnect the network adapter
-Write-Host "Disconnecting network adapter from VM '$VMName'..."
-Disconnect-VMNetworkAdapter -VMName $VMName
+# Save current VLAN ID
+$vlanInfo = Get-VMNetworkAdapterVlan -VMName $VMName -ErrorAction SilentlyContinue
+$originalVlanID = if ($vlanInfo -and $vlanInfo.AccessVlanId) { $vlanInfo.AccessVlanId } else { $null }
 
-# Give a small delay to ensure disconnection
+Write-Host "Current VLAN ID: $originalVlanID"
+
+# Disconnect and remove network adapter
+Write-Host "Disconnecting and removing network adapter from VM '$VMName'..."
+Disconnect-VMNetworkAdapter -VMName $VMName
 Start-Sleep -Seconds 2
 
-# Remove and re-add the network adapter (optional but ensures a clean reset)
-Write-Host "Removing network adapter..."
 Remove-VMNetworkAdapter -VMName $VMName -Confirm:$false
-
 Start-Sleep -Seconds 2  # Wait before re-adding
 
+# Re-add network adapter and connect to the new switch
 Write-Host "Re-adding network adapter and connecting to '$VmSwitch'..."
 Add-VMNetworkAdapter -VMName $VMName -SwitchName $VmSwitch
+
+# Restore VLAN ID if it was set before
+if ($originalVlanID) {
+    Write-Host "Restoring VLAN ID: $originalVlanID..."
+    Set-VMNetworkAdapterVlan -VMName $VMName -Access -VlanId $originalVlanID
+}
 
 # Verify the connection
 $adapterAfter = Get-VMNetworkAdapter -VMName $VMName
 if ($adapterAfter -and $adapterAfter.SwitchName -eq $VmSwitch) {
-    Write-Host "Success: Network adapter is now connected to '$VmSwitch'." -ForegroundColor Green
+    Write-Host "✅ Success: Network adapter is now connected to '$VmSwitch' with VLAN ID: $originalVlanID." -ForegroundColor Green
 } else {
-    Write-Host "Warning: Failed to attach the network adapter to '$VmSwitch'." -ForegroundColor Yellow
+    Write-Host "⚠ Warning: Failed to attach the network adapter to '$VmSwitch'." -ForegroundColor Yellow
 }
