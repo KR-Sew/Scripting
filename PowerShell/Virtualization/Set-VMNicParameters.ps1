@@ -1,3 +1,10 @@
+#  Requirements
+
+# ✅ The VM must be running.
+# ✅ PowerShell Direct works only on Hyper-V host (not remote VMs).
+# ✅ The VM must be Windows with PowerShell enabled.
+
+
 param (
     [Parameter(Mandatory = $true)]
     [string]$VMName,          # Name of the VM
