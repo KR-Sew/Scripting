@@ -3,6 +3,8 @@
 # ✅ The VM must be running.
 # ✅ PowerShell Direct works only on Hyper-V host (not remote VMs).
 # ✅ The VM must be Windows with PowerShell enabled.
+# How to use the script:
+# .\Set-VMNetwork.ps1 -VMName "MyVM" -AdapterName "Ethernet" -IPAddress "192.168.1.100" -SubnetMask "24" -Gateway "192.168.1.1" -DNSServers "8.8.8.8", "8.8.4.4"
 
 
 param (
