@@ -1,3 +1,6 @@
+# Example Usage
+# .\Set-HyperVMem.ps1 -VMName "MyUbuntuVM" -MemoryMB 4096
+
 param (
     [Parameter(Mandatory = $true)]
     [string]$VMName,
