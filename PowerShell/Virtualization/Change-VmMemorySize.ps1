@@ -1,36 +1,48 @@
 param (
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory = $true)]
     [string]$VMName,
 
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory = $true)]
     [int]$MemoryMB
 )
+
+# Function to display messages
+function Write-Message {
+    param (
+        [string]$Message,
+        [string]$MessageType = "Info"
+    )
+    
+    switch ($MessageType) {
+        "Info" { Write-Output "[INFO] $Message" }
+        "Error" { Write-Error "[ERROR] $Message" }
+    }
+}
 
 # Check if VM exists
 $vm = Get-VM -Name $VMName -ErrorAction SilentlyContinue
 if (-not $vm) {
-    Write-Error "VM '$VMName' not found."
+    Write-Message "VM '$VMName' not found." "Error"
     exit 1
 }
 
-# Check current memory config
+# Check current memory configuration
 $vmMemory = Get-VMMemory -VMName $VMName
 
-# If Dynamic Memory is enabled, update minimum, startup, and maximum
+# Update memory settings based on dynamic memory status
 if ($vmMemory.DynamicMemoryEnabled) {
-    Write-Output "Dynamic memory is enabled for VM '$VMName'. Updating memory settings..."
+    Write-Message "Dynamic memory is enabled for VM '$VMName'. Updating memory settings..."
     
     Set-VMMemory -VMName $VMName `
-        -StartupBytes (${MemoryMB}MB) `
-        -MinimumBytes (${MemoryMB}MB) `
-        -MaximumBytes (${MemoryMB * 2}MB)
+        -StartupBytes ($MemoryMB * 1MB) `
+        -MinimumBytes ($MemoryMB * 1MB) `
+        -MaximumBytes ($MemoryMB * 2MB)
 
-    Write-Output "Memory updated to ${MemoryMB}MB startup/minimum and ${MemoryMB * 2}MB maximum."
-}
-else {
-    Write-Output "Static memory is enabled for VM '$VMName'. Updating startup memory..."
+    Write-Message "Memory updated to $MemoryMB MB startup/minimum and $($MemoryMB * 2) MB maximum."
+} else {
+    Write-Message "Static memory is enabled for VM '$VMName'. Updating startup memory..."
     
-    Set-VMMemory -VMName $VMName -StartupBytes (${MemoryMB}MB)
+    Set-VMMemory -VMName $VMName -StartupBytes ($MemoryMB * 1MB)
 
-    Write-Output "Memory updated to ${MemoryMB}MB."
+    Write-Message "Memory updated to $MemoryMB MB."
 }
