@@ -5,14 +5,14 @@
 
 param (
     [Parameter(Mandatory = $true)]
-    [int]$Port,                     # Port number to open
-
-    [Parameter(Mandatory = $true)]
-    [ValidateSet("TCP", "UDP")]
-    [string]$Protocol,              # Protocol: TCP or UDP
-
-    [Parameter(Mandatory = $true)]
     [string]$RuleName,             # Name of the firewall rule
+
+    [Parameter()]
+    [int]$Port,                    # Port number to open (ignored when removing)
+
+    [Parameter()]
+    [ValidateSet("TCP", "UDP")]
+    [string]$Protocol,             # Protocol: TCP or UDP (ignored when removing)
 
     [Parameter()]
     [ValidateSet("Allow", "Block")]
@@ -20,10 +20,35 @@ param (
 
     [Parameter()]
     [ValidateSet("Inbound", "Outbound")]
-    [string]$Direction = "Inbound" # Direction (default: Inbound)
+    [string]$Direction = "Inbound", # Direction (default: Inbound)
+
+    [switch]$RemoveRule            # Optional: remove the rule instead of creating it
 )
 
-# Check if the rule already exists
+# Function to remove the rule
+function Remove-FirewallRule {
+    $existingRule = Get-NetFirewallRule -DisplayName $RuleName -ErrorAction SilentlyContinue
+    if ($existingRule) {
+        Remove-NetFirewallRule -DisplayName $RuleName
+        Write-Host "🗑️ Rule '$RuleName' removed successfully." -ForegroundColor Cyan
+    } else {
+        Write-Host "⚠️ No rule found with the name '$RuleName'." -ForegroundColor Yellow
+    }
+}
+
+# If -RemoveRule switch is set
+if ($RemoveRule) {
+    Remove-FirewallRule
+    return
+}
+
+# Check required parameters for creating a rule
+if (-not $Port -or -not $Protocol) {
+    Write-Host "❌ Error: -Port and -Protocol are required when creating a rule!" -ForegroundColor Red
+    exit 1
+}
+
+# Check if rule already exists
 if (Get-NetFirewallRule -DisplayName $RuleName -ErrorAction SilentlyContinue) {
     Write-Host "⚠️ Rule '$RuleName' already exists. Aborting." -ForegroundColor Yellow
     exit 1
