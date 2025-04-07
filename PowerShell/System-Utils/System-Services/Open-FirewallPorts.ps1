@@ -1,19 +1,59 @@
-# Example usage:
-# .\Open-FirewallPort.ps1 -Port 8080 -Protocol TCP -RuleName "My Custom Rule"
+#  ✅ Create a new rule
+# .\FirewallRule.ps1 -Port 22 -Protocol TCP -RuleName "Allow SSH" -Action Allow -Direction Inbound
+
+#  🛑 Block outbound DNS traffic
+# .\FirewallRule.ps1 -Port 53 -Protocol UDP -RuleName "Block DNS" -Action Block -Direction Outbound
+
+#  🗑️ Remove a rule
+# .\FirewallRule.ps1 -RuleName "Block DNS" -RemoveRule
+
 
 param (
     [Parameter(Mandatory = $true)]
-    [int]$Port,                     # Port number to open
+    [string]$RuleName,             # Name of the firewall rule
 
-    [Parameter(Mandatory = $true)]
+    [Parameter()]
+    [int]$Port,                    # Port number to open (ignored when removing)
+
+    [Parameter()]
     [ValidateSet("TCP", "UDP")]
-    [string]$Protocol,              # Protocol: TCP or UDP
+    [string]$Protocol,             # Protocol: TCP or UDP (ignored when removing)
 
-    [Parameter(Mandatory = $true)]
-    [string]$RuleName               # Name of the firewall rule
+    [Parameter()]
+    [ValidateSet("Allow", "Block")]
+    [string]$Action = "Allow",     # Action to take (default: Allow)
+
+    [Parameter()]
+    [ValidateSet("Inbound", "Outbound")]
+    [string]$Direction = "Inbound", # Direction (default: Inbound)
+
+    [switch]$RemoveRule            # Optional: remove the rule instead of creating it
 )
 
-# Check if the rule already exists
+# Function to remove the rule
+function Remove-FirewallRule {
+    $existingRule = Get-NetFirewallRule -DisplayName $RuleName -ErrorAction SilentlyContinue
+    if ($existingRule) {
+        Remove-NetFirewallRule -DisplayName $RuleName
+        Write-Host "🗑️ Rule '$RuleName' removed successfully." -ForegroundColor Cyan
+    } else {
+        Write-Host "⚠️ No rule found with the name '$RuleName'." -ForegroundColor Yellow
+    }
+}
+
+# If -RemoveRule switch is set
+if ($RemoveRule) {
+    Remove-FirewallRule
+    return
+}
+
+# Check required parameters for creating a rule
+if (-not $Port -or -not $Protocol) {
+    Write-Host "❌ Error: -Port and -Protocol are required when creating a rule!" -ForegroundColor Red
+    exit 1
+}
+
+# Check if rule already exists
 if (Get-NetFirewallRule -DisplayName $RuleName -ErrorAction SilentlyContinue) {
     Write-Host "⚠️ Rule '$RuleName' already exists. Aborting." -ForegroundColor Yellow
     exit 1
@@ -21,11 +61,15 @@ if (Get-NetFirewallRule -DisplayName $RuleName -ErrorAction SilentlyContinue) {
 
 # Create the firewall rule
 New-NetFirewallRule -DisplayName $RuleName `
-                    -Direction Inbound `
+                    -Direction $Direction `
                     -LocalPort $Port `
                     -Protocol $Protocol `
-                    -Action Allow `
+                    -Action $Action `
                     -Enabled True `
                     -Profile Any
 
-Write-Host "✅ Firewall rule '$RuleName' created successfully to allow $Protocol on port $Port." -ForegroundColor Green
+Write-Host "✅ Firewall rule '$RuleName' created successfully:"
+Write-Host "   → Port: $Port"
+Write-Host "   → Protocol: $Protocol"
+Write-Host "   → Direction: $Direction"
+Write-Host "   → Action: $Action" -ForegroundColor Green
