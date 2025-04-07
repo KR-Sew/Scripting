@@ -1,7 +1,12 @@
-# # Allow inbound TCP on port 80
-# .\Open-FirewallPort.ps1 -Port 80 -Protocol TCP -RuleName "Allow HTTP"
-# # Block outbound UDP on port 53 (DNS)
-# .\Open-FirewallPort.ps1 -Port 53 -Protocol UDP -RuleName "Block DNS" -Action Block -Direction Outbound
+#  ✅ Create a new rule
+# .\FirewallRule.ps1 -Port 22 -Protocol TCP -RuleName "Allow SSH" -Action Allow -Direction Inbound
+
+#  🛑 Block outbound DNS traffic
+# .\FirewallRule.ps1 -Port 53 -Protocol UDP -RuleName "Block DNS" -Action Block -Direction Outbound
+
+#  🗑️ Remove a rule
+# .\FirewallRule.ps1 -RuleName "Block DNS" -RemoveRule
+
 
 param (
     [Parameter(Mandatory = $true)]
