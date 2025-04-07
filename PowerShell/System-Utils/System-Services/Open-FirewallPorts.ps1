@@ -1,3 +1,6 @@
+# Example usage:
+# .\Open-FirewallPort.ps1 -Port 8080 -Protocol TCP -RuleName "My Custom Rule"
+
 param (
     [Parameter(Mandatory = $true)]
     [int]$Port,                     # Port number to open
