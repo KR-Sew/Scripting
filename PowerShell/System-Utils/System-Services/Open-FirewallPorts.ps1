@@ -1,5 +1,7 @@
-# Example usage:
-# .\Open-FirewallPort.ps1 -Port 8080 -Protocol TCP -RuleName "My Custom Rule"
+# # Allow inbound TCP on port 80
+# .\Open-FirewallPort.ps1 -Port 80 -Protocol TCP -RuleName "Allow HTTP"
+# # Block outbound UDP on port 53 (DNS)
+# .\Open-FirewallPort.ps1 -Port 53 -Protocol UDP -RuleName "Block DNS" -Action Block -Direction Outbound
 
 param (
     [Parameter(Mandatory = $true)]
