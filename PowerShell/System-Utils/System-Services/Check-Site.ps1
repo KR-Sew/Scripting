@@ -1,7 +1,9 @@
-# Define the host to ping
-$HostToPing = "google.com"
-$DelaySeconds = 5  # Time interval between pings
 
+# Define the host to ping
+Param (
+     [string]$HostToPing = "google.com",
+     [int]$DelaySeconds = 5  # Time interval between pings
+)
 # Function to show notification
 function Show-Notification {
     param ([string]$Message)
