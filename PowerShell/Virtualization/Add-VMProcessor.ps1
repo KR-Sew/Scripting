@@ -4,7 +4,9 @@ param (
 
     [Parameter(Mandatory = $true)]
     [ValidateRange(1, 64)]
-    [int]$ProcessorCount
+    [int]$ProcessorCount,
+
+    [switch]$StartAfter
 )
 
 # Function to display colored messages
@@ -22,7 +24,7 @@ function Write-Message {
     }
 }
 
-# Function to turn off the VM gracefully or forcefully
+# Function to turn off the VM forcefully
 function Stop-VMIfRunning {
     param (
         [Microsoft.HyperV.PowerShell.VirtualMachine]$VM
@@ -31,21 +33,10 @@ function Stop-VMIfRunning {
     if ($VM.State -eq 'Running') {
         Write-Message "VM '$($VM.Name)' is currently running." "Info"
 
-        $choice = Read-Host "Do you want to shut it down gracefully? (Y/N/F=Force)"
+        $choice = Read-Host "Do you want to turn it off forcefully? (Y/N)"
 
         switch ($choice.ToUpper()) {
             "Y" {
-                Write-Message "Attempting graceful shutdown..." "Info"
-                Stop-VM -Name $VM.Name -Shutdown -ErrorAction SilentlyContinue
-                Start-Sleep -Seconds 5
-                while ((Get-VM -Name $VM.Name).State -ne 'Off') {
-                    Write-Host "." -NoNewline
-                    Start-Sleep -Seconds 2
-                }
-                Write-Host ""
-                Write-Message "VM has been shut down." "Success"
-            }
-            "F" {
                 Write-Message "Force stopping the VM..." "Info"
                 Stop-VM -Name $VM.Name -TurnOff -Force
                 Write-Message "VM has been forcefully turned off." "Success"
@@ -71,3 +62,9 @@ Stop-VMIfRunning -VM $vm
 # Set the number of virtual processors
 Set-VMProcessor -VMName $VMName -Count $ProcessorCount
 Write-Message "Processor count for '$VMName' set to $ProcessorCount." "Success"
+
+# Optionally start the VM again
+if ($StartAfter) {
+    Start-VM -Name $VMName | Out-Null
+    Write-Message "VM '$VMName' has been started." "Success"
+}
