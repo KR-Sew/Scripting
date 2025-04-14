@@ -1,3 +1,8 @@
+# This script helps to add a processor to a vm and turn on it again if it's needed
+# Example command .\Add-VMProcessor.ps1 -VMName TargetVMName -ProcessorCount 1 -StartAfter
+# Where -VMName - a vm name, -ProcessorCount amount of adding processors -StartAfter turn on a vm after adding 
+
+
 param (
     [Parameter(Mandatory = $true)]
     [string]$VMName,
