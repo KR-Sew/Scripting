@@ -4,7 +4,12 @@ $ErrorActionPreference = "Stop"
 
 function Get-LatestAtlasCliVersion {
     $latestRelease = Invoke-RestMethod -Uri "https://api.github.com/repos/mongodb/mongodb-atlas-cli/releases/latest" -Headers @{ 'User-Agent' = 'PowerShell' }
-    return $latestRelease.tag_name.TrimStart("v")
+    $rawTag = $latestRelease.tag_name
+    if ($rawTag -match ".*?/v(?<version>\d+\.\d+\.\d+)") {
+        return $matches['version']
+    } else {
+        throw "Unexpected tag_name format: $rawTag"
+    }
 }
 
 function Get-InstalledAtlasCliVersion {
@@ -32,51 +37,30 @@ function Update-AtlasCli {
 
     Write-Host "Updating MongoDB Atlas CLI to version $latestVersion..." -ForegroundColor Yellow
 
-    # GitHub URL for downloading the latest release
-    $baseUrl = "https://github.com/mongodb/mongodb-atlas-cli/releases/download/v$latestVersion"
-    $zipFileName = "atlascli_windows_amd64.zip"
+    # Corrected URL for downloading the latest MSI installer
+    $baseUrl = "https://github.com/mongodb/mongodb-atlas-cli/releases/download/atlascli%2Fv$latestVersion"
+    $msiFileName = "mongodb-atlas-cli_${latestVersion}_windows_x86_64.msi"
 
-    # Full URL for the download
-    $zipUrl = "$baseUrl/$zipFileName"
-    Write-Host "Attempting to download from: $zipUrl"
+    # Full URL for the MSI download
+    $msiUrl = "$baseUrl/$msiFileName"
+    Write-Host "Attempting to download from: $msiUrl"
 
     try {
-        $response = Invoke-WebRequest -Uri $zipUrl -OutFile "$env:TEMP\atlascli.zip"
+        $response = Invoke-WebRequest -Uri $msiUrl -OutFile "$env:TEMP\mongodb-atlas-cli.msi"
     } catch {
-        Write-Error "Failed to download the file. Please check if the URL is correct or if the release exists."
+        Write-Error "Failed to download the MSI file. Please check if the URL is correct or if the release exists."
         return
     }
 
-    # Extract the ZIP file
-    Expand-Archive -Path "$env:TEMP\atlascli.zip" -DestinationPath "$env:TEMP\atlascli" -Force
-
-    # Find the executable
-    $atlasExePath = Get-ChildItem -Path "$env:TEMP\atlascli" -Recurse -Filter atlas.exe | Select-Object -First 1
-
-    if (-not $atlasExePath) {
-        Write-Error "Failed to locate atlas.exe in the downloaded archive."
-        return
-    }
-
-    # Install path for Atlas CLI
-    $installPath = "$env:ProgramFiles\MongoDB\AtlasCLI"
-    if (-not (Test-Path $installPath)) {
-        New-Item -ItemType Directory -Path $installPath | Out-Null
-    }
-
-    # Copy the new executable to the install path
-    Copy-Item -Path $atlasExePath.FullName -Destination "$installPath\atlas.exe" -Force
-
-    # Optionally, add to PATH if not already present
-    if (-not ($env:Path -split ";" | Where-Object { $_ -eq $installPath })) {
-        [Environment]::SetEnvironmentVariable("Path", $env:Path + ";$installPath", [EnvironmentVariableTarget]::Machine)
-        Write-Host "Added $installPath to system PATH. You may need to restart your shell or log out and back in." -ForegroundColor Cyan
-    }
+    # Install the MSI package
+    Write-Host "Installing MongoDB Atlas CLI..." -ForegroundColor Yellow
+    $msiPath = "$env:TEMP\mongodb-atlas-cli.msi"
+    Start-Process msiexec.exe -ArgumentList "/i", "`"$msiPath`"", "/quiet", "/norestart" -Wait
 
     Write-Host "MongoDB Atlas CLI updated to version $latestVersion successfully." -ForegroundColor Green
 
-    # Clean up
-    Remove-Item -Recurse -Force -Path "$env:TEMP\atlascli"
+    # Clean up the MSI file
+    Remove-Item -Force -Path $msiPath
 }
 
 Update-AtlasCli
