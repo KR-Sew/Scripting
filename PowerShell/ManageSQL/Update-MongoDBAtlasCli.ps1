@@ -1,4 +1,4 @@
-# PowerShell script to update MongoDB Atlas CLI on Windows
+# PowerShell script to update MongoDB Atlas CLI on Windows with msi package
 
 $ErrorActionPreference = "Stop"
 
@@ -30,6 +30,7 @@ function Update-AtlasCli {
     Write-Host "Installed version: $installedVersion"
     Write-Host "Latest version:    $latestVersion"
 
+    # Exit if the installed version is already the latest version
     if ($installedVersion -eq $latestVersion) {
         Write-Host "MongoDB Atlas CLI is already up to date." -ForegroundColor Green
         return
@@ -47,8 +48,10 @@ function Update-AtlasCli {
 
     try {
         $response = Invoke-WebRequest -Uri $msiUrl -OutFile "$env:TEMP\mongodb-atlas-cli.msi"
-        if ($response.StatusCode -ne 200) {
-            Write-Error "Unexpected response code: $($response.StatusCode)"
+        
+        # Check if the file was downloaded successfully (file size > 0)
+        if ((Get-Item "$env:TEMP\mongodb-atlas-cli.msi").length -eq 0) {
+            Write-Error "Downloaded file is empty. Please check if the URL is correct or if the release exists."
             return
         } else {
             Write-Host "Download succeeded with status code: $($response.StatusCode)" -ForegroundColor Cyan
