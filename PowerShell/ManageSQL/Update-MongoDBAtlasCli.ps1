@@ -47,6 +47,12 @@ function Update-AtlasCli {
 
     try {
         $response = Invoke-WebRequest -Uri $msiUrl -OutFile "$env:TEMP\mongodb-atlas-cli.msi"
+        if ($response.StatusCode -ne 200) {
+            Write-Error "Unexpected response code: $($response.StatusCode)"
+            return
+        } else {
+            Write-Host "Download succeeded with status code: $($response.StatusCode)" -ForegroundColor Cyan
+        }
     } catch {
         Write-Error "Failed to download the MSI file. Please check if the URL is correct or if the release exists."
         return
