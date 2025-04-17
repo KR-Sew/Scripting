@@ -1,4 +1,4 @@
-# PowerShell script to update MongoDB Atlas CLI on Windows
+# PowerShell script to update MongoDB Atlas CLI on Windows with msi package
 
 $ErrorActionPreference = "Stop"
 
