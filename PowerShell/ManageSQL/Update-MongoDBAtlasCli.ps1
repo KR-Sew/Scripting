@@ -32,25 +32,39 @@ function Update-AtlasCli {
 
     Write-Host "Updating MongoDB Atlas CLI to version $latestVersion..." -ForegroundColor Yellow
 
-    $zipUrl = "https://github.com/mongodb/mongodb-atlas-cli/releases/download/v$latestVersion/atlascli_windows_amd64.zip"
-    $tempDir = New-Item -ItemType Directory -Path ([System.IO.Path]::GetTempPath()) -Name "atlascli_update_$([guid]::NewGuid())"
-    $zipPath = Join-Path $tempDir "atlascli.zip"
+    # GitHub URL for downloading the latest release
+    $baseUrl = "https://github.com/mongodb/mongodb-atlas-cli/releases/download/v$latestVersion"
+    $zipFileName = "atlascli_windows_amd64.zip"
 
-    Invoke-WebRequest -Uri $zipUrl -OutFile $zipPath
-    Expand-Archive -Path $zipPath -DestinationPath $tempDir -Force
+    # Full URL for the download
+    $zipUrl = "$baseUrl/$zipFileName"
+    Write-Host "Attempting to download from: $zipUrl"
 
-    $atlasExePath = Get-ChildItem -Path $tempDir -Recurse -Filter atlas.exe | Select-Object -First 1
+    try {
+        $response = Invoke-WebRequest -Uri $zipUrl -OutFile "$env:TEMP\atlascli.zip"
+    } catch {
+        Write-Error "Failed to download the file. Please check if the URL is correct or if the release exists."
+        return
+    }
+
+    # Extract the ZIP file
+    Expand-Archive -Path "$env:TEMP\atlascli.zip" -DestinationPath "$env:TEMP\atlascli" -Force
+
+    # Find the executable
+    $atlasExePath = Get-ChildItem -Path "$env:TEMP\atlascli" -Recurse -Filter atlas.exe | Select-Object -First 1
 
     if (-not $atlasExePath) {
         Write-Error "Failed to locate atlas.exe in the downloaded archive."
         return
     }
 
+    # Install path for Atlas CLI
     $installPath = "$env:ProgramFiles\MongoDB\AtlasCLI"
     if (-not (Test-Path $installPath)) {
         New-Item -ItemType Directory -Path $installPath | Out-Null
     }
 
+    # Copy the new executable to the install path
     Copy-Item -Path $atlasExePath.FullName -Destination "$installPath\atlas.exe" -Force
 
     # Optionally, add to PATH if not already present
@@ -61,7 +75,8 @@ function Update-AtlasCli {
 
     Write-Host "MongoDB Atlas CLI updated to version $latestVersion successfully." -ForegroundColor Green
 
-    Remove-Item -Recurse -Force -Path $tempDir
+    # Clean up
+    Remove-Item -Recurse -Force -Path "$env:TEMP\atlascli"
 }
 
 Update-AtlasCli
