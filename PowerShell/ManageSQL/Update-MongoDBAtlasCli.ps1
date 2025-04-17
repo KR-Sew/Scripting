@@ -30,6 +30,7 @@ function Update-AtlasCli {
     Write-Host "Installed version: $installedVersion"
     Write-Host "Latest version:    $latestVersion"
 
+    # Exit if the installed version is already the latest version
     if ($installedVersion -eq $latestVersion) {
         Write-Host "MongoDB Atlas CLI is already up to date." -ForegroundColor Green
         return
