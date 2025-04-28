@@ -46,9 +46,9 @@ if ($DiskType -eq "VHD") {
 
 if ($DiskType -eq "DVD") {
     # Find an available IDE Controller
-    $IDEController = 1  # IDE 1 is often used for CD/DVD
+    # $IDEController = 1  # IDE 1 is often used for CD/DVD
     Write-Host "Attaching DVD drive to VM '$VMName' on IDE Controller $IDEController..."
-    Add-VMDvdDrive -VMName $VMName -ControllerNumber $IDEController
+    Add-VMDvdDrive -VMName $VMName -ControllerNumber $SCSIController -ControllerLocation $SCSIPlacement
 }
 
 Write-Host "Operation completed successfully."
