@@ -1,5 +1,7 @@
 param (
     [string]$VMName,
+    [Parameter(Mandatory= $true)]
+    [ValidateSet("DVD","VHD")]
     [string]$DiskType,       # "VHD" or "DVD"
     [string]$VHDPath,        # Path for VHD (if VHD is selected)
     [int]$VHDDiskSize = 20,  # Default VHD size in GB
