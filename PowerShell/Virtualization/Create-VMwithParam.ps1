@@ -22,9 +22,10 @@
         [ValidateSet("On","Off")]
         [string]$State ,                # Enable or disable system state
         [Parameter(Mandatory=$true)]
-        
+        [ValidateSet("MicrosoftUEFICertificateAuthority", "MicrosoftWindows", "OpenSourceShieldedVM")]
         [string]$SecureBootTemplate,     # Point Security boot templates
         [string]$ISOPath,         # Path to the ISO, leave blank to skip
+        
         [bool]$AttachISO          # Set to $true to attach an ISO, $false to skip
 
         )
