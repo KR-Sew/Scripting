@@ -25,7 +25,8 @@
         [ValidateSet("MicrosoftUEFICertificateAuthority", "MicrosoftWindows", "OpenSourceShieldedVM")]
         [string]$SecureBootTemplate,     # Point Security boot templates
         [string]$ISOPath,         # Path to the ISO, leave blank to skip
-        
+        [Parameter(Mandatory=$true)]
+        [ValidateSet($true,$false)]
         [bool]$AttachISO          # Set to $true to attach an ISO, $false to skip
 
         )
