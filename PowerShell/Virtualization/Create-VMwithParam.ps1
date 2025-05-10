@@ -12,6 +12,8 @@
         [Parameter(Mandatory= $true)]
         [ValidateSet("1","2")]                   # VLAN ID for the network
         [int]$Generation,               # VM Generation: 1 or 2
+        [Parameter(Mandatory=$true)]
+        [ValidateSet( $true,$false)]
         [bool]$EnableSecureBoot,        # Enable or disable Secure Boot
         [bool]$EnableSRVIO,           # Enable or disable SR-IOV
         [string]$State ,                # Enable or disable system state
