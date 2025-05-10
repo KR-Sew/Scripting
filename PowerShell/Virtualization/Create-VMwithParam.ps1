@@ -15,8 +15,14 @@
         [Parameter(Mandatory=$true)]
         [ValidateSet( $true,$false)]
         [bool]$EnableSecureBoot,        # Enable or disable Secure Boot
+        [Parameter(Mandatory=$true)]
+        [ValidateSet( $true, $false)]
         [bool]$EnableSRVIO,           # Enable or disable SR-IOV
+        [Parameter(Mandatory=$true)]
+        [ValidateSet("On","Off")]
         [string]$State ,                # Enable or disable system state
+        [Parameter(Mandatory=$true)]
+        
         [string]$SecureBootTemplate,     # Point Security boot templates
         [string]$ISOPath,         # Path to the ISO, leave blank to skip
         [bool]$AttachISO          # Set to $true to attach an ISO, $false to skip
