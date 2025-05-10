@@ -9,7 +9,7 @@ if (-not $VM) {
 }
 # Define the script block to run remotely
 $ScriptBlock = {
-    Get-Disk | Select-Object Number, FriendlyName, SerialNumber, Size, OperationalStatus, PartitionStyle
+    Get-VMHardDiskDrive | Select-Object Number, FriendlyName, SerialNumber, @{Name="Size (MB)"; Expression={[System.Math]::Round($_.Length /1MB),2}}, OperationalStatus, PartitionStyle
 }
 
 foreach ($Computer in $VMName) {
