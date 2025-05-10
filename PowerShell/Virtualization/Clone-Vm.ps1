@@ -6,6 +6,7 @@ param (
     [string]$NewVMName,    # Name for the cloned VM
 
     [Parameter(Mandatory = $true)]
+    [ValidateSet("ExternalSwitch01","ExternalSwitch02")] # Predefined virtual switches
     [string]$SwitchName    # Virtual switch to use for networking
 )
 
