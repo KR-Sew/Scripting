@@ -8,13 +8,25 @@
         [int]$MaxMemoryMB ,  # Maximum memory for dynamic allocation
         [int]$VHDSizeGB,                # VHD size in GB
         [int]$CoreCount,                # Number of virtual processors
-        [int]$VLANID,                   # VLAN ID for the network
+        [int]$VLANID,
+        [Parameter(Mandatory= $true)]
+        [ValidateSet("1","2")]                   # VLAN ID for the network
         [int]$Generation,               # VM Generation: 1 or 2
+        [Parameter(Mandatory=$true)]
+        [ValidateSet( $true,$false)]
         [bool]$EnableSecureBoot,        # Enable or disable Secure Boot
+        [Parameter(Mandatory=$true)]
+        [ValidateSet( $true, $false)]
         [bool]$EnableSRVIO,           # Enable or disable SR-IOV
+        [Parameter(Mandatory=$true)]
+        [ValidateSet("On","Off")]
         [string]$State ,                # Enable or disable system state
+        [Parameter(Mandatory=$true)]
+        [ValidateSet("MicrosoftUEFICertificateAuthority", "MicrosoftWindows", "OpenSourceShieldedVM")]
         [string]$SecureBootTemplate,     # Point Security boot templates
         [string]$ISOPath,         # Path to the ISO, leave blank to skip
+        [Parameter(Mandatory=$true)]
+        [ValidateSet($true,$false)]
         [bool]$AttachISO          # Set to $true to attach an ISO, $false to skip
 
         )
