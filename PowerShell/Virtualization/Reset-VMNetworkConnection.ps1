@@ -3,6 +3,7 @@ param (
     [string]$VMName,       # Name of the existing VM
 
     [Parameter(Mandatory = $true)]
+    [ValidateSet("ExternalSwitch01","ExternalSwitch02")] # Predefined switch parameters
     [string]$VmSwitch      # New virtual switch name to connect to
 )
 
