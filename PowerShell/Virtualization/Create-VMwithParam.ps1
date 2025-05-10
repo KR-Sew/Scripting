@@ -8,7 +8,9 @@
         [int]$MaxMemoryMB ,  # Maximum memory for dynamic allocation
         [int]$VHDSizeGB,                # VHD size in GB
         [int]$CoreCount,                # Number of virtual processors
-        [int]$VLANID,                   # VLAN ID for the network
+        [int]$VLANID,
+        [Parameter(Mandatory= $true)]
+        [ValidateSet("1","2")]                   # VLAN ID for the network
         [int]$Generation,               # VM Generation: 1 or 2
         [bool]$EnableSecureBoot,        # Enable or disable Secure Boot
         [bool]$EnableSRVIO,           # Enable or disable SR-IOV
