@@ -5,6 +5,8 @@ param (
     [string]$DiskType,       # "VHD" or "DVD"
     [string]$VHDPath,        # Path for VHD (if VHD is selected)
     [int]$VHDDiskSize = 20,  # Default VHD size in GB
+    [Parameter(Mandatory=$true)]
+    [ValidateSet("Dynamic","Fixed")]
     [string]$VHDType = "Dynamic", # "Dynamic" or "Fixed"
     [int]$SCSIController = 0, # Default SCSI Controller Index
     [int]$SCSIPlacement = 0   # Default SCSI Location
