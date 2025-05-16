@@ -1,0 +1,12 @@
+PowerShell Remoting enabled on the print server:
+
+Enable-PSRemoting -Force
+
+rusted host setup if not in the same domain (optional but common):
+
+Set-Item WSMan:\localhost\Client\TrustedHosts -Value "YourPrintServer"
+
+If needed, use credentials:
+
+$cred = Get-Credential
+Invoke-Command -ComputerName $PrintServer -ScriptBlock { ... } -Credential $cred
