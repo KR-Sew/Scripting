@@ -1,32 +1,56 @@
 Param (
-    [Parameter(Mandatory=$True)]
-    [string]$searchDirectory, # Set a path of a folder
-    
-    [Parameter(Mandatory=$True)]
-    [string]$fileName,   # Set the name of the file you're looking for
-    
-    [string]$filesByType # Set the file type you're looking for (e.g., *.jpg, *.pdf)
+    [Parameter(Mandatory = $true, HelpMessage = "Folder path to search.")]
+    [ValidateScript({ Test-Path $_ -PathType 'Container' })]
+    [string]$searchDirectory,
+
+    [Parameter(Mandatory = $true, HelpMessage = "Exact file name to search (e.g. 'report.docx')")]
+    [string]$fileName,
+
+    [Parameter(Mandatory = $false, HelpMessage = "File type pattern (e.g. '*.jpg', '*.pdf')")]
+    [string]$fileType,
+
+    [string]$OutputCsvPath
 )
 
-# Initialize an array to hold results
+# Initialize result collection
 $allFiles = @()
 
-# Search for files by name if $fileName is not empty
-if (-not [string]::IsNullOrEmpty($fileName)) {
-    $filesByName = Get-ChildItem -Path $searchDirectory -Recurse -Filter $fileName -ErrorAction SilentlyContinue
-    $allFiles += $filesByName
+# Search by file name
+if (-not [string]::IsNullOrWhiteSpace($fileName)) {
+    try {
+        $filesByName = Get-ChildItem -Path $searchDirectory -Recurse -Filter $fileName -ErrorAction Stop
+        $allFiles += $filesByName
+    } catch {
+        Write-Warning "Failed searching for '$fileName': $_"
+    }
 }
 
-# Search for files by type if $fileType is not empty
-if (-not [string]::IsNullOrEmpty($fileType)) {
-    $filesByType = Get-ChildItem -Path $searchDirectory -Recurse -Filter $fileType -ErrorAction SilentlyContinue
-    $allFiles += $filesByType
+# Search by file type
+if (-not [string]::IsNullOrWhiteSpace($fileType)) {
+    try {
+        $filesByType = Get-ChildItem -Path $searchDirectory -Recurse -Filter $fileType -ErrorAction Stop
+        $allFiles += $filesByType
+    } catch {
+        Write-Warning "Failed searching for '$fileType': $_"
+    }
 }
 
-# Output results
-if ($allFiles) {
-    Write-Host "Found the following files:"
+# Remove duplicates and output
+$allFiles = $allFiles | Select-Object -Unique
+
+if ($allFiles.Count -gt 0) {
+    Write-Host "`nFound the following file(s):" -ForegroundColor Cyan
     $allFiles | ForEach-Object { Write-Host $_.FullName }
+
+    if ($OutputCsvPath) {
+        try {
+            $allFiles | Select-Object FullName, Name, Length, LastWriteTime |
+                Export-Csv -Path $OutputCsvPath -NoTypeInformation -Encoding UTF8
+            Write-Host "`nResults saved to: $OutputCsvPath" -ForegroundColor Green
+        } catch {
+            Write-Warning "Failed to export results to CSV: $_"
+        }
+    }
 } else {
-    Write-Host "No files found matching the criteria."
+    Write-Host "No files found matching the criteria." -ForegroundColor Yellow
 }
