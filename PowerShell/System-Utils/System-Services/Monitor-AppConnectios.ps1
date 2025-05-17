@@ -20,9 +20,9 @@ function Get-ProcessId {
 }
 
 # Get initial process ID
-$pid = Get-ProcessId -Name $ProcessName
+$pidId = Get-ProcessId -Name $ProcessName
 
-Write-Host "Monitoring connections for $ProcessName (PID: $pid)..."
+Write-Host "Monitoring connections for $ProcessName (PID: $pidId)..."
 Write-Host "Press Ctrl+C to stop monitoring."
 
 # Main monitoring loop
@@ -30,12 +30,12 @@ try {
     while ($true) {
         # Clear screen for better readability
         Clear-Host
-        Write-Host "Monitoring $ProcessName (PID: $pid) - $(Get-Date)"
+        Write-Host "Monitoring $ProcessName (PID: $pidId) - $(Get-Date)"
         Write-Host "----------------------------------------"
 
         # Get TCP connections
         Write-Host "TCP Connections:" -ForegroundColor Cyan
-        $tcpConnections = Get-NetTCPConnection -OwningProcess $pid -ErrorAction SilentlyContinue
+        $tcpConnections = Get-NetTCPConnection -OwningProcess $pidId -ErrorAction SilentlyContinue
         if ($tcpConnections) {
             $tcpConnections | Format-Table -Property LocalAddress, LocalPort, RemoteAddress, RemotePort, State, CreationTime -AutoSize
         } else {
@@ -45,7 +45,7 @@ try {
         # Get UDP endpoints if requested
         if ($IncludeUDP) {
             Write-Host "UDP Endpoints:" -ForegroundColor Cyan
-            $udpEndpoints = Get-NetUDPEndpoint -OwningProcess $pid -ErrorAction SilentlyContinue
+            $udpEndpoints = Get-NetUDPEndpoint -OwningProcess $pidId -ErrorAction SilentlyContinue
             if ($udpEndpoints) {
                 $udpEndpoints | Format-Table -Property LocalAddress, LocalPort, CreationTime -AutoSize
             } else {
