@@ -1,0 +1,9 @@
+myapp-docker/
+├── docker-compose.yml
+├── .env
+├── nginx/
+│   └── default.conf
+├── php/
+│   └── Dockerfile
+├── src/
+│   └── index.php
