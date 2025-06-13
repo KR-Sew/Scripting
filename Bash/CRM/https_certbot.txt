@@ -1,0 +1,20 @@
+🛡 HTTPS with Certbot (Optional)
+
+Manual (once):
+
+docker compose run --rm certbot certonly \
+  --webroot --webroot-path=/var/lib/letsencrypt \
+  --email admin@${APP_DOMAIN} --agree-tos --no-eff-email \
+  -d ${APP_DOMAIN}
+
+Then modify default.conf to use SSL:
+
+listen 443 ssl;
+ssl_certificate /etc/letsencrypt/live/${APP_DOMAIN}/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/${APP_DOMAIN}/privkey.pem;
+
+And add HTTP → HTTPS redirect in the port 80 server block.
+
+✅ Launch the Stack
+
+docker compose --env-file .env up -d --build

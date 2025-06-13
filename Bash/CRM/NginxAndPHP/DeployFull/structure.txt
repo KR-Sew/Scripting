@@ -1,0 +1,7 @@
+/srv/myapp/
+├── src/
+│   └── index.php
+├── nginx/
+│   └── myapp.conf
+├── php/
+│   └── Dockerfile

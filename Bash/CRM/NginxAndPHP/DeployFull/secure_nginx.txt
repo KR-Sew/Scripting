@@ -1,0 +1,9 @@
+    Limit PHP execution to only certain paths:
+
+location ~* ^/uploads/.*\.php$ {
+    deny all;
+}
+
+    Disable directory listing:
+
+autoindex off;
