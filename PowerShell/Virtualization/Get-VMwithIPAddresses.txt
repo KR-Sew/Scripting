@@ -1,0 +1,5 @@
+# there is a pipe line script that can get a list of running VMs with Name of VMs and their IPAddresses
+
+
+Get-VM | Where-Object { $_.State -eq "Running" } | ForEach-Object { $vmName = $_.Name; Get-VMNetworkAdapter -VM $_ | ForEach-Object { $_.IPAddresses | ForEach-Object { [Psc
+ustomObject]@{ VMName = $vmName; IPAddress = $_ } }} } | Format-Table -AutoSize
