@@ -30,7 +30,10 @@ in Active Directory environment
 🧪 Optional: Confirm Existing Keys
 
 - You can manually check the path using PowerShell:
-  `Get-ChildItem "HKCU:\Software\Microsoft\Office\16.0\Outlook"`
+
+  ```powershell
+  Get-ChildItem "HKCU:\Software\Microsoft\Office\16.0\Outlook"
+  ```
 
 - 📄[README.md](ReadMe.md)                   # Project documentation
 
