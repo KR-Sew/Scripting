@@ -55,13 +55,13 @@ foreach ($archive in $archiveFiles) {
     }
 
     foreach ($setup in $setupFiles) {
-        Write-Host "Running installer '$($setup.FullName)' silently..."
+        Write-Host "Running installer '$($setup.FullName)' silently..." -ForegroundColor Green
         try {
             $installerProcess = Start-Process -FilePath $setup.FullName -ArgumentList "/s" -Wait -PassThru
             if ($installerProcess.ExitCode -ne 0) {
                 Write-Warning "Installer '$($setup.Name)' exited with code $($installerProcess.ExitCode)."
             } else {
-                Write-Host "Installation completed successfully for '$($setup.Name)'."
+                Write-Host "Installation completed successfully for '$($setup.Name)'." -ForegroundColor Cyan
             }
         }
         catch {
