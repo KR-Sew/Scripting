@@ -1,47 +1,66 @@
-@"
-`$ErrorActionPreference = 'Stop'
+Invoke-Expression @'
+
+$ErrorActionPreference = 'Stop'
 
 Write-Host 'Checking current PowerShell version...' -ForegroundColor Cyan
-`$currentVersion = `$PSVersionTable.PSVersion
-Write-Host "Current version: `$currentVersion"
+$currentVersion = $PSVersionTable.PSVersion
+Write-Host "Current version: $currentVersion"
 
 Write-Host 'Fetching latest release from GitHub...' -ForegroundColor Cyan
-`$release = Invoke-RestMethod -Uri 'https://api.github.com/repos/PowerShell/PowerShell/releases/latest' -UseBasicParsing
-`$latestVersion = `$release.tag_name.TrimStart('v')
-Write-Host "Latest version available: `$latestVersion"
+try {
+    $release = Invoke-RestMethod -Uri 'https://api.github.com/repos/PowerShell/PowerShell/releases/latest' -UseBasicParsing
+    $latestVersion = $release.tag_name.TrimStart('v')
+    Write-Host "Latest version available: $latestVersion"
+} catch {
+    Write-Error "Failed to fetch latest release: $_"
+    return
+}
 
-if ([version]`$latestVersion -le `$currentVersion) {
+if ([version]$latestVersion -le $currentVersion) {
     Write-Host 'You are already on the latest version!' -ForegroundColor Green
     return
 }
 
-`$msiAsset = `$release.assets | Where-Object { `$_.name -match 'win-x64\.msi$' }
-if (-not `$msiAsset) {
+$msiAsset = $release.assets | Where-Object { $_.name -match 'win-x64\.msi$' }
+if (-not $msiAsset) {
     Write-Error 'Could not find MSI installer in the latest release.'
     return
 }
 
-`$msiUrl = `$msiAsset.browser_download_url
-`$msiFile = Join-Path -Path `$env:TEMP -ChildPath "PowerShell-`$latestVersion-win-x64.msi"
+$msiUrl = $msiAsset.browser_download_url
+$msiFile = Join-Path -Path $env:TEMP -ChildPath "PowerShell-$latestVersion-win-x64.msi"
 
 Write-Host 'Downloading MSI installer...' -ForegroundColor Cyan
-Invoke-WebRequest -Uri `$msiUrl -OutFile `$msiFile
-
-Write-Host 'Scheduling update task...' -ForegroundColor Cyan
-`$cmd = "msiexec.exe /i `"`$msiFile`" /quiet /norestart"
-`$taskName = 'UpdatePowerShell'
-
-if (Get-ScheduledTask -TaskName `$taskName -ErrorAction SilentlyContinue) {
-    Unregister-ScheduledTask -TaskName `$taskName -Confirm:`$false
+try {
+    Invoke-WebRequest -Uri $msiUrl -OutFile $msiFile
+} catch {
+    Write-Error "Failed to download MSI installer: $_"
+    return
 }
 
-`$action = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument "/c `$cmd"
-`$trigger = New-ScheduledTaskTrigger -Once -At ((Get-Date).AddMinutes(1))
-`$principal = New-ScheduledTaskPrincipal -UserId 'SYSTEM' -RunLevel Highest
+Write-Host 'Scheduling update task...' -ForegroundColor Cyan
+$taskName = 'UpdatePowerShell'
 
-Register-ScheduledTask -TaskName `$taskName -Action `$action -Trigger `$trigger -Principal `$principal
+# Properly escape the MSI file path for the command
+$escapedMsiFile = $msiFile -replace '"', '""'
+$cmd = "msiexec.exe /i `"$escapedMsiFile`" /quiet /norestart"
+
+if (Get-ScheduledTask -TaskName $taskName -ErrorAction SilentlyContinue) {
+    Unregister-ScheduledTask -TaskName $taskName -Confirm:$false
+}
+
+try {
+    $action = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument "/c $cmd"
+    $trigger = New-ScheduledTaskTrigger -Once -At ((Get-Date).AddMinutes(1))
+    $principal = New-ScheduledTaskPrincipal -UserId 'SYSTEM' -RunLevel Highest
+
+    Register-ScheduledTask -TaskName $taskName -Action $action -Trigger $trigger -Principal $principal | Out-Null
+} catch {
+    Write-Error "Failed to schedule update task: $_"
+    return
+}
 
 Write-Host ''
 Write-Host '✅ Update scheduled. Please disconnect your session NOW!' -ForegroundColor Yellow
 Write-Host 'The update will run in approximately 1 minute.' -ForegroundColor Yellow
-"@ | Invoke-Expression
+'@
