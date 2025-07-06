@@ -7,11 +7,11 @@ if (!(Test-Path $lastRecordFile)) { Set-Content -Path $lastRecordFile -Value 0 }
 
 $lastRecordId = Get-Content $lastRecordFile | ForEach-Object { [int]$_ }
 
-$events = Get-WinEvent -FilterHashtable @{LogName=$eventLogName; Id=$eventIds; StartTime=(Get-Date).AddMinutes(-5) } |
+$evts = Get-WinEvent -FilterHashtable @{LogName=$eventLogName; Id=$eventIds; StartTime=(Get-Date).AddMinutes(-5) } |
   Where-Object { $_.RecordId -gt $lastRecordId } |
   Sort-Object RecordId
 
-foreach ($event in $events) {
+foreach ($evt in $evts) {
     [xml]$eventXml = $event.ToXml()
     $data = $eventXml.Event.EventData.Data
 
