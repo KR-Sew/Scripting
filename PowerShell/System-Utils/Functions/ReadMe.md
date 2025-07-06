@@ -21,6 +21,32 @@ Install-ZipPackages `
     -SevenZipPath "C:\Program Files\7-Zip\7z.exe"
 ```
 
+## 📂 Install-ZipPackagesAdvance.ps1 description
+
+✅ How to Use
+
+Example running a specific installer with custom arguments:
+
+```powershell
+Install-ZipPackages `
+    -ArchiveDirectory "D:\tmp\Update" `
+    -ExtractDirectory "D:\tmp\Update\ext" `
+    -SevenZipPath "C:\Program Files\7-Zip\7z.exe" `
+    -LogFilePath "D:\tmp\Update\InstallLog.txt" `
+    -ExecutableName "installer.exe" `
+    -ExecutableArguments "/silent /norestart"
+```
+
+Notes:
+
+- You can still specify `"setup.exe"` if you want:
+
+```powershell
+-ExecutableName "setup.exe"
+```
+
+If you don’t want extra arguments, simply leave `-ExecutableArguments` empty.
+
 - 📄[README.md](ReadMe.md)                   # Project documentation
 
 ---
