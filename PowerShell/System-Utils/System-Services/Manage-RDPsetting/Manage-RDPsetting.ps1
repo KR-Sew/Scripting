@@ -4,7 +4,8 @@
 
 .DESCRIPTION
     This script configures the registry, firewall, and RDP service
-    to either enable, disable, or check the status of Remote Desktop.
+    to enable, disable, or show the status of Remote Desktop.
+    You can combine switches (e.g. -Enable -Status).
 
 .PARAMETER Enable
     Enables Remote Desktop.
@@ -23,16 +24,14 @@
 
 .EXAMPLE
     .\Manage-RDP.ps1 -Status
+
+.EXAMPLE
+    .\Manage-RDP.ps1 -Enable -Status
 #>
 
 param(
-    [Parameter(Mandatory=$true, ParameterSetName="Enable")]
     [switch]$Enable,
-
-    [Parameter(Mandatory=$true, ParameterSetName="Disable")]
     [switch]$Disable,
-
-    [Parameter(Mandatory=$true, ParameterSetName="Status")]
     [switch]$Status
 )
 
@@ -86,10 +85,7 @@ function Get-RDPStatus {
     }
 }
 
-if ($Enable) {
-    Enable-RDP
-} elseif ($Disable) {
-    Disable-RDP
-} elseif ($Status) {
-    Get-RDPStatus
-}
+# Execute based on switches (can combine)
+if ($Enable) { Enable-RDP }
+if ($Disable) { Disable-RDP }
+if ($Status) { Get-RDPStatus }
