@@ -6,11 +6,33 @@
 
 The script can check, enabble or disable RDP on Windows sytstem 
 
-Script can be run with next keys:
+### Script can be run with next keys:
 
 - `-Status` this key shows current configuration for RDP protocol in a system
 - `-Emable` this key set up to enalbe RDP protocol and allow firewall rules
 - `-Disable` this key set up to disable RDP protocol and disable firewall rules   
+
+---
+
+#### Usage:
+
+- #### Enable RDP:
+
+  ```powershell
+   .\Manage-RDP.ps1 -Enable
+   ```
+
+- #### Disable RDP:
+
+  ```powershell
+    .\Manage-RDP.ps1 -Disable
+   ```
+
+- #### Check status RDP:
+
+    ```powershell
+    .\Manage-RDP.ps1 -Status
+    ```
 
 ---
 
