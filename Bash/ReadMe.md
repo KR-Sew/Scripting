@@ -13,11 +13,11 @@ A collection of useful Bash scripts for system administration, automation, and D
 - 📂 [CRM](./CRM/)
   </p>
 - 📂 [fail2ban](./fail2ban/)
-
+  </p> Installing and configuring fail2ban
 - 📂 [Git](./Git/)
-
+  </p> Installing or updating Git from source and Gh cli application.
 - 📂 [Golang](./Golang/)
-
+  </p> Manage Golang. Install the latest version or update it.
 - 📂 [Kubernetes](./Kubernetes/)
   </p> Mange K3s
 - 📂 [Logs](./Logs/)
