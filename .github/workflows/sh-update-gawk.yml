@@ -18,7 +18,7 @@ jobs:
       
       - name: Grant execute permission to script
         run: |
-          chmod +x ./Bash/Update_gawk.sh
+          chmod +x ./Bash/Awk/Update_gawk.sh
 
       - name: Run the script
-        run: ./Bash/Update_gawk.sh  # Executes your script
+        run: ./Bash/Awk/Update_gawk.sh  # Executes your script

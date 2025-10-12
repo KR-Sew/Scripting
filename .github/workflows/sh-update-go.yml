@@ -18,7 +18,7 @@ jobs:
       
       - name: Grant execute permission to script
         run: |
-          chmod +x ./Bash/Update_Golang.sh
+          chmod +x ./Bash/Golang/Update_Golang.sh
 
       - name: Run the script
-        run: ./Bash/Update_Golang.sh  # Executes your script
+        run: ./Bash/Golang/Update_Golang.sh  # Executes your script

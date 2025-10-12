@@ -18,7 +18,7 @@ jobs:
       
       - name: Grant execute permission to script
         run: |
-          chmod +x ./Bash/Update_rclone.sh
+          chmod +x ./Bash/Rclone/Update_rclone.sh
 
       - name: Run the script
-        run: ./Bash/Update_rclone.sh  # Executes your script
+        run: ./Bash/Rclone/Update_rclone.sh  # Executes your script
