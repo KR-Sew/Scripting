@@ -22,7 +22,7 @@ jobs:
       
       - name: Grant execute permission to script
         run: |
-          chmod +x ./Bash/Update_Git_GitCli.sh
+          chmod +x ./Bash/Git/Update_Git_GitCli.sh
 
       - name: Run the script
-        run: ./Bash/Update_Git_GitCli.sh  # Executes your script
+        run: ./Bash/Git/Update_Git_GitCli.sh  # Executes your script

@@ -1,122 +1,68 @@
 #!/usr/bin/env bash
-#============================================================
-# Script: install_certbot_nginx.sh
-# Purpose: Install Certbot with NGINX support on Debian 13 (Trixie)
-# Author: Andrew’s assistant (GPT-5)
-#============================================================
+# certbot_install_nginx_venv.sh
+# Install latest Certbot for NGINX on Debian 13 safely (compatible with NGINX built from source)
 
 set -euo pipefail
 
-# Colors
+# Colors for output
 GREEN="\e[32m"
 YELLOW="\e[33m"
 RED="\e[31m"
 RESET="\e[0m"
 
-# Check privileges
+# Check if running as root
 if [[ $EUID -ne 0 ]]; then
   echo -e "${RED}Please run this script as root or with sudo.${RESET}"
   exit 1
 fi
 
-# Update and install dependencies
 echo -e "${YELLOW}Updating package lists...${RESET}"
 apt update -y
 
-echo -e "${YELLOW}Installing required packages...${RESET}"
-apt install -y software-properties-common curl gnupg2 lsb-release ca-certificates
+echo -e "${YELLOW}Installing dependencies...${RESET}"
+apt install -y ca-certificates python3 python3-venv python3-dev libaugeas-dev gcc curl gnupg2
 
-# Ensure NGINX is installed
-if ! command -v nginx >/dev/null 2>&1; then
-  echo -e "${YELLOW}NGINX is not installed. Installing...${RESET}"
-  apt install -y nginx
-  systemctl enable --now nginx
-else
-  echo -e "${GREEN}NGINX already installed: $(nginx -v 2>&1)${RESET}"
+# Step 1: Remove any OS-packaged Certbot to avoid conflicts
+if dpkg -l | grep -q certbot; then
+  echo -e "${YELLOW}Removing existing Certbot packages (apt-managed)...${RESET}"
+  apt remove -y certbot python3-certbot* || true
 fi
 
-# Install Certbot and NGINX plugin
-if ! command -v certbot >/dev/null 2>&1; then
-  echo -e "${YELLOW}Installing Certbot with NGINX plugin...${RESET}"
-  apt install -y certbot python3-certbot-nginx
+# Step 2: Create Python venv for Certbot
+VENV_DIR="/opt/certbot"
+if [[ -d "$VENV_DIR" ]]; then
+  echo -e "${YELLOW}Virtual environment already exists at $VENV_DIR — upgrading Certbot...${RESET}"
 else
-  echo -e "${GREEN}Certbot already installed: $(certbot --version)${RESET}"
+  echo -e "${YELLOW}Creating Python virtual environment for Certbot...${RESET}"
+  python3 -m venv "$VENV_DIR"
 fi
 
-# Enable and start auto-renewal timer
-echo -e "${YELLOW}Enabling Certbot auto-renewal timer...${RESET}"
-systemctl enable --now certbot.timer
+# Step 3: Upgrade pip and install latest Certbot inside venv
+echo -e "${YELLOW}Installing or upgrading Certbot inside the venv...${RESET}"
+"$VENV_DIR/bin/pip" install --upgrade pip
+"$VENV_DIR/bin/pip" install --upgrade certbot certbot-nginx
 
-# Verify installations
-if ! command -v certbot >/dev/null 2>&1 || ! command -v nginx >/dev/null 2>&1; then
-  echo -e "${RED}Certbot or NGINX installation failed.${RESET}"
+# Step 4: Create symbolic link for easier access
+if [[ ! -f /usr/local/bin/certbot ]]; then
+  ln -sf "$VENV_DIR/bin/certbot" /usr/local/bin/certbot
+  echo -e "${GREEN}Symlink created: /usr/local/bin/certbot → $VENV_DIR/bin/certbot${RESET}"
+fi
+
+# Step 5: Verify installation
+if command -v certbot >/dev/null 2>&1; then
+  echo -e "${GREEN}Certbot installed successfully via venv: $(certbot --version)${RESET}"
+else
+  echo -e "${RED}Certbot installation failed.${RESET}"
   exit 1
 fi
 
-echo -e "${GREEN}Certbot and NGINX installed successfully.${RESET}"
-
-# Ask for domain and email
-read -rp "Enter your domain name (e.g. example.com): " DOMAIN
-read -rp "Enter your email address for Let's Encrypt notifications: " EMAIL
-
-# Validate domain input
-if [[ -z "$DOMAIN" ]]; then
-  echo -e "${RED}Domain cannot be empty.${RESET}"
-  exit 1
-fi
-
-# Create NGINX server block if not exists
-NGINX_CONF="/etc/nginx/sites-available/$DOMAIN"
-if [[ ! -f "$NGINX_CONF" ]]; then
-  echo -e "${YELLOW}Creating NGINX configuration for $DOMAIN...${RESET}"
-  cat > "$NGINX_CONF" <<EOF
-server {
-    listen 80;
-    server_name $DOMAIN www.$DOMAIN;
-
-    root /var/www/$DOMAIN/html;
-    index index.html index.htm;
-
-    location / {
-        try_files \$uri \$uri/ =404;
-    }
-}
-EOF
-
-  mkdir -p "/var/www/$DOMAIN/html"
-  echo "<h1>$DOMAIN is working!</h1>" > "/var/www/$DOMAIN/html/index.html"
-
-  ln -sf "$NGINX_CONF" /etc/nginx/sites-enabled/
-  nginx -t && systemctl reload nginx
+# Step 6: Enable systemd timer for auto-renewal (if systemd is present)
+if systemctl list-unit-files | grep -q certbot.timer; then
+  echo -e "${YELLOW}Enabling Certbot auto-renewal timer...${RESET}"
+  systemctl enable --now certbot.timer || true
 else
-  echo -e "${GREEN}NGINX config for $DOMAIN already exists.${RESET}"
+  echo -e "${YELLOW}No systemd timer found — you can add a cron job manually if desired.${RESET}"
 fi
 
-# Obtain certificate
-echo -e "${YELLOW}Requesting Let's Encrypt certificate for $DOMAIN...${RESET}"
-certbot --nginx -d "$DOMAIN" -d "www.$DOMAIN" --email "$EMAIL" --agree-tos --no-eff-email
-
-# Verify success
-if [[ -f "/etc/letsencrypt/live/$DOMAIN/fullchain.pem" ]]; then
-  echo -e "${GREEN}Certificate obtained successfully for $DOMAIN.${RESET}"
-else
-  echo -e "${RED}Failed to obtain certificate for $DOMAIN.${RESET}"
-  exit 1
-fi
-
-# Set up reload hook
-HOOK_PATH="/etc/letsencrypt/renewal-hooks/deploy/reload-nginx.sh"
-if [[ ! -f "$HOOK_PATH" ]]; then
-  echo -e "${YELLOW}Adding NGINX reload hook for certificate renewal...${RESET}"
-  cat > "$HOOK_PATH" <<'HOOK'
-#!/usr/bin/env bash
-systemctl reload nginx
-HOOK
-  chmod +x "$HOOK_PATH"
-fi
-
-echo -e "${GREEN}NGINX reload hook configured.${RESET}"
-echo -e "${GREEN}All done! Certbot + NGINX are fully configured.${RESET}"
-echo
-echo -e "👉 Test auto-renewal with: ${YELLOW}sudo certbot renew --dry-run${RESET}"
-echo -e "👉 Your site: http://${DOMAIN}/"
+echo -e "${GREEN}All done! Certbot is ready to use with NGINX.${RESET}"
+echo -e "Run: ${YELLOW}sudo certbot --nginx${RESET} to obtain or renew certificates."
