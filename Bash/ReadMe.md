@@ -9,11 +9,11 @@ A collection of useful Bash scripts for system administration, automation, and D
 ## 📂 Description
 
 - 📂 [Awk](./Awk/)
-  </p>
+  </p>Installing or updating Awk (gawk version and set up it as default) on Debian/Ubuntu
 - 📂 [CRM](./CRM/)
   </p>
 - 📂 [fail2ban](./fail2ban/)
-  </p> Installing and configuring fail2ban
+  </p> Installing and configuring fail2ban on Debian/Ubuntu
 - 📂 [Git](./Git/)
   </p> Installing or updating Git from source and Gh cli application.
 - 📂 [Golang](./Golang/)
