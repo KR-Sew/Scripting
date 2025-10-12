@@ -1,10 +1,10 @@
-# <img src="../Assets/icons8-bash-48.svg" width=35 alt="Bash Scripts Collection">  Bash Scripts Collection  
+# <img src="../../Assets/icons8-bash-48.svg" width=35 alt="Bash Scripts Collection">  Install NGINX from source and Cerbot for NGINX and Apache (Debian/Ubuntu)  
 
 [![WSL](https://img.shields.io/badge/WSL-Microsoft-blue?style=flat&logo=linux&logoColor=white&logoSize=auto&labelColor=4E9A06)](https://learn.microsoft.com/en-us/windows/wsl/about)
 [![Bash](https://img.shields.io/badge/GNU%20Bash-4EAA25?style=flat&logo=gnubash&logoColor=white&logoSize=auto&labelColor=black)](https://www.gnu.org/software/bash/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-A collection of useful Bash scripts for system administration, automation, and DevOps workflows.  
+A collection of scripts that can install NGINX from source and install Certbot for NGINX or Apache web server on Debian/Ubuntu.  
 
 ## 📂 Folder Description
 
