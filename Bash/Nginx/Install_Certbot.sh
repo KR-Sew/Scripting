@@ -1,52 +1,98 @@
 #!/usr/bin/env bash
-#============================================================
-# Script: install_certbot.sh
-# Purpose: Install Certbot on Debian 13 (Trixie)
-# Author: Andrew’s assistant (GPT-5)
-#============================================================
+# install_certbot.sh
+# Universal Certbot installer for Debian 13 (supports both NGINX and Apache)
+# Only that you need just select a key --nginx or --apache.
+# Example for nginx sudo ./install_certbot.sh --nginx
+# Example for apache sudo ./install_certbot.sh --apache
 
 set -euo pipefail
 
-# Colors for output
+# Colors
 GREEN="\e[32m"
 YELLOW="\e[33m"
 RED="\e[31m"
 RESET="\e[0m"
 
-# Check if running as root
+# Usage function
+usage() {
+  echo -e "${YELLOW}Usage:${RESET} $0 [--nginx | --apache]"
+  echo -e "Example: sudo $0 --nginx"
+  exit 1
+}
+
+# Ensure root privileges
 if [[ $EUID -ne 0 ]]; then
   echo -e "${RED}Please run this script as root or with sudo.${RESET}"
   exit 1
 fi
 
+# Parse argument
+if [[ $# -ne 1 ]]; then
+  usage
+fi
+
+case "$1" in
+  --nginx)
+    PLUGIN="certbot-nginx"
+    SERVER_TYPE="NGINX"
+    ;;
+  --apache)
+    PLUGIN="certbot-apache"
+    SERVER_TYPE="Apache"
+    ;;
+  *)
+    usage
+    ;;
+esac
+
+# Update and install dependencies
 echo -e "${YELLOW}Updating package lists...${RESET}"
 apt update -y
 
 echo -e "${YELLOW}Installing dependencies...${RESET}"
-apt install -y software-properties-common curl gnupg2 lsb-release ca-certificates
+apt install -y ca-certificates python3 python3-venv python3-dev libaugeas-dev gcc curl gnupg2
 
-# Check if certbot already installed
-if command -v certbot >/dev/null 2>&1; then
-  echo -e "${GREEN}Certbot is already installed: $(certbot --version)${RESET}"
-else
-  echo -e "${YELLOW}Installing Certbot...${RESET}"
-  apt install -y certbot python3-certbot-nginx python3-certbot-apache || {
-    echo -e "${RED}Failed to install Certbot packages.${RESET}"
-    exit 1
-  }
+# Uninstall any old Certbot packages
+if dpkg -l | grep -q certbot; then
+  echo -e "${YELLOW}Removing existing apt-based Certbot packages...${RESET}"
+  apt remove -y certbot python3-certbot* || true
 fi
 
-# Verify installation
+# Virtual environment path
+VENV_DIR="/opt/certbot"
+
+# Create or reuse venv
+if [[ -d "$VENV_DIR" ]]; then
+  echo -e "${YELLOW}Virtual environment already exists — upgrading Certbot...${RESET}"
+else
+  echo -e "${YELLOW}Creating Python virtual environment at $VENV_DIR...${RESET}"
+  python3 -m venv "$VENV_DIR"
+fi
+
+# Upgrade pip and install Certbot + plugin
+echo -e "${YELLOW}Installing latest Certbot and $PLUGIN plugin...${RESET}"
+"$VENV_DIR/bin/pip" install --upgrade pip
+"$VENV_DIR/bin/pip" install --upgrade certbot "$PLUGIN"
+
+# Symlink for global access
+ln -sf "$VENV_DIR/bin/certbot" /usr/local/bin/certbot
+
+# Verify
 if command -v certbot >/dev/null 2>&1; then
-  echo -e "${GREEN}Certbot installed successfully: $(certbot --version)${RESET}"
+  echo -e "${GREEN}Certbot installed successfully via venv: $(certbot --version)${RESET}"
 else
   echo -e "${RED}Certbot installation failed.${RESET}"
   exit 1
 fi
 
-# Optional: enable auto-renewal timer
-echo -e "${YELLOW}Enabling auto-renewal service...${RESET}"
-systemctl enable --now certbot.timer
+# Enable timer (if available)
+if systemctl list-unit-files | grep -q certbot.timer; then
+  echo -e "${YELLOW}Enabling Certbot auto-renewal timer...${RESET}"
+  systemctl enable --now certbot.timer || true
+else
+  echo -e "${YELLOW}No systemd timer found — you can add a cron job manually if desired.${RESET}"
+fi
 
-echo -e "${GREEN}All done! Certbot is ready to use.${RESET}"
-echo -e "Run: ${YELLOW}sudo certbot --nginx${RESET} or ${YELLOW}sudo certbot --apache${RESET} to obtain certificates."
+# Success message
+echo -e "${GREEN}All done! Certbot is ready to use with $SERVER_TYPE.${RESET}"
+echo -e "Run: ${YELLOW}sudo certbot --$1${RESET} to obtain certificates."
