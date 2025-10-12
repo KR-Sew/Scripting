@@ -13,7 +13,7 @@ A collection of useful Bash scripts for system administration, automation, and D
 - 📂 [CRM](./CRM/)
   </p>
 - 📂 [fail2ban](./fail2ban/)
-  </p> Installing and configuring fail2ban on Debian/Ubuntu
+  </p> Installing and configuring fail2ban UFW and iptables on Debian/Ubuntu
 - 📂 [Git](./Git/)
   </p> Installing or updating Git from source and Gh cli application.
 - 📂 [Golang](./Golang/)
