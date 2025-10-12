@@ -8,7 +8,6 @@ A collection of scripts that can install NGINX from source and install Certbot f
 
 ## 📂 Folder Description
 
-
 - 📄[Install_Certbot_Nginx.sh](./Install_Certbot_Nginx.sh)
   </br>
   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-go.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-go.yml)
@@ -19,7 +18,7 @@ A collection of scripts that can install NGINX from source and install Certbot f
   </br> the script for installing or updating Certbot.It can use with both web servers
   Just select right key such as --nignx or --apache.
 - 📄[Install_nginx_deiban13.sh](./Install_nginx_debian13.sh)
-  </br> 
+  </br>
   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml)
   </br>the scritp for installing Nginx on Debian 13 Trixie
 
