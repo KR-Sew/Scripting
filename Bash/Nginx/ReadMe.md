@@ -8,15 +8,16 @@ A collection of scripts that can install NGINX from source and install Certbot f
 
 ## 📂 Folder Description
 
-- 📂 [fail2ban/](./fail2ban/)               # Configuration files for fail2ban
-- 📄[Update_Golang.sh](Update_Golang.sh)
+
+- 📄[Install_Certbot_Nginx.sh](./Install_Certbot_Nginx.sh)
   </br>
   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-go.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-go.yml)
-  </br> # Scripts for auto update Golang (Go)
-- 📄[Update_Git_GitCli.sh](Update_Git_GitCli.sh)
+  </br> # Scripts for installation Certbot for using with Nginx web server.
+- 📄[Install_Cerbot.sh](./Install_Certbot.sh)
   </br>
    [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-git-gitcli.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-git-gitcli.yml)
-  </br> the script for update Git and Git cli from source
+  </br> the script for installing or updating Certbot.It can use with both web servers
+  Just select right key such as --nignx or --apache.
 - 📄[Update_gawk.sh](Update_gawk.sh) # Script for automatic update gawk
   </br>
   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml)
