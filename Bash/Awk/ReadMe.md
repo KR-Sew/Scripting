@@ -9,7 +9,7 @@
 - 📄[Update_gawk.sh](Update_gawk.sh)
   </br>
   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml)
-  </br> 
+  </br>
   Installing or updating `awk` (`gawk` and set up this engine as default instead of mawk) on **Debian/Ubuntu**
 
 ---
