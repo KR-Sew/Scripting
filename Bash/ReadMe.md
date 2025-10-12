@@ -8,8 +8,20 @@ A collection of useful Bash scripts for system administration, automation, and D
 
 ## 📂 Description
 
-- 📂 [Logs](./Logs/)
+- 📂 [Awk](./Awk/)
   </p>
+- 📂 [CRM](./CRM/)
+  </p>
+- 📂 [fail2ban](./fail2ban/)
+
+- 📂 [Git](./Git/)
+
+- 📂 [Golang](./Golang/)
+
+- 📂 [Kubernetes](./Kubernetes/)
+  </p> Mange K3s
+- 📂 [Logs](./Logs/)
+  </p>Manage log files
 - 📂 [Nginx](./Nginx/)
   </p> Scripts for auto installing and updating Nginx web server from source.
 - 📂[Rclone](./Rclone/)
