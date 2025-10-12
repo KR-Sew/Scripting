@@ -11,9 +11,9 @@ A collection of useful Bash scripts for system administration, automation, and D
 - 📂 [Logs](./Logs/)
   </p>
 - 📂 [Nginx](./Nginx/)
-  </p> Scripts for auto update Golang (Go)
+  </p> Scripts for auto installing and updating Nginx web server from source.
 - 📂[Rclone](./Rclone/)
-  </p>
+  </p> Installing or Updating bash script for Rclone.
   
 - 📄[Update_gawk.sh](Update_gawk.sh) # Script for automatic update gawk
   </br>
