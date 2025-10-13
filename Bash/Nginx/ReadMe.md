@@ -33,6 +33,11 @@ A collection of scripts that can install NGINX from source and install Certbot f
   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-rclone.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-rclone.yml)
   </br> #Script for installing Nginx from source. This script doesn't create folders like sites-available, conf.d, sites-enabled if you need them you must create manually. Remember Nginx will be installed to `/usr/local/nginx`
 
+- 📄[Install_Nginx_deb13_with_folders.sh](./Install_nginx_deb13_with_folders.sh)
+  </br>
+  [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-rclone.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-rclone.yml)
+  </br> #Script for installing Nginx from source. This script will create folders like sites-available, conf.d, sites-enabled in folder `/usr/local/nginx`. Also script check curl if it's not installed it will be installed too.
+
 ---
 
 - 📄[README.md](ReadMe.md) # Project documentation
