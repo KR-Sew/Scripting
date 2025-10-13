@@ -26,7 +26,7 @@ A collection of scripts that can install NGINX from source and install Certbot f
 - 📄[Install_nginx_deiban13.sh](./Install_nginx_debian13.sh)
   </br>
   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml)
-  </br>the scritp for installing Nginx on Debian 13 Trixie. This script doesn't create folders like sites-available, conf.d, sites-enabled if you need them you must create manually.
+  </br>the scritp for installing Nginx on Debian 13 Trixie. This script doesn't create folders like sites-available, conf.d, sites-enabled if you need them you must create manually. Remember Nginx will be installed to `/usr/local/nginx`
 
 - 📄[Install_Nginx_from_Source.sh](./Install_Nginx_From_Source.sh)
   </br>
