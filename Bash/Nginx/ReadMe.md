@@ -38,6 +38,11 @@ A collection of scripts that can install NGINX from source and install Certbot f
   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-rclone.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-rclone.yml)
   </br> #Script for installing Nginx from source. This script will create folders like `sites-available`, `conf.d`, `sites-enabled` in folder `/usr/local/nginx`. Also script check `curl` if it's not installed it will be installed too.
 
+- 📄[Add_stream_module.sh](./Add_stream_module.sh)
+  </br>
+  [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-rclone.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-rclone.yml)
+  </br> #Script for adding **stream** (SNI) module to **Nginx** installed from source. This script will check **Nginx** version, download it, unpack, and `reconfigure` and `install` stream module.
+
 ---
 
 - 📄[README.md](ReadMe.md) # Project documentation
