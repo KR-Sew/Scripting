@@ -13,6 +13,9 @@ A collection of useful scripts to install **CRM** in docker containers on **Debi
 - 📂 [Nginx and PHP engine](./NginxAndPHP/) # Configuration files for fail2ban
 - 📂 [PHP-FPM engine](./PHP-FMP/) #Configuration files only for PHP engine
 - 📄 [.env](./.env) # A list of sensitive data
+- 📄 [deploy_web__stack.sh](./deploy_web_stack.sh)
+- 📄 [Dockerfile](./Dockerfile), [docker-compose.yml](./docker-compose.yml) #Docker files
+- 📄 [index.php](./index.php), [php.ini](./php.ini) #Configuration files
 
 ---
 
