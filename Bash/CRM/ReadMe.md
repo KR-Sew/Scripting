@@ -10,24 +10,9 @@ A collection of useful scripts to install **CRM** in docker containers on **Debi
 
 ## 📂 Folder Description
 
-- 📂 [fail2ban/](./fail2ban/)               # Configuration files for fail2ban
-- 📄[Update_Golang.sh](Update_Golang.sh)
-  </br>
-  [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-go.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-go.yml)
-  </br> # Scripts for auto update Golang (Go)
-- 📄[Update_Git_GitCli.sh](Update_Git_GitCli.sh)
-  </br>
-   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-git-gitcli.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-git-gitcli.yml)
-  </br> the script for update Git and Git cli from source
-- 📄[Update_gawk.sh](Update_gawk.sh) # Script for automatic update gawk
-  </br>
-  [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml)
-  </br>
-
-- 📄[Update_rclone.sh](Update_rclone.sh)
-  </br>
-  [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-rclone.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-rclone.yml)
-  </br> #Script for automatic update Rclone
+- 📂 [Nginx and PHP engine](./NginxAndPHP/) # Configuration files for fail2ban
+- 📂 [PHP-FPM engine](./PHP-FMP/) #Configuration files only for PHP engine
+- 📄 [.env](./.env) # A list of sensitive data
 
 ---
 
