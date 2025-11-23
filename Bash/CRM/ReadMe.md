@@ -6,7 +6,7 @@
 [![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=flat&logo=php&logoColor=whitelogoSize=auto&labelColor=black)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-A collection of useful Bash scripts for system administration, automation, and DevOps workflows.  
+A collection of useful scripts to install **CRM** in docker containers on **Debian/Ubuntu** with **Nginx** web server, **PHP** engine **PostgreSQL** database and **Redis**
 
 ## 📂 Folder Description
 
