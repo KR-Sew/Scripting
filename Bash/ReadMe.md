@@ -1,5 +1,7 @@
 # <img src="../Assets/icons8-bash-48.svg" width=35 alt="Bash Scripts Collection">  Bash Scripts Collection  
 
+[![Debian](https://img.shields.io/badge/Debian-607078?style=flat&logo=debian&logoColor=white&logoSize=auto&labelColor=a81d33)](https://www.debian.org/)
+[![Ubuntu](https://img.shields.io/badge/Ubuntu-607078?style=flat&logo=ubuntu&logoColor=white&logoSize=auto&labelColor=e95420)](https://ubuntu.com/download)
 [![WSL](https://img.shields.io/badge/WSL-Microsoft-blue?style=flat&logo=linux&logoColor=white&logoSize=auto&labelColor=4E9A06)](https://learn.microsoft.com/en-us/windows/wsl/about)
 [![Bash](https://img.shields.io/badge/GNU%20Bash-4EAA25?style=flat&logo=gnubash&logoColor=white&logoSize=auto&labelColor=black)](https://www.gnu.org/software/bash/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
@@ -8,23 +10,23 @@ A collection of useful Bash scripts for system administration, automation, and D
 
 ## 📂 Description
 
-- 📂 [Awk](./Awk/)
+- <img width="35" height="35" src="https://img.icons8.com/fluency/48/bash.png" alt="bash"/> [Awk](./Awk/)
   </p>Installing or updating Awk (gawk version and set up it as default) on Debian/Ubuntu
-- 📂 [CRM](./CRM/)
+- <img width="35" height="35" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-crm-sales-flaticons-lineal-color-flat-icons-3.png" alt="external-crm-sales-flaticons-lineal-color-flat-icons-3"/> [CRM](./CRM/)
   </p>
-- 📂 [fail2ban](./fail2ban/)
+- <img width="35" height="35" src="https://img.icons8.com/color/48/fail.png" alt="fail"/> [fail2ban](./fail2ban/)
   </p> Installing and configuring fail2ban UFW and iptables on Debian/Ubuntu
-- 📂 [Git](./Git/)
+- <img width="35" height="35" src="https://img.icons8.com/color/48/git.png" alt="git"/>[Git](./Git/)
   </p> Installing or updating Git from source and Gh cli application.
-- 📂 [Golang](./Golang/)
+- <img width="35" height="35" src="https://img.icons8.com/color/48/golang.png" alt="golang"/>[Golang](./Golang/)
   </p> Manage Golang. Install the latest version or update it.
-- 📂 [Kubernetes](./Kubernetes/)
+- <img width="35" height="35" src="https://img.icons8.com/color/48/kubernetes.png" alt="kubernetes"/> [Kubernetes](./Kubernetes/)
   </p> Mange K3s
-- 📂 [Logs](./Logs/)
+- <img width="35" height="35" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-logs-computer-programming-icons-flaticons-lineal-color-flat-icons-2.png" alt="external-logs-computer-programming-icons-flaticons-lineal-color-flat-icons-2"/> [Logs](./Logs/)
   </p>Manage log files
-- 📂 [Nginx](./Nginx/)
+- <img width="35" height="35" src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/external-nginx-accelerates-content-and-application-delivery-improves-security-logo-shadow-tal-revivo.png" alt="external-nginx-accelerates-content-and-application-delivery-improves-security-logo-shadow-tal-revivo"/> [Nginx](./Nginx/)
   </p> Scripts for auto installing and updating Nginx web server from source.
-- 📂[Rclone](./Rclone/)
+- [<img width="96" height="" src="https://rclone.org/img/logo_on_dark__horizontal_color.svg"/>](./Rclone/)
   </p> Installing or Updating bash script for Rclone.
   
 - 📄[Update_gawk.sh](Update_gawk.sh) # Script for automatic update gawk
