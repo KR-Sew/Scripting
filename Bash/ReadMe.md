@@ -8,21 +8,21 @@ A collection of useful Bash scripts for system administration, automation, and D
 
 ## 📂 Description
 
-- 📂 [Awk](./Awk/)
+- <img width="35" height="35" src="https://img.icons8.com/fluency/48/bash.png" alt="bash"/> [Awk](./Awk/)
   </p>Installing or updating Awk (gawk version and set up it as default) on Debian/Ubuntu
-- 📂 [CRM](./CRM/)
+- <img width="35" height="35" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-crm-sales-flaticons-lineal-color-flat-icons-3.png" alt="external-crm-sales-flaticons-lineal-color-flat-icons-3"/> [CRM](./CRM/)
   </p>
-- 📂 [fail2ban](./fail2ban/)
+- <img width="35" height="35" src="https://img.icons8.com/color/48/fail.png" alt="fail"/> [fail2ban](./fail2ban/)
   </p> Installing and configuring fail2ban UFW and iptables on Debian/Ubuntu
-- 📂 [Git](./Git/)
+- <img width="35" height="35" src="https://img.icons8.com/color/48/git.png" alt="git"/>[Git](./Git/)
   </p> Installing or updating Git from source and Gh cli application.
-- 📂 [Golang](./Golang/)
+- <img width="35" height="35" src="https://img.icons8.com/color/48/golang.png" alt="golang"/>[Golang](./Golang/)
   </p> Manage Golang. Install the latest version or update it.
-- 📂 [Kubernetes](./Kubernetes/)
+- <img width="35" height="35" src="https://img.icons8.com/color/48/kubernetes.png" alt="kubernetes"/> [Kubernetes](./Kubernetes/)
   </p> Mange K3s
-- 📂 [Logs](./Logs/)
+- <img width="35" height="35" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-logs-computer-programming-icons-flaticons-lineal-color-flat-icons-2.png" alt="external-logs-computer-programming-icons-flaticons-lineal-color-flat-icons-2"/> [Logs](./Logs/)
   </p>Manage log files
-- 📂 [Nginx](./Nginx/)
+- <img width="35" height="35" src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/external-nginx-accelerates-content-and-application-delivery-improves-security-logo-shadow-tal-revivo.png" alt="external-nginx-accelerates-content-and-application-delivery-improves-security-logo-shadow-tal-revivo"/> [Nginx](./Nginx/)
   </p> Scripts for auto installing and updating Nginx web server from source.
 - 📂[Rclone](./Rclone/)
   </p> Installing or Updating bash script for Rclone.
