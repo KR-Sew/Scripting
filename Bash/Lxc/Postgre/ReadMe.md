@@ -8,7 +8,7 @@ A collection of useful Bash scripts to work with **LXC/LXD** conatainers for aut
 
 ## 📂 Description
 
-- 📂 [Install PostreSQL in LXC container ](./install_pgsql_lxc.sh)
+- 📂 [Install PostreSQL in LXC container](./install_pgsql_lxc.sh)
   </p>Installing Postgre SQL on Debian LXC/LXD container with keep database data outside the conatainer
 
 ---
