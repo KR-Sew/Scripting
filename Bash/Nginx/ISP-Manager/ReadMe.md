@@ -10,17 +10,23 @@ Let's put **ISP manager** behind your existing **Nginx** reverse-proxy using a s
 
 ## 📂 Action chain
 
-### - 📄 Create a file:
+### - 📄 Create a file
 
 ```swift
   /etc/nginx/sites-available/isp.mysite.com.conf
 ```
 
-### - 📄 Enable it:
+### - 📄 Enable it
 
 ```swift
   sudo ln -s /etc/nginx/sites-available/isp.mysite.com.conf \
           /etc/nginx/sites-enabled/
+```
+
+### - 📄 Reload Nginx
+
+```swift
+  sudo nginx -t && sudo systemctl reload nginx && sudo systemctl status nginx
 ```
 
 ---
