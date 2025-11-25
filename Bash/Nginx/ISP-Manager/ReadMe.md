@@ -10,22 +10,18 @@ Let's put **ISP manager** behind your existing **Nginx** reverse-proxy using a s
 
 ## 📂 Action chain
 
-- 📄 Create a file:
+### - 📄 Create a file:
 
 ```swift
   /etc/nginx/sites-available/isp.mysite.com.conf
 ```
 
-  </br>
- 
-- 📄[Install_Cerbot.sh](./Install_Certbot.sh)
-  </br>
-   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-git-gitcli.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-git-gitcli.yml)
-  </br> the script for installing or updating Certbot.It can use with both web servers
-  Just select right key such as --nignx or --apache.
-  
-  too.
+### - 📄 Enable it:
 
+```swift
+  sudo ln -s /etc/nginx/sites-available/isp.mysite.com.conf \
+          /etc/nginx/sites-enabled/
+```
 
 ---
 
