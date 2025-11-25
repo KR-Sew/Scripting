@@ -8,9 +8,14 @@
 
 Let's put **ISP manager** behind your existing **Nginx** reverse-proxy using a subdomain such as `isp.mysite.com`, issue a **Let’s Encrypt** certificate for it using **Certbot**, and then proxy all traffic to the local port `1500` where **ISP manager** is running.
 
-## 📂 Folder Description
+## 📂 Action chain
 
-- 📄[Install_Certbot_Nginx.sh](./Install_Certbot_Nginx.sh)
+- 📄 Create a file:
+
+```swift
+  /etc/nginx/sites-available/isp.mysite.com.conf
+```
+
   </br>
   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-go.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-go.yml)
   </br> # Scripts for installation Certbot for using with Nginx web server.
