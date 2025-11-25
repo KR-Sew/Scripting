@@ -1,4 +1,4 @@
-# <img width="48" height="48" src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/external-nginx-accelerates-content-and-application-delivery-improves-security-logo-shadow-tal-revivo.png" alt="external-nginx-accelerates-content-and-application-delivery-improves-security-logo-shadow-tal-revivo"/>  Install NGINX from source and Cerbot for NGINX and Apache (Debian/Ubuntu)  
+# <img width="48" height="48" src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/external-nginx-accelerates-content-and-application-delivery-improves-security-logo-shadow-tal-revivo.png" alt="external-nginx-accelerates-content-and-application-delivery-improves-security-logo-shadow-tal-revivo"/> Configure NGINX for **ISP Manager** panel
 
 [![Debian](https://img.shields.io/badge/Debian-607078?style=flat&logo=debian&logoColor=white&logoSize=auto&labelColor=a81d33)](https://www.debian.org/)
 [![Ubuntu](https://img.shields.io/badge/Ubuntu-607078?style=flat&logo=ubuntu&logoColor=white&logoSize=auto&labelColor=e95420)](https://ubuntu.com/download)
@@ -6,7 +6,7 @@
 [![Bash](https://img.shields.io/badge/GNU%20Bash-4EAA25?style=flat&logo=gnubash&logoColor=white&logoSize=auto&labelColor=black)](https://www.gnu.org/software/bash/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-A collection of scripts that can install NGINX from source and install Certbot for NGINX or Apache web server on Debian/Ubuntu.  
+Let's put **ISP manager** behind your existing **Nginx** reverse-proxy using a subdomain such as `isp.mysite.com`, issue a **Let’s Encrypt** certificate for it using **Certbot**, and then proxy all traffic to the local port `1500` where **ISP manager** is running.
 
 ## 📂 Folder Description
 
