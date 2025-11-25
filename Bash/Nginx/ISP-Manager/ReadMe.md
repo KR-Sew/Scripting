@@ -29,6 +29,27 @@ Let's put **ISP manager** behind your existing **Nginx** reverse-proxy using a s
   sudo nginx -t && sudo systemctl reload nginx && sudo systemctl status nginx
 ```
 
+### - 📄 Issue a Let’s Encrypt certificate
+
+```bash
+  sudo certbot certonly --webroot -w /var/www/letsencrypt -d isp.mysite.com
+```
+
+ This will generate:
+
+- `/etc/letsencrypt/live/isp.mysite.com/fullchain.pem`
+- `/etc/letsencrypt/live/isp.mysite.com/privkey.pem`
+
+After that, reload Nginx again:
+
+```bash
+  sudo nginx -t && sudo systemctl reload nginx && sudo systemctl status nginx
+```
+
+### - 
+
+
+
 ---
 
 - 📄[README.md](ReadMe.md) # Project documentation
