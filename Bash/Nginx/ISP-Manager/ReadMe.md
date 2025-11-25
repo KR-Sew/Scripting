@@ -16,6 +16,8 @@ Let's put **ISP manager** behind your existing **Nginx** reverse-proxy using a s
   /etc/nginx/sites-available/isp.mysite.com.conf
 ```
 
+- Copy and put [isp.sitename.com.conf](isp.sitename.com.conf)
+
 ### - 📄 Enable it
 
 ```swift
