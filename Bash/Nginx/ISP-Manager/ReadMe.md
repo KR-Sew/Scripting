@@ -46,9 +46,36 @@ After that, reload Nginx again:
   sudo nginx -t && sudo systemctl reload nginx && sudo systemctl status nginx
 ```
 
-### - 
+### - To restrict ISPmanager access by IP:
 
+```nginx
+  location / {
+    allow 192.168.50.0/24;
+    allow 203.0.113.55;
+    deny all;
 
+    proxy_pass http://127.0.0.1:1500;
+    ...
+}
+```
+
+Sometimes ISPmanager tries to redirect to the original hostname or IP.
+
+Fix this inside ISPmanager:
+`In ISPmanager panel → Settings → Redirect / hostname settings`
+
+Set the “Panel access URL” to:
+
+```swift
+  https://isp.mysite.com
+```
+
+If needed, you can also add: 
+
+```nginx
+  proxy_set_header X-Forwarded-Host $host;
+  proxy_set_header X-Forwarded-Port 443;
+```
 
 ---
 
