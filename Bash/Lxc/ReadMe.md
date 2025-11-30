@@ -21,7 +21,7 @@ A collection of useful Bash scripts to work with **LXC/LXD** conatainers for aut
 
   [![MySQL](https://img.shields.io/badge/MySQL-4479A0?style=flat&logo=mysql&logoColor=white&logoSize=auto&labelColor=336791)](https://www.mysql.com/)
 
-- 📂 [MongoDb](./Mongo/)
+- 📂 [MongoDb](./MongoDB/)
   </p> Installing and managing MongoDB on Debian/Ubuntu LXC/LXD container
 
   [![MongoDB](https://img.shields.io/badge/MongoDB-004d39?style=flat&logo=mongodb&logoColor=white&logoSize=auto&labelColor=00e600)](https://www.mongodb.com/)
