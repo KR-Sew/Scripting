@@ -1,4 +1,4 @@
-# <img src="../../Assets/icons8-bash-48.svg" width=35 alt="Bash Scripts Collection">  Installing or Updating **Golang** to the latest version  
+# <img src="https://go.dev/blog/go-brand/Go-Logo/SVG/Go-Logo_Blue.svg" width=65 alt="Insttall and update Golang">  Installing or Updating **Golang** to the latest version  
 
 [![Debian](https://img.shields.io/badge/Debian-607078?style=flat&logo=debian&logoColor=white&logoSize=auto&labelColor=a81d33)](https://www.debian.org/)
 [![Ubuntu](https://img.shields.io/badge/Ubuntu-607078?style=flat&logo=ubuntu&logoColor=white&logoSize=auto&labelColor=e95420)](https://ubuntu.com/download)
