@@ -13,8 +13,10 @@ These are the scripts that can be used to install **Golang** from source.
 - 📄[Update_Golang.sh](./Update_Golang.sh)
   </br>
   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-go.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-go.yml)
-  </br> # Scripts for auto update Golang (Go)
+  </br> # This script check installed version of Go and if not install it or update it to the latest version
 - 📄[Update Go for all users.sh](./upd_go_for_allusers.sh)
+  </p>
+   # This script works as prvious one but for all users on the host where Golang is intalled.
 
  ---
 
