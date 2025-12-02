@@ -1,4 +1,4 @@
-# <img src="../../Assets/icons8-bash-48.svg" width=35 alt="Bash Scripts Collection">  Install or Update Git and add emoji for a commit
+# <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg" width=35 alt="Instatll and update Git">  Install or Update Git and add emoji for a commit
 
 [![Debian](https://img.shields.io/badge/Debian-607078?style=flat&logo=debian&logoColor=white&logoSize=auto&labelColor=a81d33)](https://www.debian.org/)
 [![Ubuntu](https://img.shields.io/badge/Ubuntu-607078?style=flat&logo=ubuntu&logoColor=white&logoSize=auto&labelColor=e95420)](https://ubuntu.com/download)
@@ -6,7 +6,7 @@
 [![Bash](https://img.shields.io/badge/GNU%20Bash-4EAA25?style=flat&logo=gnubash&logoColor=white&logoSize=auto&labelColor=black)](https://www.gnu.org/software/bash/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-There are scripts that can install Git and Git cli from source. And script that can add emoji to comments in a commit.  
+There are scripts that can install **Git** and **Git cli** from source. And script that can add emoji to comments in a commit.  
 
 ## 📂 Description
 
