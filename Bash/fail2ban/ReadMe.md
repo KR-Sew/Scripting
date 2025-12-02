@@ -1,4 +1,4 @@
-# <img src="../../Assets/icons8-bash-48.svg" width=35 alt="Bash Scripts Collection">  Fail2ban configuration for Debian/Ubuntu VPS  
+# <img src="../../Assets/Fail2ban_logo.png" width=35 alt="Bash Scripts Collection">  Fail2ban configuration for Debian/Ubuntu VPS  
 
 [![Debian](https://img.shields.io/badge/Debian-607078?style=flat&logo=debian&logoColor=white&logoSize=auto&labelColor=a81d33)](https://www.debian.org/)
 [![Ubuntu](https://img.shields.io/badge/Ubuntu-607078?style=flat&logo=ubuntu&logoColor=white&logoSize=auto&labelColor=e95420)](https://ubuntu.com/download)
