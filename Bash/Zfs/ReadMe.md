@@ -6,7 +6,7 @@
 [![Bash](https://img.shields.io/badge/GNU%20Bash-4EAA25?style=flat&logo=gnubash&logoColor=white&logoSize=auto&labelColor=black)](https://www.gnu.org/software/bash/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-These script can be useful to configure and manage **ZFS** volumes, pools, datasets 
+These script can be useful to configure and manage **ZFS** `volumes`, `pools`, `datasets` 
 
 ## 📂 Description
 
