@@ -6,7 +6,7 @@
 [![Bash](https://img.shields.io/badge/GNU%20Bash-4EAA25?style=flat&logo=gnubash&logoColor=white&logoSize=auto&labelColor=black)](https://www.gnu.org/software/bash/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-A collection of useful Bash scripts for system administration, automation, and DevOps workflows.  
+**Fail2ban** configuration that works along with **iptables**  
 
 ## 📂 Folder Description
 
