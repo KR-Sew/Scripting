@@ -12,10 +12,12 @@ There are scripts that can install **Git** and **Git cli** from source. And scri
 
 - 📄[Git-commit_with_emo.sh](./Git-commit_with_emo.sh)
   </br>
+  ![Git](https://img.shields.io/badge/%20git%20-%23F05033.svg?style=flat&logo=git&logoColor=white&logoSize=auto&labelColor=23F05033)
   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-go.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-go.yml)
   </br> Add emoji to commit description
 - 📄[Update_Git_GitCli.sh](./Update_Git_GitCli.sh)
   </br>
+   ![Git](https://img.shields.io/badge/%20git%20-%23F05033.svg?style=flat&logo=git&logoColor=white&logoSize=auto&labelColor=23F05033)
    [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-git-gitcli.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-git-gitcli.yml)
   </br> the script for update Git and Git cli from source
 
