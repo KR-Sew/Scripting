@@ -12,10 +12,10 @@
 
 - 📂[Iptables](./iptables/)
   
-  Set up fail2ban for `iptables` on **Debian/Ubuntu**
+  Set up **fail2ban** for `iptables` on **Debian/Ubuntu**
 - 📂[UFW](./UFW/)
   
-  Set up `fail2ban` for `UFW` on **Debian/Ubuntu**
+  Set up **fail2ban** for `UFW` on **Debian/Ubuntu**
 
 ---
 
