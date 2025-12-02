@@ -6,7 +6,7 @@
 [![Bash](https://img.shields.io/badge/GNU%20Bash-4EAA25?style=flat&logo=gnubash&logoColor=white&logoSize=auto&labelColor=black)](https://www.gnu.org/software/bash/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-There are scripts that can install Git and Git cli from source. And script that can add emoji to comments in a commit.  
+There are scripts that can install **Git** and **Git cli** from source. And script that can add emoji to comments in a commit.  
 
 ## 📂 Description
 
