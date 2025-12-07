@@ -12,7 +12,7 @@ PowerShell Custom cmdlets for extending functionality
 - 📂 [Select-GitEmoCommit](./Select-GitEmoCommit/)   # Cmdlet for adding emoji to the commit description in cli mode
 - 📂 [Backup-WSLImage](.//Backup-WSL/) # Cmdlet for creating a WSL backup in a tar archive
 - 📂 [Send-Message](./Send-Msg/)
-- 📂 [Git fixing module](./Git-Fixing-Module/)
+- 📂 [Git fixing module](./Git-Fixing-Module/) # Remove deleted or moved files from the Git indexes
 - 📄 [README.md](ReadMe.md)                 # Description of this folder
 
 ---
