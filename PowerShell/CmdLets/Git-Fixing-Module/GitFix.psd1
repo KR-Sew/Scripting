@@ -6,7 +6,7 @@
     Description = 'Utilities for fixing orphaned deletes and moves in Git repositories.'
     FunctionsToExport = @(
         'Remove-GitDeleted',
-        'Stage-GitAdded',
-        'Fix-GitMoves'
+        'Trace-GitAdded',
+        'Repair-GitMoves'
     )
 }
