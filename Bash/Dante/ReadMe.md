@@ -1,4 +1,4 @@
-# <img src="../../Assets/icons8-bash-48.svg" width=35 alt="Bash Scripts Collection">  Installing and managing **Dante** Socks5 proxy   
+# <img src="../../Assets/icons8-bash-48.svg" width=35 alt="Bash Scripts Collection">  Installing and managing **Dante** Socks5 proxy
 
 [![Dante Proxy](https://img.shields.io/badge/Dante_Proxy-2C3E50?style=flat&logo=cloudflare&logoColor=white)](https://www.inet.no/dante/)
 [![Debian](https://img.shields.io/badge/Debian-607078?style=flat&logo=debian&logoColor=white&logoSize=auto&labelColor=a81d33)](https://www.debian.org/)
@@ -9,7 +9,6 @@
 ![Version](https://img.shields.io/badge/version-1.4.2+-blue?style=flat)
 
 Bash scripts for automation and manage socks5 proxy **Dante** workflows.  
-
 
 ## 📂 Description
 
