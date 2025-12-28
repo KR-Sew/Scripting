@@ -45,6 +45,47 @@ A collection of scripts that can install NGINX from source and install Certbot f
   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-rclone.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-rclone.yml)
   </br> #Script for adding **stream** (SNI) module to **Nginx** installed from source. This script will check **Nginx** version, download it, unpack, and `reconfigure` and `install` stream module.
 
+
+sudo apt-get update && sudo apt-get install -y apache2-utils
+sudo htpasswd -c /opt/squid/auth/passwd proxyuser
+# add more users (no -c):
+sudo htpasswd /opt/squid/auth/passwd anotheruser
+sudo chmod 640 /opt/squid/auth/passwd
+
+
+
+cd /opt/squid
+docker compose up -d
+docker logs -f squid
+
+
+
+sudo ufw allow from 203.0.113.10 to any port 3128 proto tcp
+sudo ufw deny 3128/tcp
+sudo ufw status verbose
+
+
+Quick client tests
+From a client machine:
+curl -v --proxy http://proxyuser:YOURPASS@YOUR_SERVER_IP:3128 https://example.com
+
+
+Set system env (Linux):
+export http_proxy="http://proxyuser:YOURPASS@YOUR_SERVER_IP:3128"
+export https_proxy="http://proxyuser:YOURPASS@YOUR_SERVER_IP:3128"
+
+
+APT through proxy (example):
+
+Create /etc/apt/apt.conf.d/80proxy:
+
+Acquire::http::Proxy "http://proxyuser:YOURPASS@YOUR_SERVER_IP:3128";
+Acquire::https::Proxy "http://proxyuser:YOURPASS@YOUR_SERVER_IP:3128";
+
+
+
+
+
 ---
 
 - 📄[README.md](ReadMe.md) # Project documentation
