@@ -69,32 +69,28 @@ function Get-InstalledAzVersion {
     }
 }
 
-function Get-LatestAzVersion {
+function Get-InstalledAzVersion {
     try {
-        Write-Log "Querying latest Azure CLI version from Microsoft (GitHub)..."
+        $p = Start-Process az `
+            -ArgumentList "version --output json" `
+            -NoNewWindow -PassThru -Wait `
+            -RedirectStandardOutput "$env:TEMP\azver.json" `
+            -RedirectStandardError "$env:TEMP\azerr.txt"
 
-        $headers = @{ "User-Agent" = "PowerShell" }
-        $r = Invoke-RestMethod `
-            -Uri "https://api.github.com/repos/Azure/azure-cli/releases/latest" `
-            -Headers $headers `
-            -ErrorAction Stop
-
-        # tag examples:
-        # v2.80.0
-        # azure-cli-2.81.0
-
-        if ($r.tag_name -match '(\d+\.\d+\.\d+)') {
-            return [version]$Matches[1]
+        if ($p.ExitCode -ne 0) {
+            Write-Log "Azure CLI exists but failed to execute correctly." "WARN"
+            return $null
         }
-        else {
-            throw "Unable to parse version from tag: $($r.tag_name)"
-        }
+
+        $v = Get-Content "$env:TEMP\azver.json" -Raw | ConvertFrom-Json
+        return [version]$v.'azure-cli'
     }
     catch {
-        Write-Log "Failed to fetch latest version: $_" "ERROR"
+        Write-Log "Azure CLI execution failed: $_" "WARN"
         return $null
     }
 }
+
 
 
 # ================== INSTALL METHOD ==================
