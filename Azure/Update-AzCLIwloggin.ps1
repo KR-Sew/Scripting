@@ -79,13 +79,23 @@ function Get-LatestAzVersion {
             -Headers $headers `
             -ErrorAction Stop
 
-        return [version]($r.tag_name.TrimStart("v"))
+        # tag examples:
+        # v2.80.0
+        # azure-cli-2.81.0
+
+        if ($r.tag_name -match '(\d+\.\d+\.\d+)') {
+            return [version]$Matches[1]
+        }
+        else {
+            throw "Unable to parse version from tag: $($r.tag_name)"
+        }
     }
     catch {
         Write-Log "Failed to fetch latest version: $_" "ERROR"
         return $null
     }
 }
+
 
 # ================== INSTALL METHOD ==================
 
