@@ -100,9 +100,10 @@ function Find-InstallMethod {
     }
 
     if (Get-Command pip -ErrorAction SilentlyContinue) {
-        try {
-            if (pip show azure-cli 2>$null) { return "pip" }
-        } catch {}
+        pip show azure-cli *> $null
+          if ($LASTEXITCODE -eq 0) {
+              return "pip"
+           }
     }
 
     return "msi"
