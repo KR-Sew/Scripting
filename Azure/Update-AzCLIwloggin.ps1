@@ -89,7 +89,7 @@ function Get-LatestAzVersion {
 
 # ================== INSTALL METHOD ==================
 
-function Detect-InstallMethod {
+function Find-InstallMethod {
     if (Get-Command winget -ErrorAction SilentlyContinue) {
         $pkg = winget list --id Microsoft.AzureCLI 2>$null
         if ($pkg -match "Microsoft.AzureCLI") { return "winget" }
@@ -177,7 +177,7 @@ if ($installedVersion -and $installedVersion -ge $latestVersion) {
 
 Write-Log "Update required. Detecting installation method..."
 
-$method = Detect-InstallMethod
+$method = Find-InstallMethod
 Write-Log "Detected installation method: $method"
 
 switch ($method) {
