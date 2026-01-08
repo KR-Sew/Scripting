@@ -57,8 +57,51 @@ function Assert-Admin {
 
     Write-Log "Running with administrative privileges." "OK"
 }
+# find executable path
+function Find-AzExecutable {
+    $paths = @(
+        "$env:ProgramFiles\Microsoft SDKs\Azure\CLI2\wbin\az.cmd",
+        "$env:ProgramFiles\Azure\CLI2\wbin\az.cmd",
+        "$env:LocalAppData\Microsoft\WindowsApps\az.cmd"  # Store version
+    )
+
+    foreach ($p in $paths) {
+        if (Test-Path $p) { return $p }
+    }
+
+    return $null
+}
+
 
 # ================== VERSION ==================
+function Get-LatestAzVersion {
+    try {
+        Write-Log "Querying latest Azure CLI version from Microsoft (GitHub)..."
+
+        $headers = @{ "User-Agent" = "PowerShell" }
+        $r = Invoke-RestMethod `
+            -Uri "https://api.github.com/repos/Azure/azure-cli/releases/latest" `
+            -Headers $headers `
+            -ErrorAction Stop
+
+        # tag examples:
+        # v2.80.0
+        # azure-cli-2.81.0
+
+        if ($r.tag_name -match '(\d+\.\d+\.\d+)') {
+            return [version]$Matches[1]
+        }
+        else {
+            throw "Unable to parse version from tag: $($r.tag_name)"
+        }
+    }
+    catch {
+        Write-Log "Failed to fetch latest version: $_" "ERROR"
+        return $null
+    }
+}
+
+
 
 function Get-InstalledAzVersion {
     try {
@@ -70,19 +113,15 @@ function Get-InstalledAzVersion {
 }
 
 function Get-InstalledAzVersion {
+    param(
+        [string]$AzPath = "az"
+    )
+
     try {
-        $p = Start-Process az `
-            -ArgumentList "version --output json" `
-            -NoNewWindow -PassThru -Wait `
-            -RedirectStandardOutput "$env:TEMP\azver.json" `
-            -RedirectStandardError "$env:TEMP\azerr.txt"
+        $out = & $AzPath version --output json 2>$null
+        if (-not $out) { return $null }
 
-        if ($p.ExitCode -ne 0) {
-            Write-Log "Azure CLI exists but failed to execute correctly." "WARN"
-            return $null
-        }
-
-        $v = Get-Content "$env:TEMP\azver.json" -Raw | ConvertFrom-Json
+        $v = $out | ConvertFrom-Json
         return [version]$v.'azure-cli'
     }
     catch {
@@ -91,6 +130,20 @@ function Get-InstalledAzVersion {
     }
 }
 
+
+# ================== UNINSTALL METHOD ==================
+function Remove-AzureCLI {
+    Write-Log "Attempting to remove existing Azure CLI installation..."
+
+    if (Get-Command winget -ErrorAction SilentlyContinue) {
+        winget uninstall --id Microsoft.AzureCLI --silent --accept-source-agreements 2>$null
+    }
+
+    Get-AppxPackage Microsoft.AzureCLI -ErrorAction SilentlyContinue |
+        Remove-AppxPackage -ErrorAction SilentlyContinue
+
+    Write-Log "Removal attempt completed."
+}
 
 
 # ================== INSTALL METHOD ==================
@@ -177,6 +230,18 @@ if (-not $latestVersion) {
 
 Write-Log "Latest available version: $latestVersion"
 
+$AzBroken = $false
+
+$installedVersion = Get-InstalledAzVersion
+if ($installedVersion) {
+    Write-Log "Installed version: $installedVersion" "OK"
+}
+else {
+    Write-Log "Azure CLI not detected or broken." "WARN"
+    $AzBroken = $true
+}
+
+
 if ($installedVersion -and $installedVersion -ge $latestVersion) {
     Write-Log "Azure CLI is already up to date. No update required." "OK"
     exit 0
@@ -184,7 +249,15 @@ if ($installedVersion -and $installedVersion -ge $latestVersion) {
 
 Write-Log "Update required. Detecting installation method..."
 
-$method = Find-InstallMethod
+if ($AzBroken) {
+    Write-Log "Broken installation detected. Performing cleanup before reinstall." "WARN"
+    Remove-AzureCLI
+    $method = "msi"   # force clean install
+}
+else {
+    $method = Find-InstallMethod
+}
+
 Write-Log "Detected installation method: $method"
 
 switch ($method) {
@@ -197,7 +270,14 @@ switch ($method) {
 
 Start-Sleep -Seconds 3
 
-$newVersion = Get-InstalledAzVersion
+$azPath = Find-AzExecutable
+if (-not $azPath) {
+    Write-Log "Azure CLI executable not found in known install paths." "ERROR"
+    exit 10
+}
+
+$newVersion = Get-InstalledAzVersion -AzPath $azPath
+
 if ($newVersion) {
     Write-Log "Version after update: $newVersion" "OK"
 
