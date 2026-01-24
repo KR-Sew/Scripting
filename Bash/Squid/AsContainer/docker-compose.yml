@@ -1,0 +1,24 @@
+services:
+  squid:
+    image: ubuntu:24.04
+    container_name: squid
+    restart: unless-stopped
+    ports:
+      - "3128:3128"
+    volumes:
+      - ./conf/squid.conf:/etc/squid/squid.conf:ro
+      - ./auth:/etc/squid/auth:ro
+      - ./cache:/var/spool/squid
+      - ./logs:/var/log/squid
+    command: >
+      bash -lc "
+      apt-get update &&
+      DEBIAN_FRONTEND=noninteractive apt-get install -y squid apache2-utils ca-certificates &&
+      squid -z &&
+      exec squid -N -f /etc/squid/squid.conf
+      "
+    healthcheck:
+      test: ["CMD-SHELL", "squidclient -h 127.0.0.1 -p 3128 mgr:info >/dev/null 2>&1 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
