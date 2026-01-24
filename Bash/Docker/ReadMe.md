@@ -15,7 +15,15 @@ Bash Scripts that is used for managing Docker engine and Docker containers.
   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml)
   </br>
 
+▶ How to run
+
+```bash
+  chmod +x install-docker-debian13.sh
+  sudo ./install-docker-debian13.sh
+```
+
 ✅ After install — verify
+
 ```bash
    docker --version
    docker compose version
