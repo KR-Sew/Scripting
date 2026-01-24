@@ -15,6 +15,13 @@ Bash Scripts that is used for managing Docker engine and Docker containers.
   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml)
   </br>
 
+✅ After install — verify
+```bash
+   docker --version
+   docker compose version
+   docker-compose version
+```
+
 ---
 
 - 📄[README.md](ReadMe.md) # Project documentation
