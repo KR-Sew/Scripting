@@ -7,13 +7,11 @@
 
 There is a collection of useful `PowerShell` scripts for preparing to get [**Applied Skills: Administer Active Directory Domain Services**](https://learn.microsoft.com/en-us/credentials/applied-skills/administer-active-directory-domain-services/)
 
-## 📂 Description
+## 📂 Create and manage Active Directory Objects
 
-- 📂 [Create and manage Active Directory Objects](./Create-Manage-ADObjects/)
-  <br>
-  - [Original learning module on Learn.Microsoft.com](https://learn.microsoft.com/training/modules/create-manage-active-directory-objects/)
+- 📂 [Create and manage Active Directory Objects on Learn.Microsoft.com](https://learn.microsoft.com/training/modules/create-manage-active-directory-objects/)
 
-- 📄 README.md # Project documentation
+- 📄 [README.md](./ReadMe.md) # Project documentation
 
 ---
 
