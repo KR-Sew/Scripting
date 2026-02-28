@@ -1,4 +1,4 @@
-# ☁️ Cloud Management Scripts <img src="../Assets/icons8-amazon-web-services-48.svg" width="28" alt="Azure"> AWS
+# ☁️ Cloud <img src="../Assets/icons8-amazon-web-services-48.svg" width="28" alt="Azure"> AWS management
 
 [![AWS](https://custom-icon-badges.demolab.com/badge/Cloud-AWS-e95420?style=flat&logo=aws&logoColor=white&logoSize=auto&labelColor=000000)](https://explore.skillbuilder.aws/learn/learning-plans/85/devops-engineer-learning-plan)
 [![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat&logo=gnubash&logoColor=white&logoSize=auto&labelColor=black)](https://www.gnu.org/software/bash/)
@@ -9,6 +9,8 @@
 ---
 
 A collection of PowerShell and Bash scripts for automating cloud resource management, infrastructure deployment, and DevOps tasks in Amazon Web Services.
+
+- [Intallations](./Installations/) Contains useful scripts for installing the **AWS CLI using** `PowerShell` or `Bash`
 
 ---
 
