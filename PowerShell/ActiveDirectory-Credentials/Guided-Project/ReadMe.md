@@ -9,21 +9,6 @@ There is a collection of useful `PowerShell` scripts for preparing to get [**App
 
 ## 📂 Description
 
-- 📂 [Deploy and manage Active Directory Domain Services domain controllers](./Deploy/)
-  <br>
-  - [Original learning module on Learn.Microsoft.com](https://learn.microsoft.com/training/modules/deploy-manage-active-directory-domain-services-domain-controllers/)  
-
-- 📂 [Create and manage Active Directory Objects](./Create-Manage-ADObjects/)
-  <br>
-  - [Original learning module on Learn.Microsoft.com](https://learn.microsoft.com/training/modules/create-manage-active-directory-objects/)
-- 📂 [Create and configure Group Policy Objects in Active Directory](./Create-Configure-GPO/)
-  <br>
-  - [Original learning module on Learn.Microsoft.com]()
-  
-- 📂 [Manage security in Active Directory](./Manage-Security/)
-  <br>
-  - [Original learning module on Learn.Microsoft.com](https://learn.microsoft.com/training/modules/manage-security-active-directory/)
-
 - 📂 [Guided project - Administer Active Directory Domain Services](./Guided-Project/)
   <br>
   - [Original learning module on Learn.Microsoft.com](https://learn.microsoft.com/training/modules/guided-project-administer-active-directory-domain-services/)
