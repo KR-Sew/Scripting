@@ -1,4 +1,4 @@
-# ☁️ Cloud Management Scripts <img src="../Assets/icons8-amazon-web-services-48.svg" width="28" alt="Azure"> AWS
+# ☁️ Installing the <img src="../../Assets/icons8-amazon-web-services-48.svg" width="28" alt="Azure"> AWS CLI
 
 [![AWS](https://custom-icon-badges.demolab.com/badge/Cloud-AWS-e95420?style=flat&logo=aws&logoColor=white&logoSize=auto&labelColor=000000)](https://explore.skillbuilder.aws/learn/learning-plans/85/devops-engineer-learning-plan)
 [![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat&logo=gnubash&logoColor=white&logoSize=auto&labelColor=black)](https://www.gnu.org/software/bash/)
@@ -8,7 +8,10 @@
 
 ---
 
-A collection of PowerShell and Bash scripts for automating cloud resource management, infrastructure deployment, and DevOps tasks in Amazon Web Services.
+The folder contains two scripts for installing the **AWS CLI** on **Windows** and **Linux** `Debian/Ubuntu` operating systems.
+
+- [Install-AwsCli.ps1](./Install-AwsCli.ps1) for installing on Windows systems
+- [Install-AwsCli.sh](./Install-AwsCli.sh) for installing on Linux (Debian/Ubuntu) operating systems
 
 ---
 
