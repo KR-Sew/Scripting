@@ -7,11 +7,9 @@
 
 There is a collection of useful `PowerShell` scripts for preparing to get [**Applied Skills: Administer Active Directory Domain Services**](https://learn.microsoft.com/en-us/credentials/applied-skills/administer-active-directory-domain-services/)
 
-## 📂 Description
+## 📂 Create and configure Group Policy Objects in Active Directory
 
-- 📂 [Create and configure Group Policy Objects in Active Directory](./Create-Configure-GPO/)
-  <br>
-  - [Original learning module on Learn.Microsoft.com]()
+- 📂 [Create and configure Group Policy Objects in Active Directory (Learn.Microsoft.com)](https://learn.microsoft.com/training/modules/create-configure-group-policy-objects-active-directory/)
   
 - 📄 README.md # Project documentation
 
