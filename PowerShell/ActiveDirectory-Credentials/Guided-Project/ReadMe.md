@@ -9,11 +9,9 @@ There is a collection of useful `PowerShell` scripts for preparing to get [**App
 
 ## 📂 Description
 
-- 📂 [Guided project - Administer Active Directory Domain Services](./Guided-Project/)
-  <br>
-  - [Original learning module on Learn.Microsoft.com](https://learn.microsoft.com/training/modules/guided-project-administer-active-directory-domain-services/)
+- 📂 [Guided project - Administer Active Directory Domain Services on Learn.Microsoft.com](https://learn.microsoft.com/training/modules/guided-project-administer-active-directory-domain-services/)
 
-- 📄 README.md # Project documentation
+- 📄 [README.md](./ReadMe.md) # Project documentation
 
 ---
 
