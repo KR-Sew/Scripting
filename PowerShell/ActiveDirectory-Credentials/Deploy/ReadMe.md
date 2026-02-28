@@ -9,11 +9,9 @@ There is a collection of useful `PowerShell` scripts for preparing to get [**App
 
 ## 📂 Description
 
-- 📂 [Deploy and manage Active Directory Domain Services domain controllers](./Deploy/)
-  <br>
-  - [Original learning module on Learn.Microsoft.com](https://learn.microsoft.com/training/modules/deploy-manage-active-directory-domain-services-domain-controllers/)  
+- 📂 [Deploy and manage Active Directory Domain Services domain controllers on Learn.Microsoft.com](https://learn.microsoft.com/training/modules/deploy-manage-active-directory-domain-services-domain-controllers/)  
 
-- 📄 README.md # Project documentation
+- 📄 [README.md](./ReadMe.md) # Project documentation
 
 ---
 
