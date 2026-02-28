@@ -6,7 +6,7 @@
 
 There is a collection of useful `PowerShell` scripts for preparing to get [**Applied Skills: Administer Active Directory Domain Services**](https://learn.microsoft.com/en-us/credentials/applied-skills/administer-active-directory-domain-services/)
 
-## <img src="../../../Assets/ADirecotryFolders.svg" width="35" alt="Active Directory Domain Services">📂 Deploy and manage Active Directory Domain Services domain controllers
+## <img src="../../../Assets/ADirecotryFolders.svg" width="35" alt="Active Directory Domain Services"> Deploy and manage Active Directory Domain Services domain controllers
 
 ---
 
