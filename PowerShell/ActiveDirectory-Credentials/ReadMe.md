@@ -9,8 +9,13 @@ There is a collection of useful `PowerShell` scripts for preparing to get [**App
 
 ## 📂 Description
 
-- 📂 [CmdLets](./CmdLets/) # Custom CmdLets folder
-- 📂 [MS Hyper V and VM](./Virtualization/) # Scripts for automated backups
+- 📂 [Deploy and manage Active Directory Domain Services domain controllers](./CmdLets/)
+  <br>
+  - [Original learning module on Learn.Microsoft.com](https://learn.microsoft.com/training/modules/deploy-manage-active-directory-domain-services-domain-controllers/)  
+
+- 📂 [Create and manage Active Directory Objects](./Virtualization/)
+  <br>
+  - [Original learning module on Learn.Microsoft.com](https://learn.microsoft.com/training/modules/create-manage-active-directory-objects/)
 - 📂 [System uitilities](./System-Utils/) # Scripts for manage operating systems
 - 📂 [Manage SQL server](./ManageSQL/)# Scripts for managing SQL server
 - 📄 README.md # Project documentation
