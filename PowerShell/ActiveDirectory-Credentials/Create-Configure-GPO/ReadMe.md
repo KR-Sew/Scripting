@@ -9,7 +9,7 @@ There is a collection of useful `PowerShell` scripts for preparing to get [**App
 
 ## 📂 Create and configure Group Policy Objects in Active Directory
 
-- 📂 [Create and configure Group Policy Objects in Active Directory (Learn.Microsoft.com)](https://learn.microsoft.com/training/modules/create-configure-group-policy-objects-active-directory/)
+- 📂 [Create and configure Group Policy Objects in Active Directory on Learn.Microsoft.com](https://learn.microsoft.com/training/modules/create-configure-group-policy-objects-active-directory/)
   
 - 📄 [README.md](./ReadMe.md) # Project documentation
 
