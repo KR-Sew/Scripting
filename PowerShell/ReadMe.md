@@ -10,8 +10,14 @@ There is a collection of useful **PowerShell** scripts for system administration
 ## 📂 Description
 
 - 📂 [Applied Skills:Active Directory](./ActiveDirectory-Credentials/)
-- 📂 [CmdLets](./CmdLets/) # Custom CmdLets folder
+  <br>
+  - Preparation for getting **Microsoft Applied Skills**: `Acitve Directory Domain Service`
+- 📂 [CmdLets](./CmdLets/)
+  <br>
+  - Custom **PowerShell** `CmdLets` collection
 - 📂 [Failover Cluster management](./Failover_Cluster/)
+  <br>
+  - **Failover Cluster** management scripts
 - 📂 [MS Hyper V and VM](./Virtualization/)
   <br>
   - **Microsof Hyper-V** virtualizaiton management scripts
@@ -19,8 +25,12 @@ There is a collection of useful **PowerShell** scripts for system administration
   <br>
   - **Space storage direct** (`S2D`) management scripts
 - 📂 [System uitilities](./System-Utils/) # Scripts for manage operating systems
-- 📂 [Manage SQL server](./ManageSQL/)# Scripts for managing SQL server
-- 📄 README.md # Project documentation
+  <br>
+  - **System Service** and **System Configuraion** management scripts
+- 📂 [Manage SQL server](./ManageSQL/)
+  <br>
+  - **MS SQL** management scripts (will be moved to DevTools repo soon)
+- 📄 [README.md](./ReadMe.md) # Project documentation
 
 ---
 
