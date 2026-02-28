@@ -7,13 +7,11 @@
 
 There is a collection of useful `PowerShell` scripts for preparing to get [**Applied Skills: Administer Active Directory Domain Services**](https://learn.microsoft.com/en-us/credentials/applied-skills/administer-active-directory-domain-services/)
 
-## 📂 Description
+## 📂 Manage security in Active Directory
 
-- 📂 [Manage security in Active Directory](./Manage-Security/)
-  <br>
-  - [Original learning module on Learn.Microsoft.com](https://learn.microsoft.com/training/modules/manage-security-active-directory/)
+- 📂 [Manage security in Active Directory on Learn.Microsoft.com](https://learn.microsoft.com/training/modules/manage-security-active-directory/)
 
-- 📄 README.md # Project documentation
+- 📄 [README.md](./ReadMe.md) # Project documentation
 
 ---
 
