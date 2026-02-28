@@ -16,8 +16,14 @@ There is a collection of useful `PowerShell` scripts for preparing to get [**App
 - 📂 [Create and manage Active Directory Objects](./Virtualization/)
   <br>
   - [Original learning module on Learn.Microsoft.com](https://learn.microsoft.com/training/modules/create-manage-active-directory-objects/)
-- 📂 [System uitilities](./System-Utils/) # Scripts for manage operating systems
-- 📂 [Manage SQL server](./ManageSQL/)# Scripts for managing SQL server
+- 📂 [Create and configure Group Policy Objects in Active Directory](./System-Utils/)
+  <br>
+  - [Original learning module on Learn.Microsoft.com]()
+  
+- 📂 [Manage security in Active Directory](./ManageSQL/)
+  <br>
+  - [Original learning module on Learn.Microsoft.com](https://learn.microsoft.com/training/modules/manage-security-active-directory/)
+  
 - 📄 README.md # Project documentation
 
 ---
