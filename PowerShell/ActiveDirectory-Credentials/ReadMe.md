@@ -23,7 +23,11 @@ There is a collection of useful `PowerShell` scripts for preparing to get [**App
 - 📂 [Manage security in Active Directory](./ManageSQL/)
   <br>
   - [Original learning module on Learn.Microsoft.com](https://learn.microsoft.com/training/modules/manage-security-active-directory/)
-  
+
+- 📂 [Guided project - Administer Active Directory Domain Services]()
+  <br>
+  - [Original learning module on Learn.Microsoft.com](https://learn.microsoft.com/training/modules/guided-project-administer-active-directory-domain-services/)
+
 - 📄 README.md # Project documentation
 
 ---
