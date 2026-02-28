@@ -7,7 +7,7 @@
 
 There is a collection of useful `PowerShell` scripts for preparing to get [**Applied Skills: Administer Active Directory Domain Services**](https://learn.microsoft.com/en-us/credentials/applied-skills/administer-active-directory-domain-services/)
 
-## 📂 Description
+## 📂 Guided project - Administer Active Directory Domain Services
 
 - 📂 [Guided project - Administer Active Directory Domain Services on Learn.Microsoft.com](https://learn.microsoft.com/training/modules/guided-project-administer-active-directory-domain-services/)
 
