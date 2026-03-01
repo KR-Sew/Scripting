@@ -13,8 +13,14 @@ A collection of useful Bash scripts for system administration, automation, and D
 
 - ### <img width="25" src="https://img.icons8.com/fluency/48/bash.png" alt="bash"/> [AWK](./Awk/)
   - Installing or updating **Awk** (`gawk` version and set up it as default) on **Debian/Ubuntu**
+- ### [<img width="85" src="..//Assets/ceph_logo_icon_169421.svg" alt="Ceph"/>](./Ceph/)
+  - Installing managing and configuring **Ceph** on **Debian/Ubuntu**
 - ### <img width="25" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-crm-sales-flaticons-lineal-color-flat-icons-3.png" alt="external-crm-sales-flaticons-lineal-color-flat-icons-3"/> [CRM](./CRM/)
   - Installing and configuring **CRM** systems
+- ### <img width="35" src="../Assets/inet_dante.png" alt="Dante proxy"/> [Dante Proxy](./Dante/)
+  - Installing and managing **Dante Socks Proxy**
+- ### [<img width="95" src="../Assets/docker-logo-blue.svg" alt="Docker"/>](./Docker/)
+  - Installing and managing **Docker** on **Debian/Ubuntu** and **Windows** environment
 - ### <img width="25" src="https://img.icons8.com/color/48/fail.png" alt="fail"/> [fail2ban](./fail2ban/)
   - Installing and configuring **fail2ban** with **UFW** and **iptables** on **Debian/Ubuntu**
 - ### <img width="25" src="https://img.icons8.com/color/48/git.png" alt="git"/>[Git](./Git/)
@@ -25,6 +31,8 @@ A collection of useful Bash scripts for system administration, automation, and D
   - Mange **K3s** systems
 - ### <img width="25" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-logs-computer-programming-icons-flaticons-lineal-color-flat-icons-2.png" alt="external-logs-computer-programming-icons-flaticons-lineal-color-flat-icons-2"/> [Logs](./Logs/)
   - Managing and configuring  **Logs** files
+- ### <img width="25" src="../Assets/lxd-lxc_logo.png" alt="LXC/LXD"/> [ LXC/LXD containers](./Lxc/)
+  - Managing and Installing **LXC/LXD** containers on **Debian/Ubuntu**
 - ### <img width="25" src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/external-nginx-accelerates-content-and-application-delivery-improves-security-logo-shadow-tal-revivo.png" alt="external-nginx-accelerates-content-and-application-delivery-improves-security-logo-shadow-tal-revivo"/> [Nginx](./Nginx/)
   - Scripts for auto installing and updating **Nginx** web server from source.
 - ### [<img width="96" height="" src="https://rclone.org/img/logo_on_dark__horizontal_color.svg"/>](./Rclone/)
