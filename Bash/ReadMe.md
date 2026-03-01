@@ -33,6 +33,8 @@ A collection of useful Bash scripts for system administration, automation, and D
   - Managing and configuring  **Logs** files
 - ### <img width="25" src="../Assets/lxd-lxc_logo.png" alt="LXC/LXD"/> [ LXC/LXD containers](./Lxc/)
   - Managing and Installing **LXC/LXD** containers on **Debian/Ubuntu**
+- ### [Message of the Day](./Motd/)
+  - Some examples of **MOTD** graphics adn information scripts  
 - ### <img width="25" src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/external-nginx-accelerates-content-and-application-delivery-improves-security-logo-shadow-tal-revivo.png" alt="external-nginx-accelerates-content-and-application-delivery-improves-security-logo-shadow-tal-revivo"/> [Nginx](./Nginx/)
   - Scripts for auto installing and updating **Nginx** web server from source.
 - ### [<img width="96" height="" src="https://rclone.org/img/logo_on_dark__horizontal_color.svg"/>](./Rclone/)
