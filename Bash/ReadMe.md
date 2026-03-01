@@ -23,18 +23,13 @@ A collection of useful Bash scripts for system administration, automation, and D
   - Manage **Golang**. Install the latest version or update it.
 - ### <img width="25" src="https://img.icons8.com/color/48/kubernetes.png" alt="kubernetes"/> [Kubernetes](./Kubernetes/)
   - Mange **K3s** systems
-- <img width="35" height="35" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-logs-computer-programming-icons-flaticons-lineal-color-flat-icons-2.png" alt="external-logs-computer-programming-icons-flaticons-lineal-color-flat-icons-2"/> [Logs](./Logs/)
-  </p>Manage log files
-- <img width="35" height="35" src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/external-nginx-accelerates-content-and-application-delivery-improves-security-logo-shadow-tal-revivo.png" alt="external-nginx-accelerates-content-and-application-delivery-improves-security-logo-shadow-tal-revivo"/> [Nginx](./Nginx/)
-  </p> Scripts for auto installing and updating Nginx web server from source.
-- [<img width="96" height="" src="https://rclone.org/img/logo_on_dark__horizontal_color.svg"/>](./Rclone/)
-  </p> Installing or Updating bash script for Rclone.
+- ### <img width="25" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-logs-computer-programming-icons-flaticons-lineal-color-flat-icons-2.png" alt="external-logs-computer-programming-icons-flaticons-lineal-color-flat-icons-2"/> [Logs](./Logs/)
+  - Managing and configuring  **Logs** files
+- ### <img width="25" src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/external-nginx-accelerates-content-and-application-delivery-improves-security-logo-shadow-tal-revivo.png" alt="external-nginx-accelerates-content-and-application-delivery-improves-security-logo-shadow-tal-revivo"/> [Nginx](./Nginx/)
+  - Scripts for auto installing and updating **Nginx** web server from source.
+- ### [<img width="96" height="" src="https://rclone.org/img/logo_on_dark__horizontal_color.svg"/>](./Rclone/)
+  - Installing or Updating bash script for **Rclone**.
   
-- 📄[Update_gawk.sh](Update_gawk.sh) # Script for automatic update gawk
-  </br>
-  [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml)
-  </br>
-
 ---
 
 - 📄[README.md](ReadMe.md) # Project documentation
