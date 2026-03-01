@@ -41,7 +41,11 @@ A collection of useful Bash scripts for system administration, automation, and D
   - Installing and management **Proxmox** virtualization environment
 - ### [<img width="96" height="" src="https://rclone.org/img/logo_on_dark__horizontal_color.svg"/>](./Rclone/)
   - Installing or Updating bash script for **Rclone**.
-  
+- ### <img width="55" src="../Assets/SquidIco.png" alt="Squid Proxy"/> [Squid Proxy Server](./Squid/)
+  - Installing and managing **Squid** proxy server on **Linux** (**Debian/Ubuntu**)
+- ### [<img width="125" src="../Assets/openZFS-ico.png" alt="Open ZFS"/>](./Zfs/)
+  - Installing and managing **Open ZFS** on **Debian/Ubuntu**  
+
 ---
 
 - 📄[README.md](ReadMe.md) # Project documentation
