@@ -37,6 +37,8 @@ A collection of useful Bash scripts for system administration, automation, and D
   - Some examples of **MOTD** graphics adn information scripts  
 - ### <img width="25" src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/external-nginx-accelerates-content-and-application-delivery-improves-security-logo-shadow-tal-revivo.png" alt="external-nginx-accelerates-content-and-application-delivery-improves-security-logo-shadow-tal-revivo"/> [Nginx](./Nginx/)
   - Scripts for auto installing and updating **Nginx** web server from source.
+- ### <img width="55" src="../Assets/proxmox-logo-stacked-color.svg" alt="Proxmox"/>[Proxmox](./Proxmox/)
+  - Installing and management **Proxmox** virtualization environment
 - ### [<img width="96" height="" src="https://rclone.org/img/logo_on_dark__horizontal_color.svg"/>](./Rclone/)
   - Installing or Updating bash script for **Rclone**.
   
