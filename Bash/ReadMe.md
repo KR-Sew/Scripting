@@ -11,14 +11,14 @@ A collection of useful Bash scripts for system administration, automation, and D
 
 ## 📂 Description
 
-- <img width="35" height="35" src="https://img.icons8.com/fluency/48/bash.png" alt="bash"/> [Awk](./Awk/)
-  </p>Installing or updating Awk (gawk version and set up it as default) on Debian/Ubuntu
-- <img width="35" height="35" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-crm-sales-flaticons-lineal-color-flat-icons-3.png" alt="external-crm-sales-flaticons-lineal-color-flat-icons-3"/> [CRM](./CRM/)
-  </p>
-- <img width="35" height="35" src="https://img.icons8.com/color/48/fail.png" alt="fail"/> [fail2ban](./fail2ban/)
-  </p> Installing and configuring fail2ban UFW and iptables on Debian/Ubuntu
-- <img width="35" height="35" src="https://img.icons8.com/color/48/git.png" alt="git"/>[Git](./Git/)
-  </p> Installing or updating Git from source and Gh cli application.
+- ### <img width="25" src="https://img.icons8.com/fluency/48/bash.png" alt="bash"/> [AWK](./Awk/)
+  - Installing or updating **Awk** (`gawk` version and set up it as default) on **Debian/Ubuntu**
+- ### <img width="25" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-crm-sales-flaticons-lineal-color-flat-icons-3.png" alt="external-crm-sales-flaticons-lineal-color-flat-icons-3"/> [CRM](./CRM/)
+  - Installing and configuring **CRM** systems
+- ### <img width="25" src="https://img.icons8.com/color/48/fail.png" alt="fail"/> [fail2ban](./fail2ban/)
+  - Installing and configuring **fail2ban** with **UFW** and **iptables** on **Debian/Ubuntu**
+- ### <img width="25" src="https://img.icons8.com/color/48/git.png" alt="git"/>[Git](./Git/)
+  - Installing or updating **Git** from source and **Gh cli** application.
 - <img width="35" height="35" src="https://img.icons8.com/color/48/golang.png" alt="golang"/>[Golang](./Golang/)
   </p> Manage Golang. Install the latest version or update it.
 - <img width="35" height="35" src="https://img.icons8.com/color/48/kubernetes.png" alt="kubernetes"/> [Kubernetes](./Kubernetes/)
