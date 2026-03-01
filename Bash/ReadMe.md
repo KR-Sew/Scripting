@@ -19,10 +19,10 @@ A collection of useful Bash scripts for system administration, automation, and D
   - Installing and configuring **fail2ban** with **UFW** and **iptables** on **Debian/Ubuntu**
 - ### <img width="25" src="https://img.icons8.com/color/48/git.png" alt="git"/>[Git](./Git/)
   - Installing or updating **Git** from source and **Gh cli** application.
-- <img width="35" height="35" src="https://img.icons8.com/color/48/golang.png" alt="golang"/>[Golang](./Golang/)
-  </p> Manage Golang. Install the latest version or update it.
-- <img width="35" height="35" src="https://img.icons8.com/color/48/kubernetes.png" alt="kubernetes"/> [Kubernetes](./Kubernetes/)
-  </p> Mange K3s
+- ### <img width="25" src="https://img.icons8.com/color/48/golang.png" alt="golang"/>[Golang](./Golang/)
+  - Manage **Golang**. Install the latest version or update it.
+- ### <img width="25" src="https://img.icons8.com/color/48/kubernetes.png" alt="kubernetes"/> [Kubernetes](./Kubernetes/)
+  - Mange **K3s** systems
 - <img width="35" height="35" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-logs-computer-programming-icons-flaticons-lineal-color-flat-icons-2.png" alt="external-logs-computer-programming-icons-flaticons-lineal-color-flat-icons-2"/> [Logs](./Logs/)
   </p>Manage log files
 - <img width="35" height="35" src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/external-nginx-accelerates-content-and-application-delivery-improves-security-logo-shadow-tal-revivo.png" alt="external-nginx-accelerates-content-and-application-delivery-improves-security-logo-shadow-tal-revivo"/> [Nginx](./Nginx/)
