@@ -6,44 +6,58 @@
 [![Bash](https://img.shields.io/badge/GNU%20Bash-4EAA25?style=flat&logo=gnubash&logoColor=white&logoSize=auto&labelColor=black)](https://www.gnu.org/software/bash/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-A collection of scripts that can install NGINX from source and install Certbot for NGINX or Apache web server on Debian/Ubuntu.  
+A collection of scripts that can install **NGINX** from source and install **Certbot** for **NGINX** or **Apache** web server on **Debian/Ubuntu**.  
 
 ## 📂 Folder Description
 
 - 📄[Install_Certbot_Nginx.sh](./Install_Certbot_Nginx.sh)
   </br>
   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-go.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-go.yml)
-  </br> # Scripts for installation Certbot for using with Nginx web server.
+  - Scripts for installation `Certbot` for using with **Nginx** web server.
 - 📄[Install_Cerbot.sh](./Install_Certbot.sh)
   </br>
    [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-git-gitcli.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-git-gitcli.yml)
-  </br> the script for installing or updating Certbot.It can use with both web servers
-  Just select right key such as --nignx or --apache.
+  - the script for installing or updating **Certbot**.It can use with both web servers
+  Just select right key such as `--nignx` or `--apache`.
   
   ```bash
     sudo ./install_Certbot.sh --nginx
     sudo ./install_Certbot.sh --apache
   ```
 
-- 📄[Install_nginx_deiban13.sh](./Install_nginx_debian13.sh)
+- 📄[Install_nginx_debian13.sh](./Install_nginx_debian13.sh)
   </br>
   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml)
-  </br>the scritp for installing Nginx on Debian 13 Trixie. This script doesn't create folders like `sites-available`, `conf.d`, `sites-enabled` if you need them you must create manually. Remember Nginx will be installed to `/usr/local/nginx`
+  - the scritp for installing Nginx on **Debian 13 Trixie**. This script doesn't create folders like `sites-available`, `conf.d`, `sites-enabled` if you need them you must create manually. Remember **Nginx** will be installed to `/usr/local/nginx`
 
+- 📄[Install_nginx_deb13_symlink.sh](./install_nginx_deb13_symlink.sh)
+  </br>
+  [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml)
+  - this script will create folders like `sites-available`, `conf.d`, `sites-enabled` in folder `/usr/local/nginx`. Also script check `curl` if it's not installed it will be installed too. And it creates symlink to the folder /etc/nginx for getting certificates using **Certbot**.
+  - **Intead of this you can use next approach**:
+
+  ```bash
+  sudo certbot certonly \
+  --webroot \
+  -w /usr/local/nginx/html \
+  -d example.com \
+  -m admin@example.com \
+  --agree-tos
+  ```
 - 📄[Install_Nginx_from_Source.sh](./Install_Nginx_From_Source.sh)
   </br>
   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-rclone.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-rclone.yml)
-  </br> #Script for installing Nginx from source. This script doesn't create folders like `sites-available`, `conf.d`, `sites-enabled` if you need them you must create manually. Remember Nginx will be installed to `/usr/local/nginx`
+  - the script for installing **Nginx** from source. This script doesn't create folders like `sites-available`, `conf.d`, `sites-enabled` if you need them you must create manually. Remember **Nginx** will be installed to `/usr/local/nginx`
 
 - 📄[Install_Nginx_deb13_with_folders.sh](./Install_nginx_deb13_with_folders.sh)
   </br>
   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-rclone.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-rclone.yml)
-  </br> #Script for installing Nginx from source. This script will create folders like `sites-available`, `conf.d`, `sites-enabled` in folder `/usr/local/nginx`. Also script check `curl` if it's not installed it will be installed too.
+  - the script for installing **Nginx** from source. This script will create folders like `sites-available`, `conf.d`, `sites-enabled` in folder `/usr/local/nginx`. Also script check `curl` if it's not installed it will be installed too.
 
 - 📄[Add_stream_module.sh](./Add_stream_module.sh)
   </br>
   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-rclone.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-rclone.yml)
-  </br> #Script for adding **stream** (SNI) module to **Nginx** installed from source. This script will check **Nginx** version, download it, unpack, and `reconfigure` and `install` stream module.
+  - #Script for adding **stream** (SNI) module to **Nginx** installed from source. This script will check **Nginx** version, download it, unpack, and `reconfigure` and `install` stream module.
 
 ---
 
