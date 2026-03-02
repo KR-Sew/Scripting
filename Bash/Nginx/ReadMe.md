@@ -25,11 +25,25 @@ A collection of scripts that can install **NGINX** from source and install **Cer
     sudo ./install_Certbot.sh --apache
   ```
 
-- 📄[Install_nginx_deiban13.sh](./Install_nginx_debian13.sh)
+- 📄[Install_nginx_debian13.sh](./Install_nginx_debian13.sh)
   </br>
   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml)
   - the scritp for installing Nginx on **Debian 13 Trixie**. This script doesn't create folders like `sites-available`, `conf.d`, `sites-enabled` if you need them you must create manually. Remember **Nginx** will be installed to `/usr/local/nginx`
 
+- 📄[Install_nginx_deb13_symlink.sh](./install_nginx_deb13_symlink.sh)
+  </br>
+  [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml)
+  - this script will create folders like `sites-available`, `conf.d`, `sites-enabled` in folder `/usr/local/nginx`. Also script check `curl` if it's not installed it will be installed too. And it creates symlink to the folder /etc/nginx for getting certificates using **Certbot**.
+  - **Intead of this you can use next approach**:
+
+  ```bash
+  sudo certbot certonly \
+  --webroot \
+  -w /usr/local/nginx/html \
+  -d example.com \
+  -m admin@example.com \
+  --agree-tos
+  ```
 - 📄[Install_Nginx_from_Source.sh](./Install_Nginx_From_Source.sh)
   </br>
   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-rclone.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-rclone.yml)
