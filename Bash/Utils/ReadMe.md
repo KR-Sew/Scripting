@@ -12,7 +12,14 @@ Useful network utilities and just simple utils to work with `CLI` in **Debian/Ub
 ## 📂 Description
 
 - ### <img width="25" src="../../Assets/utilities_terminal_icon_180964.svg" alt="bash"/> Network utilities
-  - Installing or updating **Awk** (`gawk` version and set up it as default) on **Debian/Ubuntu**
+  - Core Modern Networking tools consist of:
+    - `iproute2`. Tools included: `ip`,`ss`,`bridge`,`tc`
+    - Install:
+
+    ```bash
+       sudo apt install iproute2
+    ```
+
   - Installing managing and configuring **Ceph** on **Debian/Ubuntu**
   - Installing and configuring **CRM** systems
   - Installing and managing **Dante Socks Proxy**
