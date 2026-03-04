@@ -148,8 +148,14 @@ Useful network utilities and just simple utils to work with `CLI` in **Debian/Ub
     ```bash
        curl telnet://host:25
     ```
-    
-  - Manage **Golang**. Install the latest version or update it.
+
+  - **Advanced tools**|
+    - `ethtool` important in performance troubleshooting. Check **NIC** driver, speed, offloading
+    - Installing:
+
+    ```bash
+       sudo apt install ethtool
+    ```
   - Mange **K3s** systems
   - Managing and configuring  **Logs** files
   - Managing and Installing **LXC/LXD** containers on **Debian/Ubuntu**
