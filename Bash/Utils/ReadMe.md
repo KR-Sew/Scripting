@@ -13,7 +13,7 @@ Useful network utilities and just simple utils to work with `CLI` in **Debian/Ub
 
 - ### <img width="25" src="../../Assets/utilities_terminal_icon_180964.svg" alt="bash"/> Network utilities
   - Core Modern Networking tools consist of:
-    - `iproute2`. Tools included: `ip`,`ss`,`bridge`,`tc`
+    - `iproute2`. Tools included: `ip`,`ss`,`bridge`,`tc`(traffic control/qdisc/shaping)
     - Install:
 
     ```bash
