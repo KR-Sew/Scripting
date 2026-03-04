@@ -12,7 +12,8 @@ Useful network utilities and just simple utils to work with `CLI` in **Debian/Ub
 ## 📂 Description
 
 - ### <img width="25" src="../../Assets/utilities_terminal_icon_180964.svg" alt="bash"/> Network utilities
-  - Core Modern Networking tools consist of:
+
+  - **Core Modern Networking tools** consist of:
     - `iproute2`. Tools included: `ip`,`ss`,`bridge`,`tc`(traffic control/qdisc/shaping)
     - Installing:
 
@@ -27,7 +28,19 @@ Useful network utilities and just simple utils to work with `CLI` in **Debian/Ub
       sudo apt install iputils-ping
     ```
 
-  - Installing managing and configuring **Ceph** on **Debian/Ubuntu**
+  - **Traceroute and Path Analysis**
+    - Package `traceroute`
+    - Installing:
+
+    ```bash
+      sudo apt install traceroute
+    ```
+
+    - support `UDP`,`ICMP`,`TCP` mode (`-T`), custom ports. Example:
+
+    ```bash
+       traceroute -T -p 443 example.com
+    ``` 
   - Installing and configuring **CRM** systems
   - Installing and managing **Dante Socks Proxy**
   - Installing and managing **Docker** on **Debian/Ubuntu** and **Windows** environment
