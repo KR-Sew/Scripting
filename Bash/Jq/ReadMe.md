@@ -11,10 +11,12 @@ Here is the script for installing <img width="25" src="../../Assets/jq.svg" alt=
 
 ## 📂 Description
 
-- ### <img width="25" src="../../Assets/jq.svg" alt="bash"/> 
+- ### <img width="25" src="../../Assets/jq.svg" alt="bash"/> [install_jq.sh](./install_jq.sh)
   - Installing or updating <img width="25" src="../../Assets/jq.svg" alt="bash"/> version from source **GitHub** on **Debian/Ubuntu**
-  - Installing managing and configuring **Ceph** on **Debian/Ubuntu**
-  - Installing and managing **Open ZFS** on **Debian/Ubuntu**  
+  - the script supports parameter keys:
+    - `--check` to check a new version only
+    - `--force` for rebuild
+    - without keys update if needed  
 
 ---
 
