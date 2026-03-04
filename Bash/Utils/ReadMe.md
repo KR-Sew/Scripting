@@ -40,11 +40,108 @@ Useful network utilities and just simple utils to work with `CLI` in **Debian/Ub
 
     ```bash
        traceroute -T -p 443 example.com
-    ``` 
-  - Installing and configuring **CRM** systems
-  - Installing and managing **Dante Socks Proxy**
-  - Installing and managing **Docker** on **Debian/Ubuntu** and **Windows** environment
-  - Installing and configuring **fail2ban** with **UFW** and **iptables** on **Debian/Ubuntu**
+    ```
+
+    - Package `mtr`
+    - This is traceroute + ping combined in real-time.
+    - Installing:
+
+     ```bash
+      sudo apt install mtr
+     ```
+
+    - Example:
+
+    ```bash
+       mtr  exampler.com
+       mtr -T -P 443 example.com
+    ```
+
+  - **DNS Tools**
+    - `dnsutils` contains `dig`,`nslookup`
+    - Installing:
+
+    ```bash
+       sudo apt install dnsutils
+    ```
+
+    - Examples:
+
+    ```bash
+       dig +trace example.com
+       dig @8.8.8.8 example.com
+    ```
+
+    - `knot-dnsutils` contains `kdig` modern, fast alternative to `dig`
+    - Installing:
+
+    ```bash
+       sudo apt install knot-dnsutils
+    ```
+
+    - Examples:
+
+    ```bash
+       kdig +tls google.com
+    ```
+
+  - **Deep network inspection**
+    - `tcpdump` Classic packet capture, essential fit in **Routing/NAT**
+    - Installing:
+
+    ```bash
+       sudo apt install tcpdump
+    ```
+
+    - Example:
+
+    ```bash
+       tcpdump -i eth0 port 443
+       tcpdump -i eth0 icmp
+    ```
+
+    - `wireshark-cli` CLI version of **WireShark**
+    - Installing:
+
+    ```bash
+       sudo apt install tshark
+    ```
+
+  - **Modern diagnostic tools**
+    - `nmap` Port scanner and service detector
+    - Installing:
+
+    ```bash
+       sudo apt install nmap
+    ```
+
+    - Example:
+
+    ```bash
+       nmap -sS -p- 10.0.0.1
+    ```
+    - `iperf3` Bandwidth testing tool.
+    - Installing:
+
+    ```bash
+       sudo apt install iperf3
+    ```
+
+    - Example, test between two servers:
+
+    ```bash
+       iperf3 -s
+       iperf3 -c server_ip_address
+    ```
+
+  - **Socket connection debugging**
+    - `netcat` Test raw TCP
+    - Installing:
+
+     ``` bash
+        sudo apt install netcat-openbsd
+     ```
+     
   - Manage **Golang**. Install the latest version or update it.
   - Mange **K3s** systems
   - Managing and configuring  **Logs** files
