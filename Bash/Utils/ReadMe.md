@@ -156,7 +156,38 @@ Useful network utilities and just simple utils to work with `CLI` in **Debian/Ub
     ```bash
        sudo apt install ethtool
     ```
-  - Mange **K3s** systems
+
+    - `bmon` Bandwidth monitor in terminal. Very lightweight in real-time monitoring
+    - Installing:
+
+    ```bash
+       sudo apt install bmon
+    ```
+
+    - `iftop` Shows bandwidth usage per connection
+    - Installing:
+
+    ```bash
+       sudo apt install iftop
+    ```
+
+    - `bridge-utils` Legacy by useful
+    - Installiing:
+
+    ```bash
+       sudo apt install bridge-utils
+    ```
+
+  - **Modern feeling**
+    - `gping` Graphical ping in terminal
+    - Installing:
+
+    ```bash
+       sudo apt install gping
+    ```
+
+    - `bandwhich` Shows which process uses bandwidth
+
   - Managing and configuring  **Logs** files
   - Managing and Installing **LXC/LXD** containers on **Debian/Ubuntu**
   - Some examples of **MOTD** graphics adn information scripts  
