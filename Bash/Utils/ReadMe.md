@@ -141,7 +141,14 @@ Useful network utilities and just simple utils to work with `CLI` in **Debian/Ub
      ``` bash
         sudo apt install netcat-openbsd
      ```
-     
+
+    - `curl` Not just for **HTTP** - aslo for **FTP**,**SFTP**,**SMTP**,**Telnet**, raw **TCP**
+    - Example:
+
+    ```bash
+       curl telnet://host:25
+    ```
+    
   - Manage **Golang**. Install the latest version or update it.
   - Mange **K3s** systems
   - Managing and configuring  **Logs** files
