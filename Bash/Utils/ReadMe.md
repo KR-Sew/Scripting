@@ -11,7 +11,7 @@ Useful network utilities and just simple utils to work with `CLI` in **Debian/Ub
 
 ## 📂 Description
 
-- ### <img width="25" src="https://img.icons8.com/fluency/48/bash.png" alt="bash"/> [AWK](./Awk/)
+- ### <img width="25" src="../../Assets/utilities_terminal_icon_180964.svg" alt="bash"/> Network utilities
   - Installing or updating **Awk** (`gawk` version and set up it as default) on **Debian/Ubuntu**
   - Installing managing and configuring **Ceph** on **Debian/Ubuntu**
   - Installing and configuring **CRM** systems
