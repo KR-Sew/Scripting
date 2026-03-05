@@ -188,15 +188,6 @@ Useful network utilities and just simple utils to work with `CLI` in **Debian/Ub
 
     - `bandwhich` Shows which process uses bandwidth
 
-  - Managing and configuring  **Logs** files
-  - Managing and Installing **LXC/LXD** containers on **Debian/Ubuntu**
-  - Some examples of **MOTD** graphics adn information scripts  
-  - Scripts for auto installing and updating **Nginx** web server from source.
-  - Installing and management **Proxmox** virtualization environment
-  - Installing or Updating bash script for **Rclone**.
-  - Installing and managing **Squid** proxy server on **Linux** (**Debian/Ubuntu**)
-  - Installing and managing **Open ZFS** on **Debian/Ubuntu**  
-
 ---
 
 - 📄[README.md](ReadMe.md) # Project documentation
