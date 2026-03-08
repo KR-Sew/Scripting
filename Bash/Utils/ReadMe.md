@@ -11,40 +11,182 @@ Useful network utilities and just simple utils to work with `CLI` in **Debian/Ub
 
 ## 📂 Description
 
-- ### <img width="25" src="https://img.icons8.com/fluency/48/bash.png" alt="bash"/> [AWK](./Awk/)
-  - Installing or updating **Awk** (`gawk` version and set up it as default) on **Debian/Ubuntu**
-- ### [<img width="85" src="..//Assets/ceph_logo_icon_169421.svg" alt="Ceph"/>](./Ceph/)
-  - Installing managing and configuring **Ceph** on **Debian/Ubuntu**
-- ### <img width="25" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-crm-sales-flaticons-lineal-color-flat-icons-3.png" alt="external-crm-sales-flaticons-lineal-color-flat-icons-3"/> [CRM](./CRM/)
-  - Installing and configuring **CRM** systems
-- ### <img width="35" src="../Assets/inet_dante.png" alt="Dante proxy"/> [Dante Proxy](./Dante/)
-  - Installing and managing **Dante Socks Proxy**
-- ### [<img width="95" src="../Assets/docker-logo-blue.svg" alt="Docker"/>](./Docker/)
-  - Installing and managing **Docker** on **Debian/Ubuntu** and **Windows** environment
-- ### <img width="25" src="https://img.icons8.com/color/48/fail.png" alt="fail"/> [fail2ban](./fail2ban/)
-  - Installing and configuring **fail2ban** with **UFW** and **iptables** on **Debian/Ubuntu**
-- ### <img width="25" src="https://img.icons8.com/color/48/git.png" alt="git"/>[Git](./Git/)
-  - Installing or updating **Git** from source and **Gh cli** application.
-- ### <img width="25" src="https://img.icons8.com/color/48/golang.png" alt="golang"/>[Golang](./Golang/)
-  - Manage **Golang**. Install the latest version or update it.
-- ### <img width="25" src="https://img.icons8.com/color/48/kubernetes.png" alt="kubernetes"/> [Kubernetes](./Kubernetes/)
-  - Mange **K3s** systems
-- ### <img width="25" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-logs-computer-programming-icons-flaticons-lineal-color-flat-icons-2.png" alt="external-logs-computer-programming-icons-flaticons-lineal-color-flat-icons-2"/> [Logs](./Logs/)
-  - Managing and configuring  **Logs** files
-- ### <img width="25" src="../Assets/lxd-lxc_logo.png" alt="LXC/LXD"/> [ LXC/LXD containers](./Lxc/)
-  - Managing and Installing **LXC/LXD** containers on **Debian/Ubuntu**
-- ### [Message of the Day](./Motd/)
-  - Some examples of **MOTD** graphics adn information scripts  
-- ### <img width="25" src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/external-nginx-accelerates-content-and-application-delivery-improves-security-logo-shadow-tal-revivo.png" alt="external-nginx-accelerates-content-and-application-delivery-improves-security-logo-shadow-tal-revivo"/> [Nginx](./Nginx/)
-  - Scripts for auto installing and updating **Nginx** web server from source.
-- ### <img width="55" src="../Assets/proxmox-logo-stacked-color.svg" alt="Proxmox"/>[Proxmox](./Proxmox/)
-  - Installing and management **Proxmox** virtualization environment
-- ### [<img width="96" height="" src="https://rclone.org/img/logo_on_dark__horizontal_color.svg"/>](./Rclone/)
-  - Installing or Updating bash script for **Rclone**.
-- ### <img width="55" src="../Assets/SquidIco.png" alt="Squid Proxy"/> [Squid Proxy Server](./Squid/)
-  - Installing and managing **Squid** proxy server on **Linux** (**Debian/Ubuntu**)
-- ### [<img width="125" src="../Assets/openZFS-ico.png" alt="Open ZFS"/>](./Zfs/)
-  - Installing and managing **Open ZFS** on **Debian/Ubuntu**  
+- ### <img width="25" src="../../Assets/utilities_terminal_icon_180964.svg" alt="bash"/> Network utilities
+
+  - **Core Modern Networking tools** consist of:
+    - `iproute2`. Tools included: `ip`,`ss`,`bridge`,`tc`(traffic control/qdisc/shaping)
+    - Installing:
+
+    ```bash
+       sudo apt install iproute2
+    ```
+  
+    - `iputils`. Contains `ping`,`tracepath`,`arping`
+    - Installing:
+
+    ```bash
+      sudo apt install iputils-ping
+    ```
+
+  - **Traceroute and Path Analysis**
+    - Package `traceroute`
+    - Installing:
+
+    ```bash
+      sudo apt install traceroute
+    ```
+
+    - support `UDP`,`ICMP`,`TCP` mode (`-T`), custom ports. Example:
+
+    ```bash
+       traceroute -T -p 443 example.com
+    ```
+
+    - Package `mtr`
+    - This is traceroute + ping combined in real-time.
+    - Installing:
+
+     ```bash
+      sudo apt install mtr
+     ```
+
+    - Example:
+
+    ```bash
+       mtr  exampler.com
+       mtr -T -P 443 example.com
+    ```
+
+  - **DNS Tools**
+    - `dnsutils` contains `dig`,`nslookup`
+    - Installing:
+
+    ```bash
+       sudo apt install dnsutils
+    ```
+
+    - Examples:
+
+    ```bash
+       dig +trace example.com
+       dig @8.8.8.8 example.com
+    ```
+
+    - `knot-dnsutils` contains `kdig` modern, fast alternative to `dig`
+    - Installing:
+
+    ```bash
+       sudo apt install knot-dnsutils
+    ```
+
+    - Examples:
+
+    ```bash
+       kdig +tls google.com
+    ```
+
+  - **Deep network inspection**
+    - `tcpdump` Classic packet capture, essential fit in **Routing/NAT**
+    - Installing:
+
+    ```bash
+       sudo apt install tcpdump
+    ```
+
+    - Example:
+
+    ```bash
+       tcpdump -i eth0 port 443
+       tcpdump -i eth0 icmp
+    ```
+
+    - `wireshark-cli` CLI version of **WireShark**
+    - Installing:
+
+    ```bash
+       sudo apt install tshark
+    ```
+
+  - **Modern diagnostic tools**
+    - `nmap` Port scanner and service detector
+    - Installing:
+
+    ```bash
+       sudo apt install nmap
+    ```
+
+    - Example:
+
+    ```bash
+       nmap -sS -p- 10.0.0.1
+    ```
+    - `iperf3` Bandwidth testing tool.
+    - Installing:
+
+    ```bash
+       sudo apt install iperf3
+    ```
+
+    - Example, test between two servers:
+
+    ```bash
+       iperf3 -s
+       iperf3 -c server_ip_address
+    ```
+
+  - **Socket connection debugging**
+    - `netcat` Test raw TCP
+    - Installing:
+
+     ``` bash
+        sudo apt install netcat-openbsd
+     ```
+
+    - `curl` Not just for **HTTP** - aslo for **FTP**,**SFTP**,**SMTP**,**Telnet**, raw **TCP**
+    - Example:
+
+    ```bash
+       curl telnet://host:25
+    ```
+
+  - **Advanced tools**|
+    - `ethtool` important in performance troubleshooting. Check **NIC** driver, speed, offloading
+    - Installing:
+
+    ```bash
+       sudo apt install ethtool
+    ```
+
+    - `bmon` Bandwidth monitor in terminal. Very lightweight in real-time monitoring
+    - Installing:
+
+    ```bash
+       sudo apt install bmon
+    ```
+
+    - `iftop` Shows bandwidth usage per connection
+    - Installing:
+
+    ```bash
+       sudo apt install iftop
+    ```
+
+    - `bridge-utils` Legacy by useful
+    - Installiing:
+
+    ```bash
+       sudo apt install bridge-utils
+    ```
+
+  - **Modern feeling**
+    - `gping` Graphical ping in terminal
+    - Installing:
+
+    ```bash
+       sudo apt install gping
+    ```
+
+    - `bandwhich` Shows which process uses bandwidth
 
 ---
 
