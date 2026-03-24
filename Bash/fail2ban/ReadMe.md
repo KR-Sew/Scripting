@@ -10,9 +10,9 @@
 
 ## 📂 Folder Description
 
-- 📂[Iptables](./iptables/)
+- 📂[nfTables](./nfTables/)
   
-  Set up **fail2ban** for `iptables` on **Debian/Ubuntu**
+  Set up **fail2ban** to work with `nfTables` on **Debian/Ubuntu**
 - 📂[UFW](./UFW/)
   
   Set up **fail2ban** for `UFW` on **Debian/Ubuntu**
