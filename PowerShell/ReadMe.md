@@ -27,10 +27,6 @@ There is a collection of useful **PowerShell** scripts for system administration
 - 📂 [System uitilities](./System-Utils/) # Scripts for manage operating systems
   <br>
   - **System Service** and **System Configuraion** management scripts
-- 📂 [Manage SQL server](./ManageSQL/)
-  <br>
-  - **MS SQL** management scripts (will be moved to DevTools repo soon)
-- 📄 [README.md](./ReadMe.md) # Project documentation
 
 ---
 
