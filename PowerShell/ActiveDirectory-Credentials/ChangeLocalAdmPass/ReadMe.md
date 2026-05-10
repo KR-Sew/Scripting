@@ -5,7 +5,11 @@
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1%2B-blue?logo=powershell)](https://docs.microsoft.com/en-us/powershell/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
+There is a **powershell** logon script that can be used for finding and changing a local admiin password on **Windows** systems from **Windows 7** up to **Windows 11** in a Windows domain environment.
+
 ## 📂 Description
+
+ - 
 
 ---
 
