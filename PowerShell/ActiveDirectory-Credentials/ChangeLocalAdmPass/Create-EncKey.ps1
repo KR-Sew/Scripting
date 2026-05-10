@@ -10,7 +10,7 @@
     Path where AES key file will be saved.
 
 .EXAMPLE
-    .\New-AesKey.ps1 -OutputPath "\\v77\Secure$\aes.key"
+    .\New-AesKey.ps1 -OutputPath "\\ServerName\Secure$\aes.key"
 
 .NOTES
     Recommended permissions:
