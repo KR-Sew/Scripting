@@ -9,7 +9,9 @@ There is a **powershell** logon script that can be used for finding and changing
 
 ## 📂 Description
 
- - 
+- [Logon script Change-LMAdmPass.ps1](Change-LMAdmnPass.ps1)
+- [Ecrypt sensitive data Create-EncData.ps1](./Create-EncData.ps1)
+- [Create key for encryption Create-EncKey.ps1](./Create-EncKey.ps1)
 
 ---
 
