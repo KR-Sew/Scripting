@@ -16,8 +16,8 @@
 
 .EXAMPLE
     .\Protect-Password.ps1 `
-        -KeyPath "\\v77\Secure$\aes.key" `
-        -OutputPath "\\v77\Secure$\local-admin-password.enc"
+        -KeyPath "\\ServerName\Secure$\aes.key" `
+        -OutputPath "\\ServerName\Secure$\local-admin-password.enc"
 
 .NOTES
     Result file can later be decrypted using:
