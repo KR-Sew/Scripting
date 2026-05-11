@@ -17,21 +17,27 @@ There is a **powershell** logon script that can be used for finding and changing
         - Windows Settings
           - Scripts (Startup/Shutdown)
   - run this script with parameters:
+
   ```powershell
 
-  ```        
+  ```
+
 - [**Ecrypt sensitive data Create-EncData.ps1**](./Create-EncData.ps1)
   - this script encrypt sensitive data where the new password keeps
   - run this script with parameters:
+  
   ```powershell
-
+  Create-EncData.ps1 `
+        -KeyPath "\\ServerName\Secure$\aes.key" `
+        -OutputPath "\\ServerName\Secure$\local-admin-password.enc"
   ```
 
 - [**Create key for encryption Create-EncKey.ps1**](./Create-EncKey.ps1)
   - this script creates an encryption key for encrypting the data
   - run this script with parameters:
-  ```powershell
 
+  ```powershell
+   .\Create-EncKey.ps1 -OutputPath "\\ServerName\Secure$\aes.key"
   ```
 
 - **Permissions**: for folders where an encrypted key and an encrypted password are kept
