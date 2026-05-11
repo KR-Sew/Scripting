@@ -57,22 +57,26 @@ $NewPasswordPlain = [Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
 
 #region LOGGING
 
-$LogDir  = Join-Path $CentralLogShare.path 'Logon'
- if (-not (Test-Path $LogDir)){
-    Write-Host "Creating folder: $Logdir" 
-    New-Item -Path $LogDir -ItemType Directory -Force
-  } else {
-    Write-Host "Folder already exists: $LogDir" 
- }
-
-
+$LogDir  = 'C:\ProgramData\LocalAdminReset'
 $LogFile = Join-Path $LogDir 'LocalAdminReset.log'
 
+# Optional central log share
+$CentralLogShare = '\\v77\Logs$\LocalAdminReset'
+
+# Enable/Disable central logging
+$EnableCentralLogging = $true
+
+# Create LOCAL log directory only
 if (-not (Test-Path $LogDir)) {
-    New-Item -Path $LogDir -ItemType Directory -Force | Out-Null
+
+    New-Item `
+        -Path $LogDir `
+        -ItemType Directory `
+        -Force | Out-Null
 }
 
 function Write-Log {
+
     param(
         [string]$Message,
 
@@ -86,21 +90,45 @@ function Write-Log {
 
     Write-Host $Line
 
-    Add-Content -Path $LogFile -Value $Line
+    # LOCAL LOGGING
+    try {
 
+        Add-Content `
+            -Path $LogFile `
+            -Value $Line `
+            -ErrorAction Stop
+
+    }
+    catch {
+
+        Write-Host "[WARN] Failed to write local log: $_"
+    }
+
+    # CENTRAL LOGGING
     if ($EnableCentralLogging) {
+
         try {
 
-            if (-not (Test-Path $CentralLogShare)) {
-                New-Item -Path $CentralLogShare -ItemType Directory -Force -ErrorAction Stop | Out-Null
+            # Optional check only
+            if (Test-Path $CentralLogShare) {
+
+                $CentralLogFile = Join-Path `
+                    $CentralLogShare `
+                    "$($env:COMPUTERNAME).log"
+
+                Add-Content `
+                    -Path $CentralLogFile `
+                    -Value $Line `
+                    -ErrorAction Stop
             }
+            else {
 
-            $CentralLogFile = Join-Path $CentralLogShare "$($env:COMPUTERNAME).log"
-
-            Add-Content -Path $CentralLogFile -Value $Line
+                Write-Host "[WARN] Central log share unavailable: $CentralLogShare"
+            }
 
         }
         catch {
+
             Write-Host "[WARN] Failed to write central log: $_"
         }
     }
