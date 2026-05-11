@@ -20,7 +20,7 @@ There is a **powershell** logon script that can be used for finding and changing
   - this script encrypt sensitive data where the new password keeps
 - [**Create key for encryption Create-EncKey.ps1**](./Create-EncKey.ps1)
   - this script creates encryption key to encrypt the data further
-- **Permissions**:
+- **Permissions**: for folders where an encrypted key and an encrypted password are kept
   - **Domain Computers** → `Read`
   - `remove` **Authenticated Users**
   - `remove` **Everyone**
