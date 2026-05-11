@@ -53,16 +53,6 @@ $BSTR = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($SecurePassword)
 
 $NewPasswordPlain = [Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
 
-# end expand the pass region
-
-# Optional central log share
-# Example:
-# \\fileserver\AdminLogs$
-# $CentralLogShare = '\\ServerName\Logs$\LocalAdminReset'
-
-# Enable/Disable central logging
-$EnableCentralLogging = $true
-
 #endregion
 
 #region LOGGING
