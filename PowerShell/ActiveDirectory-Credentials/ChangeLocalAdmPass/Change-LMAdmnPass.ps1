@@ -57,11 +57,7 @@ $NewPasswordPlain = [Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
 
 #region LOGGING
 
-$LogDir  = 'C:\ProgramData\LocalAdminReset'
 $LogFile = Join-Path $LogDir 'LocalAdminReset.log'
-
-# Optional central log share
-$CentralLogShare = '\\v77\Logs$\LocalAdminReset'
 
 # Enable/Disable central logging
 $EnableCentralLogging = $true
