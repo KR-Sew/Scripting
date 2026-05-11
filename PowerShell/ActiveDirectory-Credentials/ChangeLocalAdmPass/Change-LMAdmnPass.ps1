@@ -21,14 +21,44 @@
 #>
 
 #region CONFIG
+[CmdletBinding()]
+param(
+    [Parameter(Mandatory, HelpMessage ="Path to encryption key")]
+    [string]$KeyPath,
 
-# !!! CHANGE PASSWORD !!!
-$NewPasswordPlain = 'Str0ngP@ssw0rd!2026'
+    [Parameter(Mandatory, HelpMessage="Path to encrypted password file")]
+    [SecureString]$PasswordPath,
+
+    [Parameter(Mandatory, HelpMessage="Path to centralized logs sharefolder")]
+    [string]$CentralLogShare,
+    
+    [Parameter(Mandatory=$True, HelpMessage="Enable central logging")]
+    [ValidateSet($true,$false)]
+    [Boolean]$EnableCentralLogging,
+
+    [Parameter(Mandatory, HelpMessage="Path to Local logging folder")]
+    [string]$LogDir
+)
+
+# region expand the pass
+
+$AesKey = [Convert]::FromBase64String(
+    (Get-Content $KeyPath).Trim()
+)
+
+$SecurePassword = Get-Content $PasswordPath |
+    ConvertTo-SecureString -Key $AesKey
+
+$BSTR = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($SecurePassword)
+
+$NewPasswordPlain = [Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+
+# end expand the pass region
 
 # Optional central log share
 # Example:
 # \\fileserver\AdminLogs$
-$CentralLogShare = '\\v77\Logs$\LocalAdminReset'
+# $CentralLogShare = '\\ServerName\Logs$\LocalAdminReset'
 
 # Enable/Disable central logging
 $EnableCentralLogging = $true
@@ -37,7 +67,15 @@ $EnableCentralLogging = $true
 
 #region LOGGING
 
-$LogDir  = 'C:\ProgramData\LocalAdminReset'
+$LogDir  = Join-Path $CentralLogShare.path 'Logon'
+ if (-not (Test-Path $LogDir)){
+    Write-Host "Creating folder: $Logdir" 
+    New-Item -Path $LogDir -ItemType Directory -Force
+  } else {
+    Write-Host "Folder already exists: $LogDir" 
+ }
+
+
 $LogFile = Join-Path $LogDir 'LocalAdminReset.log'
 
 if (-not (Test-Path $LogDir)) {
