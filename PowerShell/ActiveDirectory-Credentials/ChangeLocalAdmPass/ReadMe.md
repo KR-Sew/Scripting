@@ -20,11 +20,11 @@ There is a **powershell** logon script that can be used for finding and changing
 
   ```powershell
   Chage-LMAdminPass.ps1 `
-    -Keypath "\\ServerName\Secure$\aes.key"
-    -PasswordPath "\\ServerName\Secure$\local-admin-password.enc"
-    -CentralLogShare "\\ServerName\Logs$"
-    -EnableCentralLogging $true
-    -LogDir "C:\Logs"
+    -Keypath "\\ServerName\Secure$\aes.key"                       # path to encrypted key
+    -PasswordPath "\\ServerName\Secure$\local-admin-password.enc" # path to encrypted password data
+    -CentralLogShare "\\ServerName\Logs$"                         # path to cntral logging folder
+    -EnableCentralLogging $true                                   # enable(default) or disable central logging
+    -LogDir "C:\Logs"                                             # local logs folder
   ```
 
 - [**Ecrypt sensitive data Create-EncData.ps1**](./Create-EncData.ps1)
@@ -33,8 +33,8 @@ There is a **powershell** logon script that can be used for finding and changing
   
   ```powershell
   Create-EncData.ps1 `
-        -KeyPath "\\ServerName\Secure$\aes.key" `
-        -OutputPath "\\ServerName\Secure$\local-admin-password.enc"
+        -KeyPath "\\ServerName\Secure$\aes.key" `                   # encryption key path
+        -OutputPath "\\ServerName\Secure$\local-admin-password.enc" # encryption password output path
   ```
 
 - [**Create key for encryption Create-EncKey.ps1**](./Create-EncKey.ps1)
@@ -42,7 +42,7 @@ There is a **powershell** logon script that can be used for finding and changing
   - run this script with parameters:
 
   ```powershell
-   .\Create-EncKey.ps1 -OutputPath "\\ServerName\Secure$\aes.key"
+   .\Create-EncKey.ps1 -OutputPath "\\ServerName\Secure$\aes.key" #encrypted key path
   ```
 
 - **Permissions**: for folders where an encrypted key and an encrypted password are kept
