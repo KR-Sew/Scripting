@@ -40,7 +40,7 @@ param(
     [string]$LogDir
 )
 
-# region expand the pass
+# region Expand the pass
 
 $AesKey = [Convert]::FromBase64String(
     (Get-Content $KeyPath).Trim()
