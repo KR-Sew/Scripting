@@ -16,10 +16,24 @@ There is a **powershell** logon script that can be used for finding and changing
       - Policies
         - Windows Settings
           - Scripts (Startup/Shutdown)
+  - run this script with parameters:
+  ```powershell
+
+  ```        
 - [**Ecrypt sensitive data Create-EncData.ps1**](./Create-EncData.ps1)
   - this script encrypt sensitive data where the new password keeps
+  - run this script with parameters:
+  ```powershell
+
+  ```
+
 - [**Create key for encryption Create-EncKey.ps1**](./Create-EncKey.ps1)
-  - this script creates encryption key to encrypt the data further
+  - this script creates an encryption key for encrypting the data
+  - run this script with parameters:
+  ```powershell
+
+  ```
+
 - **Permissions**: for folders where an encrypted key and an encrypted password are kept
   - **Domain Computers** → `Read`
   - `remove` **Authenticated Users**
