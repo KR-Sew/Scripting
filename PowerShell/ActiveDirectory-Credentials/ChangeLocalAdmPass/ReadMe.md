@@ -19,7 +19,12 @@ There is a **powershell** logon script that can be used for finding and changing
   - run this script with parameters:
 
   ```powershell
-
+  Chage-LMAdminPass.ps1 `
+    -Keypath "\\ServerName\Secure$\aes.key"
+    -PasswordPath "\\ServerName\Secure$\local-admin-password.enc"
+    -CentralLogShare "\\ServerName\Logs$"
+    -EnableCentralLogging $true
+    -LogDir "C:\Logs"
   ```
 
 - [**Ecrypt sensitive data Create-EncData.ps1**](./Create-EncData.ps1)
