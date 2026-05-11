@@ -11,6 +11,11 @@ There is a **powershell** logon script that can be used for finding and changing
 
 - [Logon script Change-LMAdmPass.ps1](Change-LMAdmnPass.ps1)
   - this script finds and changes a the password for local admin and if this account disable just enable it
+  - Use GPO Startup Script instead of Logon Script
+    - Computer Configuration
+      - Policies
+        - Windows Settings
+          - Scripts (Startup/Shutdown)
 - [Ecrypt sensitive data Create-EncData.ps1](./Create-EncData.ps1)
   - this script encrypt sensitive data where the new password keeps
 - [Create key for encryption Create-EncKey.ps1](./Create-EncKey.ps1)
