@@ -171,13 +171,20 @@ log_ok "Backup created:"
 echo "       $BACKUP_FILE"
 
 # ============================================================
-# Replace Binary
+# Replace Binary Safely
 # ============================================================
+
+log_info "Stopping NGINX..."
+
+sudo systemctl stop nginx
 
 log_info "Installing new binary..."
 
-sudo cp objs/nginx "$NGINX_BIN"
-sudo chmod 755 "$NGINX_BIN"
+sudo install -m 755 objs/nginx "$NGINX_BIN"
+
+log_info "Starting NGINX..."
+
+sudo systemctl start nginx
 
 # ============================================================
 # Verify Modules
