@@ -1,0 +1,63 @@
+@"
+`$ErrorActionPreference = 'Stop'
+
+# Prepare log file
+`$logFile = Join-Path -Path `$env:TEMP -ChildPath 'UpdatePowerShell.log'
+'[' + (Get-Date) + '] Starting PowerShell update script.' | Out-File -FilePath `$logFile -Encoding utf8
+
+function Log {
+    param([string]`$Message)
+    `$timestamp = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'
+    "`$timestamp `$Message" | Tee-Object -FilePath `$logFile -Append
+}
+
+Log 'Checking current PowerShell version...'
+`$currentVersion = `$PSVersionTable.PSVersion
+Log "Current version: `$currentVersion"
+
+Log 'Fetching latest release metadata from GitHub...'
+`$release = Invoke-RestMethod -Uri 'https://api.github.com/repos/PowerShell/PowerShell/releases/latest' -UseBasicParsing
+`$latestVersion = `$release.tag_name.TrimStart('v')
+Log "Latest version available: `$latestVersion"
+
+if ([version]`$latestVersion -le `$currentVersion) {
+    Log 'You are already on the latest version!'
+    Write-Host '✅ You are already on the latest version!' -ForegroundColor Green
+    return
+}
+
+Log 'Locating MSI asset...'
+`$msiAsset = `$release.assets | Where-Object { `$_.name -match 'win-x64\.msi$' }
+if (-not `$msiAsset) {
+    Log 'ERROR: Could not find MSI installer in the latest release.'
+    Write-Error 'Could not find MSI installer in the latest release.'
+    return
+}
+
+`$msiUrl = `$msiAsset.browser_download_url
+`$msiFile = Join-Path -Path `$env:TEMP -ChildPath "PowerShell-`$latestVersion-win-x64.msi"
+Log "Downloading MSI from `$msiUrl to `$msiFile..."
+Invoke-WebRequest -Uri `$msiUrl -OutFile `$msiFile
+
+Log 'Preparing scheduled task for installation...'
+`$cmd = "msiexec.exe /i `"`$msiFile`" /quiet /norestart"
+`$taskName = 'UpdatePowerShell'
+
+if (Get-ScheduledTask -TaskName `$taskName -ErrorAction SilentlyContinue) {
+    Log 'Existing scheduled task found. Removing it.'
+    Unregister-ScheduledTask -TaskName `$taskName -Confirm:`$false
+}
+
+`$action = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument "/c `$cmd"
+`$trigger = New-ScheduledTaskTrigger -Once -At ((Get-Date).AddMinutes(1))
+`$principal = New-ScheduledTaskPrincipal -UserId 'SYSTEM' -RunLevel Highest
+
+Register-ScheduledTask -TaskName `$taskName -Action `$action -Trigger `$trigger -Principal `$principal
+Log 'Scheduled task registered successfully.'
+
+Write-Host ''
+Write-Host '✅ Update scheduled. Please disconnect your session NOW!' -ForegroundColor Yellow
+Write-Host 'The update will run in approximately 1 minute.' -ForegroundColor Yellow
+Log 'Script completed. Awaiting scheduled installation.'
+
+"@ | Invoke-Expression
