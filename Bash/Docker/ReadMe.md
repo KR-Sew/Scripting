@@ -19,8 +19,8 @@ Bash Scripts that is used for managing Docker engine and Docker containers.
 ▶ How to run
 
 ```bash
-  chmod +x install-docker-debian13.sh
-  sudo ./install-docker-debian13.sh
+  chmod +x install-docker.sh
+  sudo ./install-docker.sh
 ```
 
 ✅ After install — verify
@@ -30,6 +30,8 @@ Bash Scripts that is used for managing Docker engine and Docker containers.
    docker compose version
    docker-compose version
 ```
+
+- 📄[install_docker_only.sh](./install_docker_only.sh) # If you want to install only Docker just run this script
 
 ---
 
