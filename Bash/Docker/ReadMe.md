@@ -9,27 +9,27 @@
 
 Bash Scripts that is used for managing Docker engine and Docker containers.  
 
-## 📂 Description
+## 📂 Installing Docker on Ubuntu/Debian
 
 - 📄[install_docker.sh](install_docker.sh) # Script for automatic install Docker engine and Docker compose.
   </br>
   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-gawk.yml)
   </br>
 
-▶ How to run
+   ▶ How to run
 
-```bash
-  chmod +x install-docker.sh
-  sudo ./install-docker.sh
-```
+    ```bash
+       chmod +x install-docker.sh
+       sudo ./install-docker.sh
+    ```
+  
+  ✅ After install — verify
 
-✅ After install — verify
-
-```bash
-   docker --version
-   docker compose version
-   docker-compose version
-```
+    ```bash
+       docker --version
+       docker compose version
+       docker-compose version
+    ```
 
 - 📄[install_docker_only.sh](./install_docker_only.sh) # If you want to install only Docker just run this script
 
