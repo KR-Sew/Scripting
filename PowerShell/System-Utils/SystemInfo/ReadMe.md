@@ -9,13 +9,13 @@ There is a collection of useful **PowerShell** scripts for collecting sytem info
 
 ## 📂 Description
 
-- 📂 [Applied Skills:Active Directory](./ActiveDirectory-Credentials/)
+- 📂 [Get-HostNetworkAdapter.ps1](./Get-HostNetworkAdapter.ps1)
   <br>
-  - Preparation for getting **Microsoft Applied Skills**: `Acitve Directory Domain Service`
-- 📂 [CmdLets](./CmdLets/)
+  - Collecting information about `NICs` and save it in files `.TXT` and `.CSV`
+- 📂 [Get-MotherBoard.ps1](./Get-MotherBoard.ps1)
   <br>
-  - Custom **PowerShell** `CmdLets` collection
-- 📂 [Failover Cluster management](./Failover_Cluster/)
+  - Collecting information about **Motherboard** and its components like `HHD`, `MemorySize`, `Processor` and etc.
+- 📂 [](./Failover_Cluster/)
   <br>
   - **Failover Cluster** management scripts
 - 📂 [MS Hyper V and VM](./Virtualization/)
