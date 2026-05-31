@@ -9,8 +9,8 @@ These are **PoSH** engine updating and getting info scripts on **Windows**.
 ## 📂 Updating and getting info about **PoSH** engine and version.
 
 - 📂 Managing **Private Keys Infrastructure**
-  - [`Export-Cert.ps1`](./Export-certs.ps1) export certificates
-  - [`Import-Cert.ps1`](./Import-certs.ps1) import certificates
+  - [`Update-Powershell.ps1`](./Update-Powershell.ps1) update **Powershell** to the latest version
+  - [`Update-Powershell.txt`](./Update-Powershell.txt) the same script prepared to `Copy & Paste` operation being in teminal session
 
 - 📄[README.md](ReadMe.md)                   # Project documentation
 
