@@ -8,25 +8,29 @@ A collection of useful `PowerShell` scripts for **system administration**, **aut
 
 ## 📂 Folder Description
 
-- 📂 [Manage users, groups and rights](./Accounts/)`Accounts` folder
+- 📂 [Manage **Active Directory** users, groups and rights](./Accounts/) `Accounts` folder
 
   Folder contains **PowerShell** scripts designed for **managing user and group permissions** within the organization. The scripts facilitate the automation of tasks such as creating, modifying, and deleting user accounts and groups, as well as assigning and revoking access rights.
 
-- 📂 [Manage DNS service](./DNS/) `DNS` folder
+- 📂 [Manage **DNS** service](./DNS/) `DNS` folder
   
   Contains **PowerShell** scripts designed for management **DNS** records and **DNS** service.
 
-- 📂 [Manage email messaging system](./eMail/) `eMail` folder
+- 📂 [Manage **Email** messaging system](./eMail/) `eMail` folder
   
   Contains **PowerShell** scripts designed for management messaging system like **MDaemon** and email client applications such as **MS Office Outlook**.
 
-- 📂 [Manage files and folders and thing like these](./FileSystems/)`FileSystem` folder
+- 📂 [Manage **files** and **folders** and thing like these](./FileSystems/) `FileSystem` folder
   
   Contains **PowerShell** scripts designed for efficient management of files, folders, and the filesystem.
 
-- 📂 [Managing application and the other settings](./Functions/)`Functions` folder
+- 📂 [Managing application and the other settings](./Functions/) `Functions` folder
   
   Contains **PowerShell** scripts designed for efficient management of files, folders, and the filesystem.
+
+- 📂 [Managing **Private Keys Infrastructure**](./PKI/) `PKI` folder
+  
+  Contains **PowerShell** scripts designed for management **PKI**.
 
 - 📂 [Manage System and Serviice scripts](./System-Services/)`System-Servicex` folder
 
