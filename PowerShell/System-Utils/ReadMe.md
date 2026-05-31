@@ -15,8 +15,8 @@ A collection of useful `PowerShell` scripts for **system administration**, **aut
 - 📂 [Manage **DNS** service](./DNS/) in `DNS` folder
   
   Contains powershell scripts designed for management **DNS** records and **DNS** service.
-   - `Get-SpecDNSRec.ps1`
-   - `Move-DNSRecords.ps1`
+  - `Get-SpecDNSRec.ps1`
+  - `Move-DNSRecords.ps1`
 
 - 📂 [Manage **Email** messaging system](./eMail/) in `eMail` folder
   
@@ -55,8 +55,6 @@ A collection of useful `PowerShell` scripts for **system administration**, **aut
 - 📂 [Manage System and Serviice scripts](./System-Services/)`System-Servicex` folder
 
      Contains PowerShell scripts designed for managing system services, retrieving detailed system information, and configuring various system components. The scripts enable users to start, stop, and restart services, gather hardware and software details, and modify system settings to optimize performance and functionality.
-
-
 
 - 📄[README.md](ReadMe.md)                   # Project documentation
 
