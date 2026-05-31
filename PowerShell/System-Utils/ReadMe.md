@@ -22,7 +22,7 @@ A collection of useful `PowerShell` scripts for **system administration**, **aut
 
 - 📂 [Manage **files** and **folders** and thing like these](./FileSystems/) in `FileSystem` folder
   
-  Contains powershell scripts designed for efficient management of files, folders, and the filesystem.
+  Contains scripts designed for efficient management of files, folders, and the filesystem.
 
 - 📂 [These are small custom **CmdLet's**](./Functions/) in `Functions` folder
   
