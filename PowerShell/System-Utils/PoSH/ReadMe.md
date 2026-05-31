@@ -11,7 +11,9 @@ These are **PoSH** engine updating and getting info scripts on **Windows**.
 - 📂 Managing **Private Keys Infrastructure**
   - [`Update-Powershell.ps1`](./Update-Powershell.ps1) update **Powershell** to the latest version
   - [`Update-Powershell.txt`](./Update-Powershell.txt) the same script prepared to `Copy & Paste` operation being in teminal session
-
+  - [`Update-PowerShellv2.ps1`](./Update-PowerShellv2.ps1) imporved version of previous one
+  - [`Update-PowerShellv2.txt`](./Update-PowerShellv2.txt) the same script but for `Copy` and `Paste` operations
+  - [`Update-PowershellwithLog.txt`](./Update-PowershellwithLog.txt) extended version with `Log` function
 - 📄[README.md](ReadMe.md)                   # Project documentation
 
 ---
