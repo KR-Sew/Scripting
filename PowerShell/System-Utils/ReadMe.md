@@ -33,7 +33,9 @@ A collection of useful `PowerShell` scripts for **system administration**, **aut
 
 - 📂 [Managing **Private Keys Infrastructure**](./PKI/) `PKI` folder
   
-  Contains powershell scripts designed for management **PKI**.
+  Contains scripts designed for management **PKI**.
+  - `Export-Cert.ps1` export certificates
+  - `Impoert-Cert.ps1` import certificates
 
 - 📂 [Managing **PowerShell** settings](./PoSH/) `PoSH` folder
   
