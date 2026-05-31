@@ -4,7 +4,7 @@
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1%2B-blue?logo=powershell)](https://docs.microsoft.com/en-us/powershell/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-A collection of useful PowerShell scripts for system administration, automation, and DevOps workflows.  
+A collection of useful `PowerShell` scripts for **system administration**, **automation**, and **DevOps** workflows on **Windows**.  
 
 ## 📂 Folder Description
 
