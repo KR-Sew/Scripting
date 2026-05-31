@@ -4,9 +4,9 @@
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1%2B-blue?logo=powershell)](https://docs.microsoft.com/en-us/powershell/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-A collection of useful `PowerShell` scripts for managing **DNS** service on **Windows**.  
+A collection of useful `PowerShell` scripts for managing **PKI** (**Certification Authorities**) service on **Windows**.  
 
-## 📂 Managing DNS Records
+## 📂 Managing PKI service
 
 - 📂 Managing **Private Keys Infrastructure**
   - [`Export-Cert.ps1`](./Export-certs.ps1) export certificates
