@@ -8,9 +8,9 @@ A collection of useful `PowerShell` scripts for managing **DNS** service on **Wi
 
 ## 📂 Managing DNS service
 
-- 📂 Managing **Private Keys Infrastructure**
-  - [`Export-Cert.ps1`](./Export-certs.ps1) export certificates
-  - [`Import-Cert.ps1`](./Import-certs.ps1) import certificates
+- 📂 Managing **DNS service**
+  - [`Get-SpecDNSRec.ps1`](./Get-SpecDNSRec.ps1) get info about specified records
+  - [`Move-DnsRecords.ps1`](./Move-DnsRecords.ps1) move `dns` recordsS
 
 - 📄[README.md](ReadMe.md)                   # Project documentation
 
