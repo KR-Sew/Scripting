@@ -14,19 +14,10 @@ There is a collection of useful **PowerShell** scripts for collecting sytem info
   - Collecting information about `NICs` and save it in files `.TXT` and `.CSV`
 - 📂 [Get-MotherBoard.ps1](./Get-MotherBoard.ps1)
   <br>
-  - Collecting information about **Motherboard** and its components like `HHD`, `MemorySize`, `Processor` and etc.
-- 📂 [](./Failover_Cluster/)
+  - Collecting information about **Motherboard**.
+- 📂 [Get-SystemInform.ps1](./Get-SystemInform.ps1)
   <br>
-  - **Failover Cluster** management scripts
-- 📂 [MS Hyper V and VM](./Virtualization/)
-  <br>
-  - **Microsof Hyper-V** virtualizaiton management scripts
-- 📂 [Space Storage Direct (S2D) management](./S2D_storage/)
-  <br>
-  - **Space storage direct** (`S2D`) management scripts
-- 📂 [System uitilities](./System-Utils/) # Scripts for manage operating systems
-  <br>
-  - **System Service** and **System Configuraion** management scripts
+  - Collecting information about **Motherboard** components liske `Processor`, `Memory`, `Storage` and etc.
 
 ---
 
