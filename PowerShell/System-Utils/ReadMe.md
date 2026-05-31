@@ -34,7 +34,15 @@ A collection of useful `PowerShell` scripts for **system administration**, **aut
 
 - 📂 [Managing **PowerShell** settings](./PoSH/) `PoSH` folder
   
-  Contains powershell scripts designed for efficient management of files, folders, and the filesystem.
+  Contains powershell scripts designed for management `PowerShell` engine itself.
+
+- 📂 [Managing **Print services** settings](./PrintServices/) `PrintServices` folder
+  
+  Contains powershell scripts designed for management **Print services** and **Print Server** role.
+
+- 📂 [Managing **Remote Desktop Services** settings](./RDServices/) `RDServices` folder
+  
+  Contains scripts designed for management **Remote Desktop Services** and **Remote Desktop connections**.
 
 - 📂 [Manage System and Serviice scripts](./System-Services/)`System-Servicex` folder
 
