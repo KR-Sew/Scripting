@@ -15,6 +15,8 @@ A collection of useful `PowerShell` scripts for **system administration**, **aut
 - 📂 [Manage **DNS** service](./DNS/) in `DNS` folder
   
   Contains powershell scripts designed for management **DNS** records and **DNS** service.
+   - `Get-SpecDNSRec.ps1`
+   - `Move-DNSRecords.ps1`
 
 - 📂 [Manage **Email** messaging system](./eMail/) in `eMail` folder
   
