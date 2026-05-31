@@ -10,7 +10,7 @@ A collection of useful `PowerShell` scripts for managing **DNS** service on **Wi
 
 - 📂 Managing **Private Keys Infrastructure**
   - [`Export-Cert.ps1`](./Export-certs.ps1) export certificates
-  - [`Impoert-Cert.ps1`](./Import-certs.ps1) import certificates
+  - [`Import-Cert.ps1`](./Import-certs.ps1) import certificates
 
 - 📄[README.md](ReadMe.md)                   # Project documentation
 
