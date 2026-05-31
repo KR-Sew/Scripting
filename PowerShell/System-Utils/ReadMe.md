@@ -26,7 +26,7 @@ A collection of useful `PowerShell` scripts for **system administration**, **aut
 
 - 📂 [These are small custom **CmdLet's**](./Functions/) in `Functions` folder
   
-  Contains powerShell scripts designed for efficient management of files, folders, and the filesystem.
+  Contains custom **CmdLet** `Install-ZipPackages.ps1` for managing archived files and folders .
 
 - 📂 [Managing **Private Keys Infrastructure**](./PKI/) `PKI` folder
   
