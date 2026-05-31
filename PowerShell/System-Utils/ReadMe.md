@@ -37,8 +37,9 @@ A collection of useful `PowerShell` scripts for **system administration**, **aut
 
 - 📂 [Managing **PowerShell** settings](./PoSH/) `PoSH` folder
   
-  Contains powershell scripts designed for management `PowerShell` engine itself.
-
+  Contains scripts designed for managing `PowerShell` engine itself:
+  - `Update-PowerShell.ps` for updating to the latest version.
+  - `Update-PowerShell.txt` the same script but adapted to run just using **Copy&Paste** being in teminal session.
 - 📂 [Managing **Print services** settings](./PrintServices/) `PrintServices` folder
   
   Contains powershell scripts designed for management **Print services** and **Print Server** role.
