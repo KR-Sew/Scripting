@@ -27,14 +27,14 @@ param(
     [string]$KeyPath,
 
     [Parameter(Mandatory, HelpMessage="Path to encrypted password file")]
-    [SecureString]$PasswordPath,
+    [String]$PasswordPath,
 
     [Parameter(Mandatory, HelpMessage="Path to centralized logs sharefolder")]
     [string]$CentralLogShare,
     
-    [Parameter(Mandatory=$True, HelpMessage="Enable central logging")]
+    [Parameter(HelpMessage="Enable central logging")]
     [ValidateSet($true,$false)]
-    [Boolean]$EnableCentralLogging,
+    [Boolean]$EnableCentralLogging = $true,
 
     [Parameter(Mandatory, HelpMessage="Path to Local logging folder")]
     [string]$LogDir
@@ -185,6 +185,39 @@ try {
     else {
         Write-Log "Administrator account already enabled."
     }
+
+# Desired new Administrator account name
+$NewAdminName = 'Admin'
+
+Write-Log "Checking current Administrator account name..."
+
+if ($AccountName -ne $NewAdminName) {
+
+    Write-Log "Renaming account:"
+    Write-Log "Old Name : $AccountName"
+    Write-Log "New Name : $NewAdminName"
+
+    Invoke-CimMethod `
+        -InputObject $AdminAccount `
+        -MethodName Rename `
+        -Arguments @{
+            Name = $NewAdminName
+        } | Out-Null
+
+    Write-Log "Administrator account renamed successfully." -Level OK
+
+    # Update variable after rename
+    $AccountName = $NewAdminName
+
+    # Reconnect ADSI object after rename
+    $ADSPath = "WinNT://$ComputerName/$AccountName,user"
+
+    $User = [ADSI]$ADSPath
+}
+else {
+
+    Write-Log "Administrator account already renamed."
+}
 
     # Reset password
     Write-Log "Changing password..."
