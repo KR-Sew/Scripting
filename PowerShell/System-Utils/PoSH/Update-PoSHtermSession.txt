@@ -1,0 +1,46 @@
+# ----------------------------------------------------------------------------------------------------
+# Just copy the script below and paste it into you terminal session if you want to Update PowerShell
+# ----------------------------------------------------------------------------------------------------
+ @"
+ `$ErrorActionPreference = 'Stop'
+
+ Write-Host 'Checking current PowerShell version...' -ForegroundColor Cyan
+ `$currentVersion = `$PSVersionTable.PSVersion
+ Write-Host "Current version: `$currentVersion"
+
+ Write-Host 'Fetching latest release from GitHub...' -ForegroundColor Cyan
+ `$headers = @{ 'User-Agent' = 'PowershellScript' }
+ `$release = Invoke-RestMethod -Uri 'https://api.github.com/repos/PowerShell/PowerShell/releases/latest' -Headers `$headers
+ `$latestVersion = `$release.tag_name.TrimStart('v')
+ Write-Host "Latest version available: `$latestVersion"
+
+ if ([version]`$latestVersion -le `$currentVersion) {
+     Write-Host 'You are already on the latest version!' -ForegroundColor Green
+     return
+ }
+
+ `$msiAsset = `$release.assets | Where-Object { `$_.name -match 'win-x64.msi$' }
+ if (-not `$msiAsset) {
+     Write-Error 'Could not find MSI installer in latest release.'
+     return
+ }
+
+ `$msiUrl = `$msiAsset.browser_download_url
+ `$msiFile = "`$env:TEMP\PowerShell-`$latestVersion-win-x64.msi"
+
+ Write-Host 'Downloading MSI installer...' -ForegroundColor Cyan
+ Invoke-WebRequest -Uri `$msiUrl -OutFile `$msiFile -Headers `$headers -MaximumRedirection 10
+
+ Write-Host 'Scheduling update task...' -ForegroundColor Cyan
+ `$cmd = "msiexec.exe /i `$msiFile /quiet /norestart"
+ `$taskName = 'UpdatePowerShell'
+
+ `$Action = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument "/c `$cmd"
+ `$Trigger = New-ScheduledTaskTrigger -Once -At ((Get-Date).AddMinutes(1))
+ `$Principal = New-ScheduledTaskPrincipal -UserId 'SYSTEM' -RunLevel Highest
+ if (Get-ScheduledTask -TaskName `$taskName -ErrorAction SilentlyContinue) { Unregister-ScheduledTask -TaskName `$taskName -Confirm:`$false }
+ Register-ScheduledTask -TaskName `$taskName -Action `$Action -Trigger `$Trigger -Principal `$Principal
+
+ Write-Host 'Update scheduled. Please disconnect SSH session NOW!' -ForegroundColor Yellow
+ Write-Host 'The update will run in about 1 minute.' -ForegroundColor Yellow
+ "@ | Invoke-Expression
