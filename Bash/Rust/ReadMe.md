@@ -5,6 +5,7 @@
 [![WSL](https://img.shields.io/badge/WSL-Microsoft-blue?style=flat&logo=linux&logoColor=white&logoSize=auto&labelColor=4E9A06)](https://learn.microsoft.com/en-us/windows/wsl/about)
 [![Bash](https://img.shields.io/badge/GNU%20Bash-4EAA25?style=flat&logo=gnubash&logoColor=white&logoSize=auto&labelColor=black)](https://www.gnu.org/software/bash/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+![Rust](https://img.shields.io/badge/Rust-607078?style=flat&logo=rust&logoColor=white&logoSize=auto&labelColor=b7410e)
 
 There are scripts that can install **Git** and **Git cli** from source. And script that can add emoji to comments in a commit.  
 
