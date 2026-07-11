@@ -1,4 +1,4 @@
-# <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg" width=35 alt="Instatll and update Git">  Install or Update Rust programming language
+# <img width="45" src="https://img.icons8.com/external-tal-revivo-duo-tal-revivo/25/external-rust-is-a-multi-paradigm-system-programming-language-logo-duo-tal-revivo.png" alt="external-rust-is-a-multi-paradigm-system-programming-language-logo-duo-tal-revivo"/> Install or Update Rust programming language
 
 [![Rust](https://img.shields.io/badge/Rust-607078?style=flat&logo=rust&logoColor=white&logoSize=auto&labelColor=b7410e)](https://rust-lang.org/)
 [![Debian](https://img.shields.io/badge/Debian-607078?style=flat&logo=debian&logoColor=white&logoSize=auto&labelColor=a81d33)](https://www.debian.org/)
@@ -17,7 +17,7 @@ There is the script that can install **Rust** from source. Also it can be used f
   [![Debian](https://img.shields.io/badge/Debian-607078?style=flat&logo=debian&logoColor=white&logoSize=auto&labelColor=a81d33)](https://www.debian.org/)
   [![Ubuntu](https://img.shields.io/badge/Ubuntu-607078?style=flat&logo=ubuntu&logoColor=white&logoSize=auto&labelColor=e95420)](https://ubuntu.com/download)
 
-  - the script for update Git and Git cli from source
+  - the script for install or update **Rust** programming language from source `github`
 
 ---
 
