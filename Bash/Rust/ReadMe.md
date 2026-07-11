@@ -11,16 +11,13 @@ There is the script that can install **Rust** from source. Also it can be used f
 
 ## 📂 Description
 
-- 📄[Git-commit_with_emo.sh](./Git-commit_with_emo.sh)
+- 📄[install_rust.sh](./install_rust.sh)
   </br>
-  ![Git](https://img.shields.io/badge/%20git%20-%23F05033.svg?style=flat&logo=git&logoColor=white&logoSize=auto&labelColor=23F05033)
-  [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-go.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-go.yml)
-  </br> Add emoji to commit description
-- 📄[Update_Git_GitCli.sh](./Update_Git_GitCli.sh)
-  </br>
-   ![Git](https://img.shields.io/badge/%20git%20-%23F05033.svg?style=flat&logo=git&logoColor=white&logoSize=auto&labelColor=23F05033)
-   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-git-gitcli.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-git-gitcli.yml)
-  </br> the script for update Git and Git cli from source
+  ![Rust](https://img.shields.io/badge/Rust-607078?style=flat&logo=rust&logoColor=white&logoSize=auto&labelColor=b7410e)
+  [![Debian](https://img.shields.io/badge/Debian-607078?style=flat&logo=debian&logoColor=white&logoSize=auto&labelColor=a81d33)](https://www.debian.org/)
+  [![Ubuntu](https://img.shields.io/badge/Ubuntu-607078?style=flat&logo=ubuntu&logoColor=white&logoSize=auto&labelColor=e95420)](https://ubuntu.com/download)
+
+  - the script for update Git and Git cli from source
 
 ---
 
