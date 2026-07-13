@@ -14,6 +14,7 @@ These are **PoSH** engine updating and getting info scripts on **Windows**.
   - [`Update-PowerShellv2.ps1`](./Update-PowerShellv2.ps1) imporved version of previous one
   - [`Update-PowerShellv2.txt`](./Update-PowerShellv2.txt) the same script but for `Copy` and `Paste` operations
   - [`Update-PowershellwithLog.txt`](./Update-PowershellwithLog.txt) extended version with `Log` function
+  - [`Update-PoSHWithTLSEnabled.txt`](./Update-PoSHwithTLSenabled.txt) imporved version for running on an old Windows version where has only **PowerShell** `v5.1` existed
 - 📄[README.md](ReadMe.md)                   # Project documentation
 
 ---
