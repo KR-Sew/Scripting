@@ -6,7 +6,8 @@
 [![Bash](https://img.shields.io/badge/GNU%20Bash-4EAA25?style=flat&logo=gnubash&logoColor=white&logoSize=auto&labelColor=black)](https://www.gnu.org/software/bash/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-There are scripts that can install **Git** and **Git cli** from source or update them  
+There are scripts that can install **Git** and **Git cli** from source or update them.
+Notice: for the version since `v2.55` you need to have installed **Rust** in your system otherwise the script will have got the error. You could run [this script](../Rust/install_rust.sh) that will install the latest version of **Rust**.  
 
 ## 📂 Description
 
