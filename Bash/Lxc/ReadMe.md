@@ -10,14 +10,13 @@ A collection of useful Bash scripts to work with **LXC/LXD** conatainers for aut
 
 ## 📂 Description
 
-- 📂 [Postgre](./Postgre/)
+- 📂 [**PostgreSQL**](./Postgre/)
   
-  </p>Installing or managing Postgre SQL on Debian/Ubuntu LXC/LXD container
+  Installing or managing [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat&logo=postgresql&logoColor=white&logoSize=auto&labelColor=5197e1)](https://www.postgresql.org/) on [![Debian](https://img.shields.io/badge/Debian-607078?style=flat&logo=debian&logoColor=white&logoSize=auto&labelColor=a81d33)](https://www.debian.org/)
+[![Ubuntu](https://img.shields.io/badge/Ubuntu-607078?style=flat&logo=ubuntu&logoColor=white&logoSize=auto&labelColor=e95420)](https://ubuntu.com/download) into [![LXC/LXD](https://custom-icon-badges.demolab.com/badge/LXC_LXD-Containers-607078?style=flat&logo=lxd-lxc_logo&logoColor=grey&logoSize=auto&labelColor=grey)](https://documentation.ubuntu.com/lxd/stable-5.21/) container
   
-  [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat&logo=postgresql&logoColor=white&logoSize=auto&labelColor=5197e1)](https://www.postgresql.org/)
-  
-- 📂 [MySQL](./MySQL/)
-  </p>Installing or managing Postgre SQL on Debian/Ubuntu LXC/LXD container
+- 📂 [**MySQL**](./MySQL/)
+  Installing or managing **MySQL** on `Debian` / `Ubuntu` `LXC`/ `LXD` container
 
   [![MySQL](https://img.shields.io/badge/MySQL-4479A0?style=flat&logo=mysql&logoColor=white&logoSize=auto&labelColor=336791)](https://www.mysql.com/)
 
