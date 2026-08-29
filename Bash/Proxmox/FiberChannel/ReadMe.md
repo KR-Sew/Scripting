@@ -8,9 +8,9 @@ This is **How to** installing and configuring `FibreChannel` volumes on **Proxmo
 
 ## 📂 Description
 
-- 📂 Manage user accounts
-  </p>Installing or updating Awk (gawk version and set up it as default) on Debian/Ubuntu
-- 📂 [Convert disk image format](./CRM/)
+- 📂 
+  </p>
+- 📂 
   </p>
 ---
 
