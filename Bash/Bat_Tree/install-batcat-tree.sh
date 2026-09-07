@@ -49,6 +49,54 @@ configure_privileges() {
     fi
 }
 
+configure_bat_command() {
+    local target_user target_home target_group bin_dir bashrc_file batcat_path
+    local path_entry='export PATH="$HOME/.local/bin:$PATH"'
+
+    target_user="${SUDO_USER:-$(id -un)}"
+    target_home="$(getent passwd "$target_user" | cut -d: -f6)"
+    target_group="$(id -gn "$target_user")"
+    batcat_path="$(command -v batcat)"
+
+    if [[ -z "$target_home" ]]; then
+        error "Could not determine the home directory for user '$target_user'."
+        exit 1
+    fi
+
+    bin_dir="$target_home/.local/bin"
+    bashrc_file="$target_home/.bashrc"
+
+    info "Configuring the 'bat' command for user '$target_user'..."
+
+    if (( EUID == 0 )); then
+        install -d -m 0755 -o "$target_user" -g "$target_group" "$bin_dir"
+        ln -sfn "$batcat_path" "$bin_dir/bat"
+        chown -h "$target_user:$target_group" "$bin_dir/bat"
+        touch "$bashrc_file"
+        chown "$target_user:$target_group" "$bashrc_file"
+    else
+        mkdir -p "$bin_dir"
+        ln -sfn "$batcat_path" "$bin_dir/bat"
+        touch "$bashrc_file"
+    fi
+
+    if grep -Fqx "$path_entry" "$bashrc_file"; then
+        warning "~/.local/bin is already configured in $bashrc_file."
+    else
+        printf '\n%s\n' "$path_entry" >> "$bashrc_file"
+        success "Added ~/.local/bin to PATH in $bashrc_file."
+    fi
+
+    export PATH="$bin_dir:$PATH"
+
+    if [[ "$(command -v bat)" == "$bin_dir/bat" ]]; then
+        success "The 'bat' command now points to $batcat_path."
+    else
+        error "The 'bat' command could not be configured."
+        exit 1
+    fi
+}
+
 install_packages() {
     local packages=()
 
@@ -97,8 +145,10 @@ main() {
     configure_privileges
     install_packages
     verify_installation
+    configure_bat_command
 
     success "Installation completed successfully."
+    info "Run 'source ~/.bashrc && bat --version' or open a new terminal to refresh your current shell."
 }
 
 main "$@"
