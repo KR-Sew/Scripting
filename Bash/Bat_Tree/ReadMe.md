@@ -1,4 +1,6 @@
-# <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg" width=35 alt="Instatll and update Git">  Install or Update Batcat and Tree
+# <img src="https://raw.githubusercontent.com/sharkdp/bat/7323a7514f7601737640e7172be115127d6db08c/doc/logo-header.svg" alt="Instatll and update Batcat and Tree">  
+
+## Install or Update Batcat and Tree
 
 [![Debian](https://img.shields.io/badge/Debian-607078?style=flat&logo=debian&logoColor=white&logoSize=auto&labelColor=a81d33)](https://www.debian.org/)
 [![Ubuntu](https://img.shields.io/badge/Ubuntu-607078?style=flat&logo=ubuntu&logoColor=white&logoSize=auto&labelColor=e95420)](https://ubuntu.com/download)
@@ -8,8 +10,11 @@
 
 There are scripts that can install **Batcat** and **Tree** from source or update them.
 And configure **Batcat** to run like the short name **bat**.
+Original **GitHub** repo [**here**](https://github.com/sharkdp/bat/tree/master)
 
-## 📂 Description
+---
+
+### 📂 Description
 
 - 📄[install_bat_tree.sh](./install-batcat-tree.sh)
   
@@ -37,7 +42,7 @@ And configure **Batcat** to run like the short name **bat**.
   ```bash
      bat --version
      tree --version
-  ```   
+  ```
 
 - 📄[README.md](ReadMe.md) # Project documentation
 
