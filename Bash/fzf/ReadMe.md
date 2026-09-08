@@ -18,8 +18,7 @@
 
 </div>
 
-There are scripts that can install **Git** and **Git cli** from source or update them.
-Notice: for the version since `v2.55` you need to have installed **Rust** in your system otherwise the script will have got the error. You could run [this script](../Rust/install_rust.sh) that will install the latest version of **Rust**.  
+There is the script that can install **fzf** `fuzzi finder` from [**source**](https://github.com/junegunn/fzf) or update **them**.
 
 ## 📂 Description
 
