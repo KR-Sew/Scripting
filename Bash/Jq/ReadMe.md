@@ -15,6 +15,11 @@ Official site [**here**](https://jqlang.org/)
 - ### <img width="25" src="../../Assets/jq.svg" alt="bash"/> [install_jq.sh](./install_jq.sh)
 
   - Installing or updating <img width="25" src="../../Assets/jq.svg" alt="bash"/> version from source **GitHub** on **Debian/Ubuntu**
+  - set executable and run:
+  ```bash
+     sudo chmod +x ./install_jq.sh
+     sudo ./install_jq.sh
+  ```   
   - the script supports parameter keys:
     - `--check` to check a new version only
     - `--force` for rebuild
