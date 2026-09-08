@@ -6,17 +6,17 @@
 [![Bash](https://img.shields.io/badge/GNU%20Bash-4EAA25?style=flat&logo=gnubash&logoColor=white&logoSize=auto&labelColor=black)](https://www.gnu.org/software/bash/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-There are scripts that can install **Batcat** and **Git cli** from source or update them.
-Notice: for the version since `v2.55` you need to have installed **Rust** in your system otherwise the script will have got the error. You could run [this script](../Rust/install_rust.sh) that will install the latest version of **Rust**.  
+There are scripts that can install **Batcat** and **Tree** from source or update them.
+And configure **Batcat** to run like the short name **bat**.
 
 ## 📂 Description
 
-- 📄[Git-commit_with_emo.sh](./Git-commit_with_emo.sh)
-  </br>
+- 📄[install_bat_tree.sh](./install-batcat-tree.sh)
   
-  - 📄[Update_Git_GitCli.sh](./Update_Git_GitCli.sh)
-  </br>
+  - 
 
+- 📄[Update_Git_GitCli.sh](./Update_Git_GitCli.sh)
+  
 ---
 
 - 📄[README.md](ReadMe.md) # Project documentation
