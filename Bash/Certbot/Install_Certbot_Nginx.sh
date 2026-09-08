@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# certbot_install_nginx_venv.sh
 # Install latest Certbot for NGINX on Debian 13 safely (compatible with NGINX built from source)
 
 set -euo pipefail
