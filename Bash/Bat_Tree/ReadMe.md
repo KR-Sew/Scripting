@@ -13,7 +13,12 @@ And configure **Batcat** to run like the short name **bat**.
 
 - 📄[install_bat_tree.sh](./install-batcat-tree.sh)
   
-  - 
+  - to run this script
+  
+  ```bash
+     chmod +x ./install_bat_tree.sh
+     sudo ./install_bat_tree.sh
+  ```
 
 - **BAT** can be configured manually for some an old verion:
   
