@@ -15,9 +15,24 @@ And configure **Batcat** to run like the short name **bat**.
   
   - 
 
-- 📄[Update_Git_GitCli.sh](./Update_Git_GitCli.sh)
+- **BAT** can be configured manually for some an old verion:
   
----
+  ```bash
+     mkdir -p "$HOME/.local/bin"
+     ln -sfn "$(command -v batcat)" "$HOME/.local/bin/bat"
+
+    grep -Fqx 'export PATH="$HOME/.local/bin:$PATH"' "$HOME/.bashrc" ||
+        echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/.bashrc"
+    
+    source "$HOME/.bashrc" 
+  ```
+
+  - then you can check
+
+  ```bash
+     bat --version
+     tree --version
+  ```   
 
 - 📄[README.md](ReadMe.md) # Project documentation
 
