@@ -1,13 +1,24 @@
-# <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg" width=35 alt="Instatll and update Git">  Install or Update Git and add emoji for a commit
+<div align= "center">
+  <a href="https://github.com/junegunn/fzf"><<img src="https://raw.githubusercontent.com/junegunn/i/master/fzf-color.png" alt="Instatll and update Git">
+</div>
 
-[![Debian](https://img.shields.io/badge/Debian-607078?style=flat&logo=debian&logoColor=white&logoSize=auto&labelColor=a81d33)](https://www.debian.org/)
-[![Ubuntu](https://img.shields.io/badge/Ubuntu-607078?style=flat&logo=ubuntu&logoColor=white&logoSize=auto&labelColor=e95420)](https://ubuntu.com/download)
-[![WSL](https://img.shields.io/badge/WSL-Microsoft-blue?style=flat&logo=linux&logoColor=white&logoSize=auto&labelColor=4E9A06)](https://learn.microsoft.com/en-us/windows/wsl/about)
-[![Bash](https://img.shields.io/badge/GNU%20Bash-4EAA25?style=flat&logo=gnubash&logoColor=white&logoSize=auto&labelColor=black)](https://www.gnu.org/software/bash/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+<div align="center">
 
-There are scripts that can install **Git** and **Git cli** from source or update them.
-Notice: for the version since `v2.55` you need to have installed **Rust** in your system otherwise the script will have got the error. You could run [this script](../Rust/install_rust.sh) that will install the latest version of **Rust**.  
+# Install or Update FZF
+
+</div>
+
+<div align="center">
+
+ [![Debian](https://img.shields.io/badge/Debian-607078?style=flat&logo=debian&logoColor=white&logoSize=auto&labelColor=a81d33)](https://www.debian.org/)
+ [![Ubuntu](https://img.shields.io/badge/Ubuntu-607078?style=flat&logo=ubuntu&logoColor=white&logoSize=auto&labelColor=e95420)](https://ubuntu.com/download)
+ [![WSL](https://img.shields.io/badge/WSL-Microsoft-blue?style=flat&logo=linux&logoColor=white&logoSize=auto&labelColor=4E9A06)](https://learn.microsoft.com/en-us/windows/wsl/about)
+ [![Bash](https://img.shields.io/badge/GNU%20Bash-4EAA25?style=flat&logo=gnubash&logoColor=white&logoSize=auto&labelColor=black)](https://www.gnu.org/software/bash/)
+ [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
+</div>
+
+There is the script that can install **fzf** `fuzzi finder` from [**source**](https://github.com/junegunn/fzf) or update **them**.
 
 ## 📂 Description
 
