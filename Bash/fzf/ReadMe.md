@@ -1,5 +1,5 @@
 <div align= "center">
-  <a href="https://github.com/junegunn/fzf"><<img src="https://raw.githubusercontent.com/junegunn/i/master/fzf-color.png" alt="Instatll and update Git">
+  <a href="https://github.com/junegunn/fzf"><img src="https://raw.githubusercontent.com/junegunn/i/master/fzf-color.png" width=75% alt="Instatll and update Git">
 </div>
 
 <div align="center">
@@ -17,23 +17,27 @@
  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 </div>
+<center>
 
-There is the script that can install **fzf** `fuzzi finder` from [**source**](https://github.com/junegunn/fzf) or update **them**.
+### There is the script that can install **fzf** `fuzzi finder` from [**source**](https://github.com/junegunn/fzf) or update **them**.
 
-## 📂 Description
+</center>
 
-- 📄[Git-commit_with_emo.sh](./Git-commit_with_emo.sh)
-  </br>
-  ![Git](https://img.shields.io/badge/%20git%20-%23F05033.svg?style=flat&logo=git&logoColor=white&logoSize=auto&labelColor=23F05033)
-  [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-go.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-go.yml)
-  </br> Add emoji to commit description
-- 📄[Update_Git_GitCli.sh](./Update_Git_GitCli.sh)
-  </br>
-   ![Git](https://img.shields.io/badge/%20git%20-%23F05033.svg?style=flat&logo=git&logoColor=white&logoSize=auto&labelColor=23F05033)
-   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-git-gitcli.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-git-gitcli.yml)
-  </br> the script for update Git and Git cli from source
+### 📂 Description
 
----
+- 📄[**update_fzf.sh**](./update_fzf.sh)
+  - set the script executable and then run it:
+
+    ```bash
+     sudo chmod +x ./update_fzf.sh
+     sudo ./update_fzf.sh
+    ```
+
+  - then you can check the version
+
+    ```bash
+      fzf --version
+    ```
 
 - 📄[README.md](ReadMe.md) # Project documentation
 
