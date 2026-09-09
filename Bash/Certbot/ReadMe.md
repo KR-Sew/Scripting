@@ -25,8 +25,9 @@ These are scripts that can install **Certbot** or update them from source.
     configuration
   
    ```bash
+      # set file executable
       sudo chmod +x ./Install_Certbot.sh
-      ## Example for nginx
+      # Example for nginx
       sudo ./Install_Certbot.sh --nginx
       # Example for apache
       sudo ./Install_Certbot.sh --apache   
