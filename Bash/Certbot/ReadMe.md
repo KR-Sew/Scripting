@@ -38,17 +38,17 @@ These are scripts that can install **Certbot** or update them from source.
     - `--days N` **Renew/check** if expiration is within N days (default: 30)
     - `--help` **Show** this help
   - Examples:
-    - Check certificates:
+    - **Check** certificates:
   
-    ```bash  
-       renew_certs.sh --check
-    ```
+      ```bash  
+         renew_certs.sh --check
+      ```
   
-  - **Renew** certificates expiring within `15` days:
+    - **Renew** certificates expiring within `15` days:
   
-    ```bash
-       renew_certs.sh --renew --days 15
-    ```
+      ```bash
+         renew_certs.sh --renew --days 15
+      ```
 
 ---
 
