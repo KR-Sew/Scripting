@@ -26,8 +26,10 @@ These are scripts that can install **Certbot** or update them from source.
   
    ```bash
       sudo chmod +x ./Install_Certbot.sh
-      sudo ./Install_Certbot.sh
-   
+      ## Example for nginx
+      sudo ./Install_Certbot.sh --nginx
+      # Example for apache
+      sudo ./Install_Certbot.sh --apache   
    ```
 
 - 📄[**renew_certs.sh**](./renew_certs.sh)
