@@ -25,9 +25,12 @@ These are scripts that can install **Certbot** or update them from source.
     configuration
   
    ```bash
+      # set file executable
       sudo chmod +x ./Install_Certbot.sh
-      sudo ./Install_Certbot.sh
-   
+      # Example for nginx
+      sudo ./Install_Certbot.sh --nginx
+      # Example for apache
+      sudo ./Install_Certbot.sh --apache   
    ```
 
 - 📄[**renew_certs.sh**](./renew_certs.sh)
@@ -38,18 +41,41 @@ These are scripts that can install **Certbot** or update them from source.
     - `--days N` **Renew/check** if expiration is within N days (default: 30)
     - `--help` **Show** this help
   - Examples:
-    - Check certificates:
+    - **Check** certificates:
   
-    ```bash  
-       renew_certs.sh --check
-    ```
+      ```bash  
+         renew_certs.sh --check
+      ```
   
-  - **Renew** certificates expiring within `15` days:
+    - **Renew** certificates expiring within `15` days:
   
-    ```bash
-       renew_certs.sh --renew --days 15
-    ```
+      ```bash
+         renew_certs.sh --renew --days 15
+      ```
 
----
+- 📄[**Export certificates from `*.pfx` to `*.pem`**](export_to_pem.sh)
+  - make executable:
+
+     ```bash
+        chmod +x extract-pfx.sh
+     ```
+
+  - then run the script where `*.pfx` file as an argument
+
+     ```bash
+        ./extract-pfx.sh certificate.pfx ./output
+     ```
+  
+  - You'll get
+
+     ```scheme
+        output/
+           ├── privkey.pem
+           ├── fullchain.pem
+           ├── privkey.clean.pem   ✅ (use this)
+           └── fullchain.clean.pem ✅ (use this)
+     ```
+
+---  
 
 🔙 [back to 📂 Bash](../)
