@@ -43,7 +43,7 @@ A collection of useful Bash scripts for system administration, automation, and D
 
   - Manage **Golang**. Install the latest version or update it.
 
-- ### <img width="25" src="https://img.icons8.com/color/48/kubernetes.png" alt="kubernetes"/> [Kubernetes](./Kubernetes/)
+- ### <img width="25" src="../Assets/k3s-1331550889963002225_64px.ico" alt="k3s kubernetes"/> [Lightweight Kubernetes K3s](./k3s/)
 
   - Mange **K3s** systems
 
