@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-rclone.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-rclone.yml)
 
-Simple bash script to install Rclone on Debian/Ubuntu from source if you want to get the lateset version. Update Rclon can be run with command or can be update it with this script as well
+Simple bash script to install `RClone` on **Debian**/**Ubuntu** from source if you want to get the lateset version. Update Rclon can be run with command or can be update it with this script as well
 
 ```bash
    rclone selfupdate 
