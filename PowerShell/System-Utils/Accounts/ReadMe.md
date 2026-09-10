@@ -13,6 +13,10 @@
     Just running it you will be promted to input credentials `user name` and `new password`.
 - 📄[**Find Privilege Group Changes**](./Watch-PrivilegeGroupChanges.ps1)
   - Find privilege group changes by `Event ID` in `Security` EventLog ID `4728`, `4729`
+- 📄[**Get ADUser**](./Get-ADUsers.ps1)
+- 📄[**Get ADUser Last Logon**](./Get-ADUserLastLogon.ps1)
+- 📄[**Get ADGroup Membership**](./Get-ADGroupMembership.ps1)
+- 📄[**Search AD Creation time on `EventId`**](./Search-AdCreationTimeOnIDEvent.ps1)  
  
 ---
 
