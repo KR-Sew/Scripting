@@ -9,14 +9,10 @@ Two scripts these are clean up logfiles.
 
 ## 📂 Folder Description
 
-- 📄[Clear_LogFiles.sh](ClearLogFiles.sh)
-  </br>
-  [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-go.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-go.yml)
-  </br> # Scripts for clean a logfile
-- 📄[ClearLogFiles_param.sh](Update_Git_GitCli.sh)
-  </br>
-   [![Run Script on Push](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-git-gitcli.yml/badge.svg)](https://github.com/KR-Sew/Scripting/actions/workflows/sh-update-git-gitcli.yml)
-  </br> the script for clearing logfiles that can be run with parameters
+- 📄[**Clear LogFiles**](ClearLogFiles.sh)
+  - Scripts for clean a logfile
+- 📄[**ClearLogFiles_param**](Update_Git_GitCli.sh)
+  - the script for clearing logfiles that can be run with parameters
 
 ---
 
