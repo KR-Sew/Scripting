@@ -9,14 +9,6 @@ A collection of useful Bash scripts for system administration, automation, and D
 
 ## 📂 Description
 
-- 📂 [Awk](./Awk/)
-  </p>Installing or updating Awk (gawk version and set up it as default) on Debian/Ubuntu
-- 📂 [CRM](./CRM/)
-  </p>
-  
-- 📄[Update_gawk.sh](Update_gawk.sh) # Script for automatic update gawk
-  </br>
-
 ---
 
 - 📄[README.md](ReadMe.md) # Project documentation
