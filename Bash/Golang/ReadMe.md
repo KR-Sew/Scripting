@@ -9,10 +9,16 @@
 
 These are the scripts that can be used to install **Golang** from source.  
 
-## 📂 Folder Description
+## 📂 Description
 
 - 📄[**Update `Golang`**](./Update_Golang.sh)
   - This script check installed version of `Go` and if not install it or update it to the latest version
+  
+  ```bash
+     sudo chmod +x ./Update_Golang.sh
+     sudo ./Update_Golang.sh
+  ```
+
 - 📄[**Update `Golang` for all users.sh**](./upd_go_for_allusers.sh)
   - This script works as prvious one but for all users on the host where `Golang` is intalled.
 
