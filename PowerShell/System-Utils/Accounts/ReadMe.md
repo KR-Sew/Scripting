@@ -6,10 +6,11 @@
 
  These scripts facilitate the automation of tasks such as creating, modifying, and deleting user accounts and groups, as well as assigning and revoking access rights.
 
-## 📂 Folder Description
+## 📂 Description
 
-- 📄[Set local user password](./SetLocalUserPassword.ps1) # Set local user password
-- 📄[About this section](ReadMe.md) # Project documentation
+- 📄[**Set local user password**](./SetLocalUserPassword.ps1)
+  - Set local user password running this script using `secure string` to protect credentials
+- 📄[**About this section](ReadMe.md) # Project documentation
 
 ---
 
