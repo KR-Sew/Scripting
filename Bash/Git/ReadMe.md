@@ -13,8 +13,8 @@ Notice: for the version since `v2.55` you need to have installed **Rust** in you
 
 ## 📂 Description
 
-- 📄[Git-commit_with_emo.sh](./Git-commit_with_emo.sh)
-  </br> Add emoji to commit description
+- 📄[**Git-commit_with_emo**](./Git-commit_with_emo.sh)
+  - Add emoji to commit description
 - 📄[**Update `Git` and `GitCli`**](./Update_Git_GitCli.sh)
   - the script installs or updates `Git` and `Git cli` from source
 
