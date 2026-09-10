@@ -9,9 +9,11 @@
 ## 📂 Description
 
 - 📄[**Set local user password**](./SetLocalUserPassword.ps1)
-  - Set local user password running this script using `secure string` to protect credentials
-- 📄[**About this section](ReadMe.md) # Project documentation
-
+  - Set local user password running this script using `secure string` to protect credentials.
+    Just running it you will be promted to input credentials `user name` and `new password`.
+- 📄[**Find Privilege Group Changes**](./Watch-PrivilegeGroupChanges.ps1)
+  - Find privilege group changes by `Event ID` in `Security` EventLog ID `4728`, `4729`
+ 
 ---
 
 🔙 [back to 📂 System utilities](../)
