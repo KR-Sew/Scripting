@@ -13,8 +13,12 @@ This script installs **gAwk** from source up to the latest version or update it.
 
 - 📄[**Install or Update `awk`**](Update_gawk.sh)
   - Installing or updating `awk` (`gawk` and set up this engine as default instead of `mawk`) on **Debian/Ubuntu**
-
----
+  - set the script executable and run
+  
+  ```bash
+     sudo chmod +x ./Update_gawk.sh
+     sudo ./Update_gawk.sh
+  ```
 
 - 📄[README.md](ReadMe.md) # Project documentation
 
