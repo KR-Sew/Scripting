@@ -10,11 +10,11 @@
 
 ## **(PowerShell & Bash)**
 
-### This repository contains a set of PowerShell and Bash scripts designed for system administrators, DevOps engineers, and IT professionals who manage virtual machines (VMs), automate system tasks, and optimize infrastructure operations. These scripts work with Hyper-V, VMware, Proxmox, and Linux-based systems to simplify daily administration tasks
+### This repository contains a set of PowerShell and Bash scripts designed for system administrators and IT professionals who manage virtual machines (VMs), automate system tasks, and optimize infrastructure operations. These scripts work with Hyper-V, Proxmox, and Linux-based systems to simplify daily administration tasks.
 
 ### 🚀 Features
 
-- ✅ VM Management → Start, stop, create, and configure VMs (Hyper-V, VMware, Proxmox).
+- ✅ VM Management → Start, stop, create, and configure VMs (Hyper-V, Proxmox).
 - ✅ System Operations → Automate software updates, backups, log management, and monitoring.
 - ✅ User & Security Management → Manage user accounts, permissions, and security policies.
 - ✅ Networking → Configure firewalls, DNS, and network interfaces across systems.
