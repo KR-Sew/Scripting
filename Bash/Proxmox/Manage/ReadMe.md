@@ -46,53 +46,57 @@ That script is for creating a vm on **Proxmox VE** host
        --disk-size 64G
     ```
 
-
-The `EFI` disk can be on separate storage from the main VM disk. Ensure that storage is accessible wherever the VM may run.
+  - The `EFI` disk can be on separate storage from the main VM disk. Ensure that storage is accessible wherever the VM may run.
 
 **Windows Server** example:
+- **Windows Setup** does not natively include every **Proxmox** `VirtIO` storage driver, so attach the `VirtIO` driver `ISO`. **Proxmox** documents installing the `VirtIO` driver before or while moving the **Windows** boot disk to `VirtIO SCSI`.
 
-Windows Setup does not natively include every Proxmox VirtIO storage driver, so attach the VirtIO driver ISO. Proxmox documents installing the VirtIO driver before or while moving the Windows boot disk to VirtIO SCSI.
+    ```bash
+    sudo ./create-pve-vm.sh \
+        --vmid 193 \
+        --name ws2025-test \
+        --os windows \
+        --storage local-zfs \
+        --iso local:iso/Windows_Server_2025.iso \
+        --virtio-iso local:iso/virtio-win.iso \
+        --cores 4 \
+        --memory 8192 \
+        --disk-size 100G \
+        --bridge vmbr0 \
+        --onboot
+    ```
 
-sudo ./create-pve-vm.sh \
-  --vmid 193 \
-  --name ws2025-test \
-  --os windows \
-  --storage local-zfs \
-  --iso local:iso/Windows_Server_2025.iso \
-  --virtio-iso local:iso/virtio-win.iso \
-  --cores 4 \
-  --memory 8192 \
-  --disk-size 100G \
-  --bridge vmbr0 \
-  --onboot
+  - During Windows installation, when no disk appears:
+    - Select Load driver.
+    - Browse the `VirtIO` CD.
+    - Load the appropriate vioscsi driver.
+    - After installation, install the full `VirtIO` guest tools package and enable the `QEMU` **Guest Agent** service.
+  - **Windows 11** example:
 
-During Windows installation, when no disk appears:
+    ```bash
+     sudo ./create-pve-vm.sh \
+        --vmid 194 \
+        --name win11-test \
+        --os windows11 \
+        --storage local-zfs \
+        --iso local:iso/Windows_11.iso \
+        --virtio-iso local:iso/virtio-win.iso \
+        --cores 4 \
+        --memory 8192 \
+        --disk-size 100G \
+        --bridge vmbr0 \
+        --onboot
+    ```
 
-Select Load driver.
-Browse the VirtIO CD.
-Load the appropriate vioscsi driver.
-After installation, install the full VirtIO guest tools package and enable the QEMU Guest Agent service.
-Windows 11 example
-sudo ./create-pve-vm.sh \
-  --vmid 194 \
-  --name win11-test \
-  --os windows11 \
-  --storage local-zfs \
-  --iso local:iso/Windows_11.iso \
-  --virtio-iso local:iso/virtio-win.iso \
-  --cores 4 \
-  --memory 8192 \
-  --disk-size 100G \
-  --bridge vmbr0 \
-  --onboot
+  - This adds:
 
-This adds:
-
-Machine: q35
-BIOS: OVMF
-EFI disk: 4 MB
-Secure Boot keys: enrolled
-TPM: 2.0
+    ```text
+      Machine: q35
+      BIOS: OVMF
+      EFI disk: 4 MB
+      Secure Boot keys: enrolled
+      TPM: 2.0
+    ```
 
 ---
 
