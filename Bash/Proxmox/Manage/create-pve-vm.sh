@@ -253,8 +253,22 @@ validate_integer "$CORES" "Core count"
 validate_integer "$SOCKETS" "Socket count"
 validate_integer "$MEMORY" "Memory"
 
-[[ "$DISK_SIZE" =~ ^[0-9]+([KMGT])?$ ]] ||
-    error "Invalid disk size: ${DISK_SIZE}. Example: 32G"
+# qm allocation syntax expects the disk size as an integer number of GiB:
+# storage-id:size-in-GiB
+#
+# Accept both:
+#   --disk-size 20
+#   --disk-size 20G
+#
+# Internally, convert both forms to 20.
+if [[ "$DISK_SIZE" =~ ^([0-9]+)([Gg])?$ ]]; then
+    DISK_SIZE_GIB="${BASH_REMATCH[1]}"
+else
+    error "Invalid disk size '${DISK_SIZE}'. Use an integer GiB value, such as 20 or 20G."
+fi
+
+(( DISK_SIZE_GIB > 0 )) ||
+    error "Disk size must be greater than zero"
 
 case "$MACHINE" in
     q35|i440fx|pc|pc-i440fx-*)
@@ -330,9 +344,8 @@ printf '%s\n' \
     "  Firmware:    ${BIOS}" \
     "  CPU:         ${SOCKETS} socket(s), ${CORES} core(s)" \
     "  Memory:      ${MEMORY} MB" \
-    "  Disk:        ${STORAGE}:${DISK_SIZE}" \
-    "  ISO:         ${ISO}" \
-    "  Network:     ${NET_CONFIG}"
+    "  Disk:        ${STORAGE}:${DISK_SIZE_GIB} GiB" \
+    "  ISO:         ${ISO}"
 
 qm create "$VMID" \
     --name "$VM_NAME" \
@@ -354,8 +367,10 @@ qm create "$VMID" \
     --boot order=scsi0\;ide2
 
 # Allocate the operating-system disk.
+# qm set "$VMID" \
+#   --scsi0 "${STORAGE}:${DISK_SIZE},discard=on,iothread=1,ssd=1"
 qm set "$VMID" \
-    --scsi0 "${STORAGE}:${DISK_SIZE},discard=on,iothread=1,ssd=1"
+    --scsi0 "${STORAGE}:${DISK_SIZE_GIB},discard=on,iothread=1,ssd=1"
 
 # Attach installation media.
 qm set "$VMID" --ide2 "${ISO},media=cdrom"
