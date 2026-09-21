@@ -8,10 +8,9 @@ That script is for creating a vm on **Proxmox VE** host
 
 ## 📂 Description
 
-- 📂 Manage user accounts
-  </p>Installing or updating Awk (gawk version and set up it as default) on Debian/Ubuntu
-- 📂 [Convert disk image format](./CRM/)
-  </p>
+- 📂 [Create **PVE** VM](./create-pve-vm.sh)
+
+
 ---
 
 - 📄[README.md](ReadMe.md) # Project documentation
