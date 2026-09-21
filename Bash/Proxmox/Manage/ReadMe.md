@@ -14,9 +14,11 @@ That script is for creating a vm on **Proxmox VE** host
     ```bash
     chmod +x create-pve-vm.sh
     ```
+
   - **Debian** or **Ubuntu** example
+
     ```bash
-       sudo ./create-pve-vm.sh \
+      sudo ./create-pve-vm.sh \
        --vmid 192 \
        --name debian12 \
        --os linux \
@@ -27,23 +29,27 @@ That script is for creating a vm on **Proxmox VE** host
        --disk-size 64G \
        --bridge vmbr0 \
        --onboot
+    ```
 
-For one of your shared LVM storages, it could instead be:
+  - For one of your shared **LVM** storages, it could instead be:
 
-sudo ./create-pve-vm.sh \
-  --vmid 192 \
-  --name ubuntu-server \
-  --os linux \
-  --storage VG-iDs2 \
-  --efi-storage local-zfs \
-  --iso local:iso/ubuntu-24.04.3-live-server-amd64.iso \
-  --cores 4 \
-  --memory 8192 \
-  --disk-size 64G
+    ```bash
+      sudo ./create-pve-vm.sh \
+       --vmid 192 \
+       --name ubuntu-server \
+       --os linux \
+       --storage VG-iDs2 \
+       --efi-storage local-zfs \
+       --iso local:iso/ubuntu-24.04.3-live-server-amd64.iso \
+       --cores 4 \
+       --memory 8192 \
+       --disk-size 64G
+    ```
 
-The EFI disk can be on separate storage from the main VM disk. Ensure that storage is accessible wherever the VM may run.
 
-Windows Server example
+The `EFI` disk can be on separate storage from the main VM disk. Ensure that storage is accessible wherever the VM may run.
+
+**Windows Server** example:
 
 Windows Setup does not natively include every Proxmox VirtIO storage driver, so attach the VirtIO driver ISO. Proxmox documents installing the VirtIO driver before or while moving the Windows boot disk to VirtIO SCSI.
 
