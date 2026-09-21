@@ -8,10 +8,13 @@ A collection of useful Bash scripts to manage **Proxmox VE**
 
 ## 📂 Description
 
-- 📂 Manage user accounts
-  </p>Installing or updating Awk (gawk version and set up it as default) on Debian/Ubuntu
-- 📂 [Convert disk image format](./CRM/)
-  </p>
+- 📂 Manage storage
+  - [Configure **Fibre channel** storage](./FiberChannel/)
+  - [Configure **iSCSI** storage](./iSCSI/)
+  - [Configure **LVM** storage](./LVM/)
+- 📂 Manage VMs/containers
+  - [Create **VM** script](./Manage/ReadMe.md)
+  
 ---
 
 - 📄[README.md](ReadMe.md) # Project documentation
