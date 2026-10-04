@@ -6,10 +6,12 @@
 
 PowerShell Custom cmdlets for managing **DHCP** reservations such as `Export` and `Import` **dhcp** reservation
 
-## 📂 Description  
+## 📂 Description
 
+- 📂 [**`Create-DhcpReservation`**](./Create-DhcpScope.ps1)
 - 📂 [**`Export-DhcpReservation.ps1`**](./Export-DhcpReservation.ps1)
 - 📂 [**`Import-DhcpReservation.ps1`**](./Import-DhcpReservation.ps1)
+- 📂 [**`Module`**](./Module/)
 - 📄 [README.md](ReadMe.md)
 
 ---
