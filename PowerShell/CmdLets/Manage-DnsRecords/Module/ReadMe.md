@@ -32,10 +32,10 @@ It was built around real migration issues: SRV records, AD-integrated vs file-ba
 
 ## Requirements
 
-- Windows Server or Windows with RSAT DNS tools
+- **Windows Server** or **Windows** with **RSAT DNS** tools
 - `DnsServer` PowerShell module
-- Administrative permissions on the target DNS server
-- PowerShell 5.1+ supported by the manifest
+- Administrative permissions on the target **DNS** server
+- **PowerShell** `5.1+` supported by the manifest
 
 ## Install for the current session
 
@@ -54,7 +54,7 @@ $env:PSModulePath -split ';'
 
 ## CSV contract
 
-The module deliberately uses **comma** as the CSV delimiter:
+The module deliberately uses **comma** as the `CSV` delimiter:
 
 ```csv
 "HostName","RecordType","TTL","Data"
@@ -66,9 +66,9 @@ The module deliberately uses **comma** as the CSV delimiter:
 
 Internal Data separators are:
 
-- MX: `preference;target`
-- SRV: `priority;weight;port;target`
-- TXT chunks: separated by `|`
+- **MX**: `preference;target`
+- **SRV**: `priority;weight;port;target`
+- **TXT** chunks: separated by `|`
 
 Do **not** use Excel to casually edit/save these files. Excel can rewrite CSV quoting or use a regional semicolon delimiter. Prefer VS Code, Notepad++, PowerShell, or `Convert-DnsZoneCsv`.
 
@@ -242,9 +242,11 @@ Import-DnsZoneCsv `
 
 ## Safety notes
 
-- SOA records are not migrated.
-- NS records are not exported because a newly-created zone receives its own authoritative infrastructure records.
-- CSV structure is validated before DNS changes.
+- **SOA** records are not migrated.
+- **NS** records are not exported because a newly-created zone receives its own authoritative infrastructure records.
+- `CSV` structure is validated before **DNS** changes.
 - Existing records are not overwritten.
 - Prefer `-WhatIf` before a new migration.
-- Keep the original exported CSV as a backup.
+- Keep the original exported `CSV` as a backup.
+
+🔙 [back to 📂 **Manage-DnsRecords**](../)
