@@ -8,13 +8,25 @@ PowerShell Custom cmdlets for extending functionality
 
 ## 📂 Description  
 
-- 📂 [Select-GitEmoCommit](./Select-GitEmoCommit/)   # Cmdlet for adding emoji to the commit description in cli mode
-- 📂 [Backup-WSLImage](.//Backup-WSL/) # Cmdlet for creating a WSL backup in a tar archive
-- 📂 [Send-Message](./Send-Msg/)
-- 📂 [Git fixing module](./Git-Fixing-Module/) # Remove deleted or moved files from the Git indexes
-- 📄 [README.md](ReadMe.md)                 # Description of this folder
+- 📂 [**`Backup-WSLImage`**](./Backup-WSL/)
+  - Cmdlet for creating a WSL backup in a tar archive
+- 📂 [**`Copy-Data`**](./Copy-Data/)
+- 📂 [**`Get-ADUserSid`**](./Get-ADuserSiD/)
+- 📂 [**`Git fixing module`**](./Git-Fixing-Module/) 
+  - Remove deleted or moved files from the Git indexes
+- 📂 [**`Manage-DhcpReservation`**](./Manage-DhcpScope/)
+- 📂 [**`Manage-DnsRecords`**](./Manage-DnsRecords/)
+  - additional **dns** management extention such as:
+    - `Export-DnsZone` export **dns** zone to `*.csv` file
+    - `Get-SpecDNSRec`
+    - `Import-DnsZone` import **dns** zone from `*.csv` file
+    - `Move-DnsRecords`
+  - Module for `export` / `import` features  
+- 📂 [**`Select-GitEmoCommit`**](./Select-GitEmoCommit/)
+  - Cmdlet for adding emoji to the commit description in CLI mode
+- 📂 [**`Send-Message`**](./Send-Msg/)
 
----
+- 📄 [README.md](ReadMe.md)                 # Description of this folder
 
 ---
 
