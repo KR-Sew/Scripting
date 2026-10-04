@@ -9,8 +9,12 @@ This cmdlet `Backup-WSLImage` create a WSL backup in a tar archive.
 
 ## 📂 Folder contents  
 
-- 📄 [Backup-WSLImage.ps1](./Backup-WSLImage.psm1) # CmdLet module file
-- 📄 [About this section](./ReadMe.md) # Project documentation
+- 📄 [**`Backup-WSLImage`**](./Backup-WSLImage.psm1)
+  - CmdLet module file (`Backup-WSLImage.psm1`)
+- 📄 [**`Backup-WSL-TAR-Image`**](./Backup-WSL-TAR-Image.ps1)
+  - the same standalone script for backup WSL (`Backup-WSL-TAR-Image.ps1`)
+- 📄 [About this section](./ReadMe.md) 
+  - Project documentation
 
 ---
 
