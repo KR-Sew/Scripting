@@ -12,6 +12,17 @@ PowerShell Custom cmdlets for managing **DNS** zones such as `Export` and `Impor
 - 📄 [**`Get-SpecDNSRec.ps1`**](./Get-SpecDNSRec.ps1)
 - 📄 [**`Import-DnsZone.ps1`**](./Import-DnsZone.ps1)
 - 📄 [**`Move-DnsRecords`**](./Move-DnsRecords.ps1)
+- 📄 [**`Replace-DNSDomain`**](Replace-DNSDomain.ps1)
+  - tiny helper to replace a domain name in an exported *.csv file before import it
+  - Run the script like this:
+
+    ```powershell
+     .\Replace-DnsDomain.ps1 `
+            -File .\u-booking.ru.csv `
+            -OldDomain "u-booking.ru" `
+            -NewDomain "manyhands.pro"
+    ```
+
 - 📂 [**`Module`**](./Module/)
 - 📄 [README.md](ReadMe.md)
 
