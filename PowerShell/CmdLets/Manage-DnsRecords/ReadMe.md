@@ -9,6 +9,7 @@ PowerShell Custom cmdlets for managing **DNS** zones such as `Export` and `Impor
 ## 📂 Description  
 
 - 📄 [**`Export-DnsZone.p1`**](./Export-DnsZone.ps1)
+- 📄 [**`Get-SpecDNSRec.ps1`**](./Get-SpecDNSRec.ps1)
 - 📄 [**`Import-DnsZone.ps1`**](./Import-DnsZone.ps1)
 - 📂 [**`Module`**](./Module/)
 - 📄 [README.md](ReadMe.md)
