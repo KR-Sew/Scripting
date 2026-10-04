@@ -18,7 +18,7 @@ PowerShell Custom cmdlets for extending functionality
 - 📂 [**`Manage-DnsRecords`**](./Manage-DnsRecords/)
   - additional **dns** management extention such as:
     - `Export-DnsZone` export **dns** zone to `*.csv` file
-    - `Get-SpecDNSRec`
+    - `Get-SpecDNSRec` Queries specific types of DNS records for a given hostname or domain
     - `Import-DnsZone` import **dns** zone from `*.csv` file
     - `Move-DnsRecords`
   - Module for `export` / `import` features  
