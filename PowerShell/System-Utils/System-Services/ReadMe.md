@@ -17,6 +17,18 @@ The scripts enable users to start, stop, and restart services, gather hardware a
 - 📄[Restart service](./RestartService.ps1) # Restart service(service name as a parameter)
 - 📄[Jpdate Docker on Windows server](./Update-Docker-WinServ.ps1) # Update Docker on Windows server
 - 📄[Update RClone on Windows system](./UpdateRCloneWiindows.ps1) # Update Rclone storage menagement software on Windows
+- 📄[`Manage-IPv6Binding.ps1`](./Manage-IPv6Binding.ps1)
+  - It can be useful script in case when you use **6to4** tunnel from **HE**(Hurricane Electric)
+  
+  ```powershell
+     # Get current status on all network adapters
+    .\Manage-IPv6Binding.ps1 -Action Status
+     # to disable IPv6 
+    .\Manage-IPv6Binding.ps1 -Action Disable -AdapterName Ethernet
+     # to enable IPv6
+    .\Manage-IPv6Binding.ps1 -Action Enable -AdapterName Ethernet
+  ```
+
 - 📄[About this section](./ReadMe.md)
 
 ---
