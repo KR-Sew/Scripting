@@ -12,12 +12,6 @@ A collection of useful `PowerShell` scripts for **system administration**, **aut
 
   Folder contains powershell scripts designed for **managing user and group permissions** within the organization. The scripts facilitate the automation of tasks such as creating, modifying, and deleting user accounts and groups, as well as assigning and revoking access rights.
 
-- 📂 [Manage **DNS** service](./DNS/) in `DNS` folder
-  
-  Contains powershell scripts designed for management **DNS** records and **DNS** service.
-  - `Get-SpecDNSRec.ps1`
-  - `Move-DNSRecords.ps1`
-
 - 📂 [Manage **Email** messaging system](./eMail/) in `eMail` folder
   
   Contains powershell scripts designed for management messaging system like **MDaemon** and email client applications such as **MS Office Outlook**.
