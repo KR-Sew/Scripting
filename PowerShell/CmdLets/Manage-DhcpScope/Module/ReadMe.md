@@ -110,3 +110,5 @@ Get-Help Import-DhcpReservation -Examples
 ## Design notes
 
 The module uses native advanced-function behavior rather than custom `Write-Host` logging. Use `-Verbose` for operational detail and `-WhatIf`/`-Confirm` for change control. `New-DhcpScopeSafe` also verifies that `ScopeId` is the network calculated from `StartRange` and `SubnetMask`, which helps catch accidental scope definitions before changes are made.
+
+🔙 [back to 📂 **Manage-DhcpScope**](../)
