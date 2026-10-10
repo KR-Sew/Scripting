@@ -8,10 +8,48 @@ PowerShell Custom cmdlets for managing **DHCP** reservations such as `Export` an
 
 ## 📂 Description
 
-- 📂 [**`Create-DhcpReservation`**](./Create-DhcpScope.ps1)
-- 📂 [**`Export-DhcpReservation.ps1`**](./Export-DhcpReservation.ps1)
-- 📂 [**`Import-DhcpReservation.ps1`**](./Import-DhcpReservation.ps1)
+- 📄 [**`Create-DhcpReservation`**](./Create-DhcpScope.ps1)
+- 📄 [**`Export-DhcpReservation.ps1`**](./Export-DhcpReservation.ps1)
+- 📄 [**`Import-DhcpReservation.ps1`**](./Import-DhcpReservation.ps1)
 - 📂 [**`Module`**](./Module/)
+  - It contains:
+   ```plain text
+      DhcpAdminTools/
+      ├── DhcpAdminTools.psd1
+      ├── DhcpAdminTools.psm1
+      ├── README.md 
+      │
+      ├── Public/
+      │   ├── New-DhcpScopeSafe.ps1
+      │   ├── Export-DhcpReservation.ps1
+      │   └── Import-DhcpReservation.ps1
+      │
+      ├── Private/
+      │   ├── Test-DhcpAdminPrerequisite.ps1
+      │   └── Test-IPv4Address.ps1
+      │
+      └── examples/
+          ├── New-Scope.ps1
+          └── Migrate-Reservations.ps1
+    ```
+
+  - Installing the module:
+  
+   ```powershell
+     cd .\DhcpAdminTools
+     Import-Module .\DhcpAdminTools.psd1 -Force -Verbose
+     Get-Command -Module DhcpAdminTools
+   ```
+
+  - After installing the module:
+   
+   ```powershell
+      Import-Module DhcpAdminTools
+      Get-Command -Module DhcpAdminTools
+      Get-Help New-DhcpScopeSafe -Full
+      Get-Help Export-DhcpReservation -Examples
+    ```
+
 - 📄 [README.md](ReadMe.md)
 
 ---
